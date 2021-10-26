@@ -36,7 +36,7 @@ All methods in Dinraal accept their options in hash notation. This allows for ex
 
 ## `center`
 ```ruby
-Dinraal.center( { x, y, x2, y2, x3, y3 } )
+Dinraal.center( { x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y } )
 ```
 
 Returns the center point ( centroid ) of the given triangle as a hash.
@@ -48,7 +48,7 @@ Returns the center point ( centroid ) of the given triangle as a hash.
 ## `outline`
 
 ```ruby
-Dinraal.outline( { x, y, x2, y2, x3, y3, r, g, b, a } )
+Dinraal.outline( { x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y, r: red, g: green, b: blue, a: alpha } )
 ```
 
 Returns an array of lines represented as hashes. The lines form the outline of the given triangle.
@@ -64,7 +64,7 @@ This array is formatted to be sent directly to `args.outputs.primitives` or a `r
 ## `raster`
 
 ```ruby
-Dinraal.raster( { x, y, x2, y2, x3, y3, r, g, b, a } )
+Dinraal.raster( { x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y, r: red, g: green, b: blue, a: alpha } )
 ```
 
 Returns an array of lines represented as hashes. The lines form the solid body of the given triangle.
