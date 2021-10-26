@@ -53,13 +53,13 @@ Dinraal.outline( { x, y, x2, y2, x3, y3, r, g, b, a } )
 
 Returns an array of lines represented as hashes. The lines form the outline of the given triangle.
 
-This array is formatted to be sent directly to `args.outputs.primitives` or a `render_target`.
-
 ```ruby
 [ { x: start_x, y: start_y, x2: end_x, y2: end_x, r: red, g: green, b: blue, a: alpha },
   { x: start_x, y: start_y, x2: end_x, y2: end_x, r: red, g: green, b: blue, a: alpha },
   { x: start_x, y: start_y, x2: end_x, y2: end_x, r: red, g: green, b: blue, a: alpha } ]
 ```
+
+This array is formatted to be sent directly to `args.outputs.primitives` or a `render_target`.
 
 ## `raster`
 
@@ -69,13 +69,13 @@ Dinraal.raster( { x, y, x2, y2, x3, y3, r, g, b, a } )
 
 Returns an array of lines represented as hashes. The lines form the solid body of the given triangle.
 
-This array is formatted to be sent directly to `args.outputs.primitives` or a `render_target`.
-
 ```ruby
 [ { x: start_x, y: start_y, x2: end_x, y2: end_x, r: red, g: green, b: blue, a: alpha },
   { x: start_x, y: start_y, x2: end_x, y2: end_x, r: red, g: green, b: blue, a: alpha },
   { x: start_x, y: start_y, x2: end_x, y2: end_x, r: red, g: green, b: blue, a: alpha } ]
 ```
+
+This array is formatted to be sent directly to `args.outputs.primitives` or a `render_target`.
 
 It is recommended to call this method and cache it's result, as it will lag with larger triangles.
 
