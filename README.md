@@ -15,6 +15,9 @@ def tick args
 end
 ```
 
+The library source file can be found at [https://github.com/DSchaedler/dinraal/blob/main/app/lib/dinraal.rb](https://github.com/DSchaedler/dinraal/blob/main/app/lib/dinraal.rb)  
+(app/lib/dinraal.rb)
+
 # Methods
 
 ## `center`
