@@ -18,6 +18,18 @@ end
 The library source file can be found at [https://github.com/DSchaedler/dinraal/blob/main/app/lib/dinraal.rb](https://github.com/DSchaedler/dinraal/blob/main/app/lib/dinraal.rb)  
 (app/lib/dinraal.rb)
 
+# Common Parameters
+    x =  (int, float) x position of point 1 on the triangle.  
+    y =  (int, float) y position of point 1 on the triangle.  
+    x2 = (int, float) x position of point 2 on the triangle.  
+    y2 = (int, float) y position of point 2 on the triangle.  
+    x3 = (int, float) x position of point 3 on the triangle.  
+    y3 = (int, float) y position of point 3 on the triangle.  
+    r =  (int, float) red portion of the triangle's color.  
+    g =  (int, float) green portion of the triangle's color.  
+    b =  (int, float) blue portion of the triangle's color.  
+    a =  (int, float) alpha portion of the triangle's color.  
+
 # Methods
 
 ## `center`
