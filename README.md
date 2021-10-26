@@ -30,7 +30,7 @@ g =  (int, float) green portion of the triangle's color.
 b =  (int, float) blue portion of the triangle's color.  
 a =  (int, float) alpha portion of the triangle's color.  
 
-All methods in Dinraal accept their options in hash notation.
+All methods in Dinraal accept their options in hash notation. This allows for extra or missing options to be ignored or inferred.
 
 # Methods
 
