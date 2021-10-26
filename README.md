@@ -33,7 +33,9 @@ The library source file can be found at [https://github.com/DSchaedler/dinraal/b
 # Methods
 
 ## `center`
-```Dinraal.center( { x, y, x2, y2, x3, y3 } )```
+```ruby
+Dinraal.center( { x, y, x2, y2, x3, y3 } )
+```
 
 Returns the center point ( centroid ) of the given triangle.
 
