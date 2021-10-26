@@ -39,7 +39,11 @@ All methods in Dinraal accept their options in hash notation.
 Dinraal.center( { x, y, x2, y2, x3, y3 } )
 ```
 
-Returns the center point ( centroid ) of the given triangle.
+Returns the center point ( centroid ) of the given triangle as a hash.
+
+```ruby
+{ x: center_x, y: center_y }
+```
 
 ## `outline`
 
