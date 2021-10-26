@@ -61,6 +61,18 @@ Returns an array of lines represented as hashes. The lines form the outline of t
 
 ## `raster`
 
+```ruby
+Dinraal.raster( { x, y, x2, y2, x3, y3, r, g, b, a } )
+```
+
+Returns an array of lines represented as hashes. The lines form the solid body of the given triangle.
+
+```ruby
+[ { x: start_x, y: start_y, x2: end_x, y2: end_x, r: red, g: green, b: blue, a: alpha },
+  { x: start_x, y: start_y, x2: end_x, y2: end_x, r: red, g: green, b: blue, a: alpha },
+  { x: start_x, y: start_y, x2: end_x, y2: end_x, r: red, g: green, b: blue, a: alpha } ]
+```
+
 # TODO
 
 - Create `inside` method.
