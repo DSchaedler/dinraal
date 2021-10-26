@@ -25,3 +25,7 @@ The library source file can be found at [https://github.com/DSchaedler/dinraal/b
 ## `outline`
 
 ## `raster`
+
+# TODO
+
+- Create `inside` method.
