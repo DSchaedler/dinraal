@@ -1,3 +1,6 @@
+# Module provides some Triangle generation and manipulation methods to DragonRuby Game Toolkit.
+# By D Schaedler. Released under MIT License.
+# https://github.com/DSchaedler/dinraal
 module Dinraal
   def center(options = {})
     x = options[:x]
@@ -8,6 +11,43 @@ module Dinraal
     y3 = options[:y3]
 
     { x: ((x + x2 + x3) / 3).to_i, y: ((y + y2 + y3) / 3).to_i }
+  end
+
+  def inside?(options = {})
+    args = $gtk.args
+
+    point_x = options[:point_x]
+    point_y = options[:point_y]
+    x = options[:x]
+    y = options[:y]
+    x2 = options[:x2]
+    y2 = options[:y2]
+    x3 = options[:x3]
+    y3 = options[:y3]
+
+    triangle = [[x, y], [x2, y2], [x3, y3]]
+    triangle = triangle.sort_by { |point| point[1] }
+    triangle = triangle.reverse
+
+    leg0 = [triangle[0], triangle[1]]
+    leg0_slope = args.geometry.line_slope(leg0.flatten)
+    leg0_intercept = triangle[0][1] - (leg0_slope * triangle[0][0])
+
+    return false unless point_y <= leg0_slope * point_x + leg0_intercept
+
+    leg1 = [triangle[0], triangle[2]]
+    leg1_slope = args.geometry.line_slope(leg1.flatten)
+    leg1_intercept = triangle[0][1] - (leg1_slope * triangle[0][0])
+
+    return false unless point_y <= leg1_slope * point_x + leg1_intercept
+
+    leg2 = [triangle[1], triangle[2]]
+    leg2_slope = args.geometry.line_slope(leg2.flatten)
+    leg2_intercept = triangle[2][1] - (leg2_slope * triangle[2][0])
+
+    return false unless point_y >= leg2_slope * point_x + leg2_intercept
+
+    true
   end
 
   def outline(options = {})
