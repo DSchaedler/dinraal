@@ -59,7 +59,7 @@ Returns a rectangle that contains the given triangle.
 Dinraal.center( { x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y } )
 ```
 
-Returns the center point ( centroid ) of the given triangle as a hash.
+Returns the center point ( centroid, incenter ) of the given triangle as a hash.
 
 ```ruby
 { x: center_x, y: center_y }
