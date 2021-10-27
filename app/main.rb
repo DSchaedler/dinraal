@@ -3,7 +3,7 @@ require 'app/lib/dinraal.rb'
 def tick(args)
   # Define two triangles
   tri1 = { x: 100, y: 100, x2: 250, y2: 600, x3: 900, y3: 500, r: 255 }
-  tri2 = { x: 100, y: 100, x2: 700, y2: 100, x3: 900, y3: 500, b: 255 }
+  tri2 = { x: 110, y: 110, x2: 260, y2: 590, x3: 890, y3: 500, b: 255 }
 
   # Pre-Render the triangles and their center markers
   if args.state.tick_count.zero?
@@ -27,6 +27,9 @@ def tick(args)
   args.outputs.labels << { x: args.grid.center_x, y: 720, text: "Mouse inside red: #{mouse_inside}", alignment_enum: 1 }
 
   args.outputs.borders << Dinraal.bounding_box(tri2)
+
+  two_contains_one = Dinraal.tri_inside?(inner: tri2, outer: tri1)
+  args.outputs.labels << [300, 300, two_contains_one.to_s]
 
   # Optional Debug Information. Uncomment to show
   # args.outputs.debug << args.gtk.framerate_diagnostics_primitives

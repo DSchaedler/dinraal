@@ -151,6 +151,14 @@ module Dinraal
     end
     raster_lines
   end
+
+  def tri_inside?(inner:, outer:)
+    # Return true if tri1 is contained by tri2
+    return false unless inside?({ point_x: inner[:x], point_y: inner[:y] }.merge(outer))
+    return false unless inside?({ point_x: inner[:x2], point_y: inner[:y2] }.merge(outer))
+    return false unless inside?({ point_x: inner[:x3], point_y: inner[:y3] }.merge(outer))
+    true
+  end
 end
 
 Dinraal.extend Dinraal
