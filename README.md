@@ -49,6 +49,14 @@ Returns the center point ( centroid ) of the given triangle as a hash.
 { x: center_x, y: center_y }
 ```
 
+## `inside?`
+
+```ruby
+Dinraal.inside?( { point_x: point_x, point_y: point_y, x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y } )
+```
+
+Returns `true` if the given point `[point_x, point_y]` is inside or touching the given triangle. Otherwise, returns `false`.
+
 ## `outline`
 
 ```ruby
@@ -85,4 +93,4 @@ It is recommended to call this method and cache it's result, as it will lag with
 
 # TODO
 
-- Create `inside` method.
+- Create `bounding_box` method.
