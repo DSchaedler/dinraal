@@ -15,8 +15,11 @@ def tick args
 end
 ```
 
-The library source file can be found at [https://github.com/DSchaedler/dinraal/blob/main/app/lib/dinraal.rb](https://github.com/DSchaedler/dinraal/blob/main/app/lib/dinraal.rb)  
+The library source file can be found at [https://github.com/DSchaedler/dinraal/blob/main/app/lib/dinraal.rb](https://github.com/DSchaedler/dinraal/blob/main/app/lib/dinraal.rb).  
 (app/lib/dinraal.rb)
+
+A more detailed sample app is at [https://github.com/DSchaedler/dinraal/blob/main/app/main.rb](https://github.com/DSchaedler/dinraal/blob/main/app/main.rb).  
+(app/main.rb)
 
 # Common Parameters
 
