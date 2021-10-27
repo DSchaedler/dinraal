@@ -30,17 +30,17 @@ module Dinraal
     { x: ((x + x2 + x3) / 3).to_i, y: ((y + y2 + y3) / 3).to_i }
   end
 
-  def inside?(options = {})
+  def inside?(point:, tri:)
     args = $gtk.args
 
-    point_x = options[:point_x]
-    point_y = options[:point_y]
-    x = options[:x]
-    y = options[:y]
-    x2 = options[:x2]
-    y2 = options[:y2]
-    x3 = options[:x3]
-    y3 = options[:y3]
+    point_x = point[:x]
+    point_y = point[:y]
+    x = tri[:x]
+    y = tri[:y]
+    x2 = tri[:x2]
+    y2 = tri[:y2]
+    x3 = tri[:x3]
+    y3 = tri[:y3]
 
     triangle = [[x, y], [x2, y2], [x3, y3]]
     triangle = triangle.sort_by { |point| point[1] }
@@ -152,11 +152,19 @@ module Dinraal
     raster_lines
   end
 
+  def rect_inside?(rect:, tri:)
+    return false unless inside?(point: { x: rect[:x],            y: rect[:y] }, tri: tri)
+    return false unless inside?(point: { x: rect[:x] + rect[:w], y: rect[:y] }, tri: tri)
+    return false unless inside?(point: { x: rect[:x],            y: rect[:y] + rect[:h] }, tri: tri)
+    return false unless inside?(point: { x: rect[:x] + rect[:w], y: rect[:y] + rect[:h] }, tri: tri)
+    true
+  end
+
   def tri_inside?(inner:, outer:)
     # Return true if tri1 is contained by tri2
-    return false unless inside?({ point_x: inner[:x], point_y: inner[:y] }.merge(outer))
-    return false unless inside?({ point_x: inner[:x2], point_y: inner[:y2] }.merge(outer))
-    return false unless inside?({ point_x: inner[:x3], point_y: inner[:y3] }.merge(outer))
+    return false unless inside?(point: { x: inner[:x], y: inner[:y] }, tri: outer)
+    return false unless inside?(point: { x: inner[:x2], y: inner[:y2] }, tri: outer)
+    return false unless inside?(point: { x: inner[:x3], y: inner[:y3] }, tri: outer)
     true
   end
 end
