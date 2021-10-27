@@ -19,6 +19,12 @@ The library source file can be found at [app/lib/dinraal.rb](https://github.com/
 
 A more detailed sample app is at [app/main.rb](https://github.com/DSchaedler/dinraal/blob/main/app/main.rb).
 
+Triangles are defined as a hash of points, with any additional information.
+
+```ruby
+{ x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y, r: red, g: green, b: blue, a: alpha }
+```
+
 # Common Parameters
 
 All methods in Dinraal accept their options in hash notation. This allows for extra or missing options to be ignored or inferred.
