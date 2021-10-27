@@ -26,6 +26,8 @@ def tick(args)
   # Draw a label to display if the mouse inside the red triangle
   args.outputs.labels << { x: args.grid.center_x, y: 720, text: "Mouse inside red: #{mouse_inside}", alignment_enum: 1 }
 
+  args.outputs.borders << Dinraal.bounding_box(tri2)
+
   # Optional Debug Information. Uncomment to show
   # args.outputs.debug << args.gtk.framerate_diagnostics_primitives
 end

@@ -2,6 +2,23 @@
 # By D Schaedler. Released under MIT License.
 # https://github.com/DSchaedler/dinraal
 module Dinraal
+  def bounding_box(options = {})
+    x = options[:x]
+    y = options[:y]
+    x2 = options[:x2]
+    y2 = options[:y2]
+    x3 = options[:x3]
+    y3 = options[:y3]
+
+    x_min = [x, x2, x3].min
+    x_max = [x, x2, x3].max
+
+    y_min = [y, y2, y3].min
+    y_max = [y, y2, y3].max
+
+    { x: x_min, y: y_min, w: x_max - x_min, h: y_max - y_min }
+  end
+
   def center(options = {})
     x = options[:x]
     y = options[:y]
