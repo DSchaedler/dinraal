@@ -74,10 +74,10 @@ Returns the center point ( centroid, incenter ) of the given triangle as a hash.
 ## `inside?`
 
 ```ruby
-Dinraal.inside?( { point_x: point_x, point_y: point_y, x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y } )
+Dinraal.inside?( point: { x: point_x, y: point_y }, tri: { x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y } )
 ```
 
-Returns `true` if the given point `[point_x, point_y]` is inside or touching the given triangle. Otherwise, returns `false`.
+Returns `true` if the given point `{ x: point_x, y: point_y }` is inside or touching the given triangle. Otherwise, returns `false`.
 
 ## `outline`
 
