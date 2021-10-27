@@ -121,9 +121,8 @@ It is recommended to call this method and cache it's result, as it will lag with
 - Create `rect_inside?` method
 - Create `inradius` method - [Incircle Math Breakdown](https://artofproblemsolving.com/wiki/index.php/Incircle)
 - Create `area` method - [Heron's Formula](https://artofproblemsolving.com/wiki/index.php/Heron%27s_Formula)
-- - Vector based calculations will be faster, but less straightforward to impliment
+  - Vector based calculations will be faster, but less straightforward to impliment
 - Create `perimiter` method
--
 
 # How to contribute
 - Submit a Pull Request with any code improvements
@@ -131,5 +130,5 @@ It is recommended to call this method and cache it's result, as it will lag with
 - Write a sample app that more clearly shows all methods
 - Write a tutorial
 - Submit improved calculation methods
-- - Speed improvements to the `raster` method
-- - Vector calculations for area over Heron's Formula
+  - Speed improvements to the `raster` method
+  - Vector calculations for area over Heron's Formula
