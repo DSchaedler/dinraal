@@ -113,12 +113,26 @@ This array is formatted to be sent directly to `args.outputs.primitives` or a `r
 
 It is recommended to call this method and cache it's result, as it will lag with larger triangles.
 
+## `rect_inside?`
+
+```ruby
+Dinraal.rect_inside?(rect: { x: x, y: y, w: width, h: height }, tri: { x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y })
+```
+
+Returns `true` if the rectangle provided in `rect` is contained inside of the triganle `tri`. Otherwise, returns `false`.
+
+## `tri_inside?`
+
+```ruby
+Dinraal.tri_inside?(inner: { x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y }, outer: { x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y })
+```
+
+Returns `true` if the triangle provided in `inner` is contained inside of the triganle `outer`. Otherwise, returns `false`.
+
 # TODO
 
 - Create `tri_intersects?` method
 - Create `rect_intersects?` method
-- Create `tri_inside?` method
-- Create `rect_inside?` method
 - Create `inradius` method - [Incircle Math Breakdown](https://artofproblemsolving.com/wiki/index.php/Incircle)
 - Create `area` method - [Heron's Formula](https://artofproblemsolving.com/wiki/index.php/Heron%27s_Formula)
   - Vector based calculations will be faster, but less straightforward to impliment
