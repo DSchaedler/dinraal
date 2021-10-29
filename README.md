@@ -132,12 +132,12 @@ Returns `true` if the triangle provided in `inner` is contained inside of the tr
 # TODO
 - Document new circle methods
 - Alphabetize methods in `dinrall.rb`
-- Create `tri_intersects?` method
-- Create `rect_intersects?` method
-- Create `inradius` method - [Incircle Math Breakdown](https://artofproblemsolving.com/wiki/index.php/Incircle)
-- Create `area` method - [Heron's Formula](https://artofproblemsolving.com/wiki/index.php/Heron%27s_Formula)
+- Create `triangle_intersects_triangle?` method
+- Create `rectangle_intersects_triangle?` method
+- Create `triangle_inradius` method - [Incircle Math Breakdown](https://artofproblemsolving.com/wiki/index.php/Incircle)
+- Create `triangle_area` method - [Heron's Formula](https://artofproblemsolving.com/wiki/index.php/Heron%27s_Formula)
   - Vector based calculations will be faster, but less straightforward to impliment
-- Create `perimiter` method
+- Create `triangle_perimiter` method
 
 # How to contribute
 - Submit a Pull Request with any code improvements
@@ -145,7 +145,7 @@ Returns `true` if the triangle provided in `inner` is contained inside of the tr
 - Write a sample app that more clearly shows all methods
 - Write a tutorial
 - Submit improved calculation methods
-  - Speed improvements to the `raster` method
+  - Speed improvements to the `triangle_raster` and `circle_raster` methods
   - Vector calculations for area over Heron's Formula
 
 # About Dinraal
