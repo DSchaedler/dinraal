@@ -2,7 +2,7 @@
 # By D Schaedler. Released under MIT License.
 # https://github.com/DSchaedler/dinraal
 module Dinraal
-  def bounding_box(options = {})
+  def triangle_bounding_box(options = {})
     x = options[:x]
     y = options[:y]
     x2 = options[:x2]
@@ -19,7 +19,7 @@ module Dinraal
     { x: x_min, y: y_min, w: x_max - x_min, h: y_max - y_min }.border!
   end
 
-  def center(options = {})
+  def triangle_center(options = {})
     x = options[:x]
     y = options[:y]
     x2 = options[:x2]
@@ -30,17 +30,78 @@ module Dinraal
     { x: ((x + x2 + x3) / 3).to_i, y: ((y + y2 + y3) / 3).to_i }
   end
 
-  def inside?(point:, tri:)
+  def circle_outline(options = {})
+    x = options[:x]
+    y = options[:y]
+    radius = options[:radius]
+
+    r = options[:r]
+    g = options[:g]
+    b = options[:b]
+    a = options[:a]
+
+    pixels = []
+
+    angle = 0
+    while angle < 360
+      new_pixel = point_at_distance_angle(point: { x: x, y: y }, distance: radius, angle: angle)
+
+      new_pixel[:x] = new_pixel[:x].floor
+      new_pixel[:y] = new_pixel[:y].floor
+
+      possible_pixel = { x: new_pixel[:x], y: new_pixel[:y], w: 1, h: 1, r: r, g: g, b: b, a: a }.solid!
+
+      pixels << possible_pixel unless pixels.include?(possible_pixel)
+      angle += 1
+    end
+
+    pixels
+  end
+
+  def circle_raster(options = {})
+    args = $gtk.args
+
+    x = options[:x].floor
+    y = options[:y].floor
+    radius = options[:radius]
+
+    r = options[:r]
+    g = options[:g]
+    b = options[:b]
+    a = options[:a]
+
+    x_min = x - radius.floor
+    x_max = x + radius.floor
+
+    y_min = y - radius.floor
+    y_max = y + radius.floor
+
+    pixels = []
+
+    while x_min <= x_max
+      pixels[x_min] ||= []
+      y_min = y - radius
+      while y_min <= y_max
+        possible_pixel = { x: x_min, y: y_min, w: 1, h: 1, r: r, g: g, b: b, a: a }.solid!
+        pixels[x_min][y_min] = possible_pixel if args.geometry.point_inside_circle?({ x: x_min, y: y_min }, { x: x, y: y }, radius)
+        y_min += 1
+      end
+      x_min += 1
+    end
+    pixels
+  end
+
+  def point_inside_triangle?(point:, triangle:)
     args = $gtk.args
 
     point_x = point[:x]
     point_y = point[:y]
-    x = tri[:x]
-    y = tri[:y]
-    x2 = tri[:x2]
-    y2 = tri[:y2]
-    x3 = tri[:x3]
-    y3 = tri[:y3]
+    x = triangle[:x]
+    y = triangle[:y]
+    x2 = triangle[:x2]
+    y2 = triangle[:y2]
+    x3 = triangle[:x3]
+    y3 = triangle[:y3]
 
     triangle = [[x, y], [x2, y2], [x3, y3]]
     triangle = triangle.sort_by { |point| point[1] }
@@ -67,7 +128,7 @@ module Dinraal
     true
   end
 
-  def outline(options = {})
+  def triangle_outline(options = {})
     x = options[:x]
     y = options[:y]
     x2 = options[:x2]
@@ -86,7 +147,19 @@ module Dinraal
     lines
   end
 
-  def raster(options = {})
+  def point_at_distance_angle(options = {})
+    point = options[:point]
+    distance = options[:distance]
+    angle = options[:angle]
+
+    new_point = {}
+
+    new_point[:x] = (distance * Math.cos(angle * Math::PI / 180)) + point[:x]
+    new_point[:y] = (distance * Math.sin(angle * Math::PI / 180)) + point[:y]
+    new_point
+  end
+
+  def triangle_raster(options = {})
     x = options[:x]
     y = options[:y]
     x2 = options[:x2]
@@ -152,19 +225,19 @@ module Dinraal
     raster_lines
   end
 
-  def rect_inside?(rect:, tri:)
-    return false unless inside?(point: { x: rect[:x],            y: rect[:y] }, tri: tri)
-    return false unless inside?(point: { x: rect[:x] + rect[:w], y: rect[:y] }, tri: tri)
-    return false unless inside?(point: { x: rect[:x],            y: rect[:y] + rect[:h] }, tri: tri)
-    return false unless inside?(point: { x: rect[:x] + rect[:w], y: rect[:y] + rect[:h] }, tri: tri)
+  def rectangle_inside_triangle?(rectangle:, triangle:)
+    return false unless point_inside_triangle?(point: { x: rectangle[:x],                 y: rectangle[:y] }, triangle: triangle)
+    return false unless point_inside_triangle?(point: { x: rectangle[:x] + rectangle[:w], y: rectangle[:y] }, triangle: triangle)
+    return false unless point_inside_triangle?(point: { x: rectangle[:x],                 y: rectangle[:y] + rectangle[:h] }, triangle: triangle)
+    return false unless point_inside_triangle?(point: { x: rectangle[:x] + rectangle[:w], y: rectangle[:y] + rectangle[:h] }, triangle: triangle)
     true
   end
 
-  def tri_inside?(inner:, outer:)
+  def triangle_inside_triangle?(inner:, outer:)
     # Return true if tri1 is contained by tri2
-    return false unless inside?(point: { x: inner[:x], y: inner[:y] }, tri: outer)
-    return false unless inside?(point: { x: inner[:x2], y: inner[:y2] }, tri: outer)
-    return false unless inside?(point: { x: inner[:x3], y: inner[:y3] }, tri: outer)
+    return false unless point_inside_triangle?(point: { x: inner[:x], y: inner[:y] }, triangle: outer)
+    return false unless point_inside_triangle?(point: { x: inner[:x2], y: inner[:y2] }, triangle: outer)
+    return false unless point_inside_triangle?(point: { x: inner[:x3], y: inner[:y3] }, triangle: outer)
     true
   end
 end
