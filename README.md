@@ -146,3 +146,12 @@ Returns `true` if the triangle provided in `inner` is contained inside of the tr
 - Submit improved calculation methods
   - Speed improvements to the `raster` method
   - Vector calculations for area over Heron's Formula
+
+# About Dinraal
+Dinraal is created by Dee Schaedler. Many thanks to the DragonRuby Discord server for inspiration and feedback. https://discord.dragonruby.org
+
+Specific thanks to:
+- leviondiscord#5978    - Optimization contribution
+- theanxietybuster#8491 - Catching a project-ending typo
+
+Most DragonRuby packages and libraries are named after various dragons. Dinraal is a [Japanese Dragon](https://en.wikipedia.org/wiki/Japanese_dragon) from [The Legend of Zelda: Breath of the Wild](https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild). Dinraal is the dragon of fire, and the gatekeeper of the Shrine at the [Spring of Power](https://zelda.fandom.com/wiki/Spring_of_Power).
