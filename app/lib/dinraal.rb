@@ -16,7 +16,7 @@ module Dinraal
     y_min = [y, y2, y3].min
     y_max = [y, y2, y3].max
 
-    { x: x_min, y: y_min, w: x_max - x_min, h: y_max - y_min }
+    { x: x_min, y: y_min, w: x_max - x_min, h: y_max - y_min }.border!
   end
 
   def center(options = {})
