@@ -2,7 +2,7 @@
 # By D Schaedler. Released under MIT License.
 # https://github.com/DSchaedler/dinraal
 module Dinraal
-  # Returns a `border` `rect` for the bounding box of the provided triangle
+  # Calculates a `border` `rect` for the bounding box of the provided triangle
   #
   # @param options [Hash]
   # @option options x [Float]  Point 1 x position.
@@ -30,6 +30,17 @@ module Dinraal
     { x: x_min, y: y_min, w: x_max - x_min, h: y_max - y_min }.border!
   end
 
+  # Calculates the centerpoint of the provided triangle
+  #
+  # @param options [Hash]
+  # @option options x [Float]  Point 1 x position.
+  # @option options y [Float]  Point 1 x position.
+  # @option options x2 [Float] Point 2 x position.
+  # @option options y2 [Float] Point 2 x position.
+  # @option options x3 [Float] Point 3 x position.
+  # @option options y3 [Float] Point 3 x position.
+  #
+  # @return [Hash] A DR `point` hash. E.g. `{x: 20, y: 45}`
   def triangle_center(options = {})
     x = options[:x]
     y = options[:y]
