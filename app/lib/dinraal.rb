@@ -30,7 +30,7 @@ module Dinraal
     { x: x_min, y: y_min, w: x_max - x_min, h: y_max - y_min }.border!
   end
 
-  # Calculates the centerpoint of the provided triangle
+  # Calculates the center `point` of the provided triangle
   #
   # @param options [Hash]
   # @option options x [Float]  Point 1 x position.
