@@ -2,6 +2,17 @@
 # By D Schaedler. Released under MIT License.
 # https://github.com/DSchaedler/dinraal
 module Dinraal
+  # Returns a `border` `rect` for the bounding box of the provided triangle
+  #
+  # @param options [Hash]
+  # @option options x [Float]  Point 1 x position.
+  # @option options y [Float]  Point 1 x position.
+  # @option options x2 [Float] Point 2 x position.
+  # @option options y2 [Float] Point 2 x position.
+  # @option options x3 [Float] Point 3 x position.
+  # @option options y3 [Float] Point 3 x position.
+  #
+  # @return [Hash] A DR `border` hash. E.g. `{x: 100, y: 150, w: 300, h: 400}.border!`
   def triangle_bounding_box(options = {})
     x = options[:x]
     y = options[:y]
