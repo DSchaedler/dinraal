@@ -2,6 +2,10 @@
 
 Dinraal is a library for working with shapes in DragonRuby Game Toolkit. By default, DRGTK does not support rendering or working with any shapes outside of rectangles. Until now, other shapes have been provided by sprites.
 
+Full Documentation can be found at https://dschaedler.github.io/dinraal/
+
+---
+
 Our killer feature is the `triangle_raster` method. This returns an array of primitives ready to be drawn.
 
 ```ruby
