@@ -130,7 +130,7 @@ module Dinraal
     y3 = triangle[:y3]
 
     triangle = [[x, y], [x2, y2], [x3, y3]]
-    triangle = triangle.sort_by { |point| point[1] }
+    triangle = triangle.sort_by { |sort_point| sort_point[1] }
     triangle = triangle.reverse
 
     leg0 = [triangle[0], triangle[1]]
