@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 # This workflow will download a prebuilt Ruby version, install dependencies, and  run linters
-name: Rails - Install dependencies and run linters
+name: Ruby - Rubocop Lint
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
         uses: ruby/setup-ruby@473e4d8fe5dd94ee328fdfca9f8c9c7afc9dae5e
         with:
           bundler-cache: true
-          ruby-version: 2.6
+          ruby-version: 2.0
       # Add or Replace any other security checks here
       - name: Run security checks
         run: |
