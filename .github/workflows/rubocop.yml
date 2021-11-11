@@ -8,5 +8,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: RuboCop Linter Action
-      uses: andrewmcodes-archive/rubocop-linter-action@v3.3.0
+    - name: Run rubocop with reviewdog
+      uses: reviewdog/action-rubocop@v1
