@@ -297,22 +297,22 @@ module Dinraal
     return false unless point_inside_triangle?(point: { x: rectangle[:x],                 y: rectangle[:y] }, triangle: triangle)
 
     return false unless point_inside_triangle?(point: { x: rectangle[:x] + rectangle[:w], y: rectangle[:y] }, triangle: triangle)
-    
+
     return false unless point_inside_triangle?(point: { x: rectangle[:x],                 y: rectangle[:y] + rectangle[:h] }, triangle: triangle)
-    
+
     return false unless point_inside_triangle?(point: { x: rectangle[:x] + rectangle[:w], y: rectangle[:y] + rectangle[:h] }, triangle: triangle)
-    
+
     true
   end
 
   def triangle_inside_triangle?(inner:, outer:)
     # Return true if tri1 is contained by tri2
     return false unless point_inside_triangle?(point: { x: inner[:x], y: inner[:y] }, triangle: outer)
-    
+
     return false unless point_inside_triangle?(point: { x: inner[:x2], y: inner[:y2] }, triangle: outer)
-    
+
     return false unless point_inside_triangle?(point: { x: inner[:x3], y: inner[:y3] }, triangle: outer)
-    
+
     true
   end
 end
