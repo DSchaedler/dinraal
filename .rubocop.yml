@@ -6,3 +6,9 @@ AllCops:
 
 Layout/LineLength:
   Max: 150
+
+Metrics/MethodLength:
+  Max: 15
+
+Style/GlobalVars:
+  Enabled: false
