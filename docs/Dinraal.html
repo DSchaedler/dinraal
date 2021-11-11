@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+  Module: Dinraal
+  
+    &mdash; Documentation by YARD 0.9.26
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" />
+
+<script type="text/javascript">
+  pathId = "Dinraal";
+  relpath = '';
+</script>
+
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <div class="nav_wrap">
+      <iframe id="nav" src="class_list.html?1"></iframe>
+      <div id="resizer"></div>
+    </div>
+
+    <div id="main" tabindex="-1">
+      <div id="header">
+        <div id="menu">
+  
+    <a href="_index.html">Index (D)</a> &raquo;
+    
+    
+    <span class="title">Dinraal</span>
+  
+</div>
+
+        <div id="search">
+  
+    <a class="full_list_link" id="class_list_link"
+        href="class_list.html">
+
+        <svg width="24" height="24">
+          <rect x="0" y="4" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="12" width="24" height="4" rx="1" ry="1"></rect>
+          <rect x="0" y="20" width="24" height="4" rx="1" ry="1"></rect>
+        </svg>
+    </a>
+  
+</div>
+        <div class="clear"></div>
+      </div>
+
+      <div id="content"><h1>Module: Dinraal
+  
+  
+  
+</h1>
+<div class="box_info">
+  
+
+  
+  
+  <dl>
+      <dt>Extended by:</dt>
+      <dd><span class='object_link'><a href="" title="Dinraal (module)">Dinraal</a></span></dd>
+  </dl>
+  
+  
+  
+  
+
+  
+  <dl>
+    <dt>Included in:</dt>
+    <dd><span class='object_link'><a href="" title="Dinraal (module)">Dinraal</a></span></dd>
+  </dl>
+  
+
+  
+  <dl>
+    <dt>Defined in:</dt>
+    <dd>app/lib/dinraal.rb</dd>
+  </dl>
+  
+</div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Module provides some Triangle generation and manipulation methods to DragonRuby Game Toolkit.
+By D Schaedler. Released under MIT License.
+<a href="https://github.com/DSchaedler/dinraal">https://github.com/DSchaedler/dinraal</a></p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+</div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small><a href="#" class="summary_toggle">collapse</a></small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#circle_outline-instance_method" title="#circle_outline (instance method)">#<strong>circle_outline</strong>(options = {})  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#circle_raster-instance_method" title="#circle_raster (instance method)">#<strong>circle_raster</strong>(options = {})  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#point_at_distance_angle-instance_method" title="#point_at_distance_angle (instance method)">#<strong>point_at_distance_angle</strong>(options = {})  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#point_inside_triangle%3F-instance_method" title="#point_inside_triangle? (instance method)">#<strong>point_inside_triangle?</strong>(point:, triangle:)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#rectangle_inside_triangle%3F-instance_method" title="#rectangle_inside_triangle? (instance method)">#<strong>rectangle_inside_triangle?</strong>(rectangle:, triangle:)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#triangle_bounding_box-instance_method" title="#triangle_bounding_box (instance method)">#<strong>triangle_bounding_box</strong>(options = {})  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Calculates a <code>border</code> <code>rect</code> for the bounding box of the provided triangle.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#triangle_center-instance_method" title="#triangle_center (instance method)">#<strong>triangle_center</strong>(options = {})  &#x21d2; Hash </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Calculates the center <code>point</code> of the provided triangle.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#triangle_inside_triangle%3F-instance_method" title="#triangle_inside_triangle? (instance method)">#<strong>triangle_inside_triangle?</strong>(inner:, outer:)  &#x21d2; Boolean </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#triangle_outline-instance_method" title="#triangle_outline (instance method)">#<strong>triangle_outline</strong>(options = {})  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#triangle_raster-instance_method" title="#triangle_raster (instance method)">#<strong>triangle_raster</strong>(options = {})  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+
+    
+      <div class="method_details first">
+  <h3 class="signature first" id="circle_outline-instance_method">
+  
+    #<strong>circle_outline</strong>(options = {})  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_circle_outline'>circle_outline</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_radius'>radius</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:radius</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_r'>r</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:r</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_g'>g</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:g</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:b</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:a</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_pixels'>pixels</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_angle'>angle</span> <span class='op'>=</span> <span class='int'>0</span>
+  <span class='kw'>while</span> <span class='id identifier rubyid_angle'>angle</span> <span class='op'>&lt;</span> <span class='int'>360</span>
+    <span class='id identifier rubyid_new_pixel'>new_pixel</span> <span class='op'>=</span> <span class='id identifier rubyid_point_at_distance_angle'>point_at_distance_angle</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_y'>y</span> <span class='rbrace'>}</span><span class='comma'>,</span>
+                                        <span class='label'>distance:</span> <span class='id identifier rubyid_radius'>radius</span><span class='comma'>,</span>
+                                        <span class='label'>angle:</span> <span class='id identifier rubyid_angle'>angle</span><span class='rparen'>)</span>
+
+    <span class='id identifier rubyid_new_pixel'>new_pixel</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_new_pixel'>new_pixel</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_floor'>floor</span>
+    <span class='id identifier rubyid_new_pixel'>new_pixel</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_new_pixel'>new_pixel</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_floor'>floor</span>
+
+    <span class='id identifier rubyid_possible_pixel'>possible_pixel</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_new_pixel'>new_pixel</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_new_pixel'>new_pixel</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>w:</span> <span class='int'>1</span><span class='comma'>,</span> <span class='label'>h:</span> <span class='int'>1</span><span class='comma'>,</span>
+                       <span class='label'>r:</span> <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_g'>g</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_a'>a</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_solid!'>solid!</span>
+
+    <span class='id identifier rubyid_pixels'>pixels</span> <span class='op'>&lt;&lt;</span> <span class='id identifier rubyid_possible_pixel'>possible_pixel</span> <span class='kw'>unless</span> <span class='id identifier rubyid_pixels'>pixels</span><span class='period'>.</span><span class='id identifier rubyid_include?'>include?</span><span class='lparen'>(</span><span class='id identifier rubyid_possible_pixel'>possible_pixel</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_angle'>angle</span> <span class='op'>+=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_pixels'>pixels</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="circle_raster-instance_method">
+  
+    #<strong>circle_raster</strong>(options = {})  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 86</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_circle_raster'>circle_raster</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='gvar'>$gtk</span><span class='period'>.</span><span class='id identifier rubyid_args'>args</span>
+
+  <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_floor'>floor</span>
+  <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_floor'>floor</span>
+  <span class='id identifier rubyid_radius'>radius</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:radius</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_r'>r</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:r</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_g'>g</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:g</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:b</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:a</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_x_min'>x_min</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>-</span> <span class='id identifier rubyid_radius'>radius</span><span class='period'>.</span><span class='id identifier rubyid_floor'>floor</span>
+  <span class='id identifier rubyid_x_max'>x_max</span> <span class='op'>=</span> <span class='id identifier rubyid_x'>x</span> <span class='op'>+</span> <span class='id identifier rubyid_radius'>radius</span><span class='period'>.</span><span class='id identifier rubyid_floor'>floor</span>
+
+  <span class='id identifier rubyid_y_min'>y_min</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span> <span class='op'>-</span> <span class='id identifier rubyid_radius'>radius</span><span class='period'>.</span><span class='id identifier rubyid_floor'>floor</span>
+  <span class='id identifier rubyid_y_max'>y_max</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span> <span class='op'>+</span> <span class='id identifier rubyid_radius'>radius</span><span class='period'>.</span><span class='id identifier rubyid_floor'>floor</span>
+
+  <span class='id identifier rubyid_pixels'>pixels</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+
+  <span class='kw'>while</span> <span class='id identifier rubyid_x_min'>x_min</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_x_max'>x_max</span>
+    <span class='id identifier rubyid_pixels'>pixels</span><span class='lbracket'>[</span><span class='id identifier rubyid_x_min'>x_min</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_y_min'>y_min</span> <span class='op'>=</span> <span class='id identifier rubyid_y'>y</span> <span class='op'>-</span> <span class='id identifier rubyid_radius'>radius</span>
+    <span class='kw'>while</span> <span class='id identifier rubyid_y_min'>y_min</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_y_max'>y_max</span>
+      <span class='id identifier rubyid_possible_pixel'>possible_pixel</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_x_min'>x_min</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_y_min'>y_min</span><span class='comma'>,</span> <span class='label'>w:</span> <span class='int'>1</span><span class='comma'>,</span> <span class='label'>h:</span> <span class='int'>1</span><span class='comma'>,</span>
+                         <span class='label'>r:</span> <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_g'>g</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_a'>a</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_solid!'>solid!</span>
+      <span class='id identifier rubyid_pixels'>pixels</span><span class='lbracket'>[</span><span class='id identifier rubyid_x_min'>x_min</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id identifier rubyid_y_min'>y_min</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_possible_pixel'>possible_pixel</span> <span class='kw'>if</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_geometry'>geometry</span><span class='period'>.</span><span class='id identifier rubyid_point_inside_circle?'>point_inside_circle?</span><span class='lparen'>(</span><span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_x_min'>x_min</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_y_min'>y_min</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_y'>y</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='id identifier rubyid_radius'>radius</span><span class='rparen'>)</span>
+      <span class='id identifier rubyid_y_min'>y_min</span> <span class='op'>+=</span> <span class='int'>1</span>
+    <span class='kw'>end</span>
+    <span class='id identifier rubyid_x_min'>x_min</span> <span class='op'>+=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_pixels'>pixels</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="point_at_distance_angle-instance_method">
+  
+    #<strong>point_at_distance_angle</strong>(options = {})  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 176</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_point_at_distance_angle'>point_at_distance_angle</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:point</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_distance'>distance</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:distance</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_angle'>angle</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:angle</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_new_point'>new_point</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+
+  <span class='id identifier rubyid_new_point'>new_point</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_distance'>distance</span> <span class='op'>*</span> <span class='const'>Math</span><span class='period'>.</span><span class='id identifier rubyid_cos'>cos</span><span class='lparen'>(</span><span class='id identifier rubyid_angle'>angle</span> <span class='op'>*</span> <span class='const'>Math</span><span class='op'>::</span><span class='const'>PI</span> <span class='op'>/</span> <span class='int'>180</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_point'>point</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_new_point'>new_point</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_distance'>distance</span> <span class='op'>*</span> <span class='const'>Math</span><span class='period'>.</span><span class='id identifier rubyid_sin'>sin</span><span class='lparen'>(</span><span class='id identifier rubyid_angle'>angle</span> <span class='op'>*</span> <span class='const'>Math</span><span class='op'>::</span><span class='const'>PI</span> <span class='op'>/</span> <span class='int'>180</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_point'>point</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_new_point'>new_point</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="point_inside_triangle?-instance_method">
+  
+    #<strong>point_inside_triangle?</strong>(point:, triangle:)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 120</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span><span class='comma'>,</span> <span class='label'>triangle:</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='gvar'>$gtk</span><span class='period'>.</span><span class='id identifier rubyid_args'>args</span>
+
+  <span class='id identifier rubyid_point_x'>point_x</span> <span class='op'>=</span> <span class='id identifier rubyid_point'>point</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_point_y'>point_y</span> <span class='op'>=</span> <span class='id identifier rubyid_point'>point</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_x2'>x2</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='symbol'>:x2</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y2'>y2</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='symbol'>:y2</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_x3'>x3</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='symbol'>:x3</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y3'>y3</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='symbol'>:y3</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_triangle'>triangle</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x3'>x3</span><span class='comma'>,</span> <span class='id identifier rubyid_y3'>y3</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_triangle'>triangle</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_point'>point</span><span class='op'>|</span> <span class='id identifier rubyid_point'>point</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_triangle'>triangle</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='period'>.</span><span class='id identifier rubyid_reverse'>reverse</span>
+
+  <span class='id identifier rubyid_leg0'>leg0</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_leg0_slope'>leg0_slope</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_geometry'>geometry</span><span class='period'>.</span><span class='id identifier rubyid_line_slope'>line_slope</span><span class='lparen'>(</span><span class='id identifier rubyid_leg0'>leg0</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='comma'>,</span> <span class='label'>replace_infinity:</span> <span class='int'>1080</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_leg0_intercept'>leg0_intercept</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_leg0_slope'>leg0_slope</span> <span class='op'>*</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_y'>point_y</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_leg0_slope'>leg0_slope</span> <span class='op'>*</span> <span class='id identifier rubyid_point_x'>point_x</span> <span class='op'>+</span> <span class='id identifier rubyid_leg0_intercept'>leg0_intercept</span>
+
+  <span class='id identifier rubyid_leg1'>leg1</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_leg1_slope'>leg1_slope</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_geometry'>geometry</span><span class='period'>.</span><span class='id identifier rubyid_line_slope'>line_slope</span><span class='lparen'>(</span><span class='id identifier rubyid_leg1'>leg1</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='comma'>,</span> <span class='label'>replace_infinity:</span> <span class='int'>1080</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_leg1_intercept'>leg1_intercept</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_leg1_slope'>leg1_slope</span> <span class='op'>*</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_y'>point_y</span> <span class='op'>&lt;=</span> <span class='id identifier rubyid_leg1_slope'>leg1_slope</span> <span class='op'>*</span> <span class='id identifier rubyid_point_x'>point_x</span> <span class='op'>+</span> <span class='id identifier rubyid_leg1_intercept'>leg1_intercept</span>
+
+  <span class='id identifier rubyid_leg2'>leg2</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_leg2_slope'>leg2_slope</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_geometry'>geometry</span><span class='period'>.</span><span class='id identifier rubyid_line_slope'>line_slope</span><span class='lparen'>(</span><span class='id identifier rubyid_leg2'>leg2</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='comma'>,</span> <span class='label'>replace_infinity:</span> <span class='int'>1080</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_leg2_intercept'>leg2_intercept</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_leg2_slope'>leg2_slope</span> <span class='op'>*</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_y'>point_y</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_leg2_slope'>leg2_slope</span> <span class='op'>*</span> <span class='id identifier rubyid_point_x'>point_x</span> <span class='op'>+</span> <span class='id identifier rubyid_leg2_intercept'>leg2_intercept</span>
+
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="rectangle_inside_triangle?-instance_method">
+  
+    #<strong>rectangle_inside_triangle?</strong>(rectangle:, triangle:)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+294
+295
+296
+297
+298
+299
+300</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 294</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_rectangle_inside_triangle?'>rectangle_inside_triangle?</span><span class='lparen'>(</span><span class='label'>rectangle:</span><span class='comma'>,</span> <span class='label'>triangle:</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span><span class='comma'>,</span>                 <span class='label'>y:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:w</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span><span class='comma'>,</span>                 <span class='label'>y:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:h</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:w</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:h</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='rparen'>)</span>
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="triangle_bounding_box-instance_method">
+  
+    #<strong>triangle_bounding_box</strong>(options = {})  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Calculates a <code>border</code> <code>rect</code> for the bounding box of the provided triangle</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">x</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 1 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 1 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">x2</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 2 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y2</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 2 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">x3</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 3 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y3</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 3 x position.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A DR <code>border</code> hash. E.g. <code>{x: 100, y: 150, w: 300, h: 400}.border!</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 16</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_triangle_bounding_box'>triangle_bounding_box</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_x2'>x2</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x2</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y2'>y2</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y2</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_x3'>x3</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x3</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y3'>y3</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y3</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_x_min'>x_min</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_x3'>x3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span>
+  <span class='id identifier rubyid_x_max'>x_max</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_x3'>x3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+
+  <span class='id identifier rubyid_y_min'>y_min</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span><span class='comma'>,</span> <span class='id identifier rubyid_y3'>y3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span>
+  <span class='id identifier rubyid_y_max'>y_max</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span><span class='comma'>,</span> <span class='id identifier rubyid_y3'>y3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span>
+
+  <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_x_min'>x_min</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_y_min'>y_min</span><span class='comma'>,</span> <span class='label'>w:</span> <span class='id identifier rubyid_x_max'>x_max</span> <span class='op'>-</span> <span class='id identifier rubyid_x_min'>x_min</span><span class='comma'>,</span> <span class='label'>h:</span> <span class='id identifier rubyid_y_max'>y_max</span> <span class='op'>-</span> <span class='id identifier rubyid_y_min'>y_min</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_border!'>border!</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="triangle_center-instance_method">
+  
+    #<strong>triangle_center</strong>(options = {})  &#x21d2; <tt>Hash</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    <p>Calculates the center <code>point</code> of the provided triangle</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">x</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 1 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 1 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">x2</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 2 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y2</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 2 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">x3</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 3 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y3</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'><p>Point 3 x position.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A DR <code>point</code> hash. E.g. <code>{x: 20, y: 45}</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_triangle_center'>triangle_center</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_x2'>x2</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x2</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y2'>y2</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y2</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_x3'>x3</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x3</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y3'>y3</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y3</span><span class='rbracket'>]</span>
+
+  <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span> <span class='op'>+</span> <span class='id identifier rubyid_x2'>x2</span> <span class='op'>+</span> <span class='id identifier rubyid_x3'>x3</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>3</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_y'>y</span> <span class='op'>+</span> <span class='id identifier rubyid_y2'>y2</span> <span class='op'>+</span> <span class='id identifier rubyid_y3'>y3</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>3</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="triangle_inside_triangle?-instance_method">
+  
+    #<strong>triangle_inside_triangle?</strong>(inner:, outer:)  &#x21d2; <tt>Boolean</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+
+  </div>
+</div>
+<div class="tags">
+  
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+302
+303
+304
+305
+306
+307
+308</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 302</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_triangle_inside_triangle?'>triangle_inside_triangle?</span><span class='lparen'>(</span><span class='label'>inner:</span><span class='comma'>,</span> <span class='label'>outer:</span><span class='rparen'>)</span>
+  <span class='comment'># Return true if tri1 is contained by tri2
+</span>  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_outer'>outer</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:x2</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:y2</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_outer'>outer</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:x3</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:y3</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_outer'>outer</span><span class='rparen'>)</span>
+  <span class='kw'>true</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="triangle_outline-instance_method">
+  
+    #<strong>triangle_outline</strong>(options = {})  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 157</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_triangle_outline'>triangle_outline</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_x2'>x2</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x2</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y2'>y2</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y2</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_x3'>x3</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x3</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y3'>y3</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y3</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_r'>r</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:r</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_g'>g</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:g</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:b</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:a</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_lines'>lines</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_lines'>lines</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='label'>x2:</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='label'>y2:</span> <span class='id identifier rubyid_y2'>y2</span><span class='comma'>,</span> <span class='label'>r:</span> <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_g'>g</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_a'>a</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_line!'>line!</span>
+  <span class='id identifier rubyid_lines'>lines</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_x3'>x3</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_y3'>y3</span><span class='comma'>,</span> <span class='label'>x2:</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='label'>y2:</span> <span class='id identifier rubyid_y2'>y2</span><span class='comma'>,</span> <span class='label'>r:</span> <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_g'>g</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_a'>a</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_line!'>line!</span>
+  <span class='id identifier rubyid_lines'>lines</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='label'>x2:</span> <span class='id identifier rubyid_x3'>x3</span><span class='comma'>,</span> <span class='label'>y2:</span> <span class='id identifier rubyid_y3'>y3</span><span class='comma'>,</span> <span class='label'>r:</span> <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_g'>g</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_a'>a</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_line!'>line!</span>
+  <span class='id identifier rubyid_lines'>lines</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="triangle_raster-instance_method">
+  
+    #<strong>triangle_raster</strong>(options = {})  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 188</span>
+
+<span class='kw'>def</span> <span class='id identifier rubyid_triangle_raster'>triangle_raster</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y'>y</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_x2'>x2</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x2</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y2'>y2</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y2</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_x3'>x3</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x3</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_y3'>y3</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:y3</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_r'>r</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:r</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:r</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_g'>g</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:g</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:g</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:b</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:b</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:a</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='int'>255</span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:a</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_path'>path</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>pixel</span><span class='tstring_end'>&#39;</span></span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_image_width'>image_width</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:image_width</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_x3'>x3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_max'>max</span> <span class='op'>-</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_x3'>x3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:image_width</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='gvar'>$gtk</span><span class='period'>.</span><span class='id identifier rubyid_args'>args</span>
+  <span class='id identifier rubyid_triangle'>triangle</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x3'>x3</span><span class='comma'>,</span> <span class='id identifier rubyid_y3'>y3</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_triangle'>triangle</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_point'>point</span><span class='op'>|</span> <span class='id identifier rubyid_point'>point</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_triangle'>triangle</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='period'>.</span><span class='id identifier rubyid_reverse'>reverse</span>
+
+  <span class='id identifier rubyid_line_slope'>line_slope</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_geometry'>geometry</span><span class='period'>.</span><span class='id identifier rubyid_line_slope'>line_slope</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>replace_infinity:</span> <span class='int'>1080</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_x_intercept'>x_intercept</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_line_slope'>line_slope</span> <span class='op'>*</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_vertex4'>vertex4</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lparen'>(</span><span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>-</span> <span class='id identifier rubyid_x_intercept'>x_intercept</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='id identifier rubyid_line_slope'>line_slope</span><span class='comma'>,</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_leg0'>leg0</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_leg0_slope'>leg0_slope</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_geometry'>geometry</span><span class='period'>.</span><span class='id identifier rubyid_line_slope'>line_slope</span><span class='lparen'>(</span><span class='id identifier rubyid_leg0'>leg0</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='comma'>,</span> <span class='label'>replace_infinity:</span> <span class='int'>1080</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_leg0_intercept'>leg0_intercept</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_leg0_slope'>leg0_slope</span> <span class='op'>*</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_leg1'>leg1</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_vertex4'>vertex4</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_leg1_slope'>leg1_slope</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_geometry'>geometry</span><span class='period'>.</span><span class='id identifier rubyid_line_slope'>line_slope</span><span class='lparen'>(</span><span class='id identifier rubyid_leg1'>leg1</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='comma'>,</span> <span class='label'>replace_infinity:</span> <span class='int'>1080</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_leg1_intercept'>leg1_intercept</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_leg1_slope'>leg1_slope</span> <span class='op'>*</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_leg2'>leg2</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_leg2_slope'>leg2_slope</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_geometry'>geometry</span><span class='period'>.</span><span class='id identifier rubyid_line_slope'>line_slope</span><span class='lparen'>(</span><span class='id identifier rubyid_leg2'>leg2</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='comma'>,</span> <span class='label'>replace_infinity:</span> <span class='int'>1080</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_leg2_intercept'>leg2_intercept</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_leg2_slope'>leg2_slope</span> <span class='op'>*</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_leg3'>leg3</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_vertex4'>vertex4</span><span class='comma'>,</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id identifier rubyid_leg3_slope'>leg3_slope</span> <span class='op'>=</span> <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_geometry'>geometry</span><span class='period'>.</span><span class='id identifier rubyid_line_slope'>line_slope</span><span class='lparen'>(</span><span class='id identifier rubyid_leg3'>leg3</span><span class='period'>.</span><span class='id identifier rubyid_flatten'>flatten</span><span class='comma'>,</span> <span class='label'>replace_infinity:</span> <span class='int'>1080</span><span class='rparen'>)</span>
+  <span class='id identifier rubyid_leg3_intercept'>leg3_intercept</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_leg3_slope'>leg3_slope</span> <span class='op'>*</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='id identifier rubyid_raster_lines'>raster_lines</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+
+  <span class='id identifier rubyid_x_offset'>x_offset</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_x3'>x3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span>
+  <span class='id identifier rubyid_y_offset'>y_offset</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_y'>y</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span><span class='comma'>,</span> <span class='id identifier rubyid_y3'>y3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_min'>min</span>
+
+  <span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='kw'>while</span> <span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_vertex4'>vertex4</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_start_x'>start_x</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>-</span> <span class='id identifier rubyid_leg0_intercept'>leg0_intercept</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='id identifier rubyid_leg0_slope'>leg0_slope</span>
+    <span class='id identifier rubyid_end_x'>end_x</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>-</span> <span class='id identifier rubyid_leg1_intercept'>leg1_intercept</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='id identifier rubyid_leg1_slope'>leg1_slope</span>
+
+    <span class='id identifier rubyid_sort_list'>sort_list</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_start_x'>start_x</span><span class='comma'>,</span> <span class='id identifier rubyid_end_x'>end_x</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span>
+    <span class='id identifier rubyid_small_x'>small_x</span> <span class='op'>=</span> <span class='id identifier rubyid_sort_list'>sort_list</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_big_x'>big_x</span> <span class='op'>=</span> <span class='id identifier rubyid_sort_list'>sort_list</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+
+    <span class='id identifier rubyid_start_x'>start_x</span> <span class='op'>=</span> <span class='id identifier rubyid_small_x'>small_x</span>
+    <span class='id identifier rubyid_end_x'>end_x</span> <span class='op'>=</span> <span class='id identifier rubyid_big_x'>big_x</span>
+
+    <span class='id identifier rubyid_draw_width'>draw_width</span> <span class='op'>=</span> <span class='id identifier rubyid_end_x'>end_x</span> <span class='op'>-</span> <span class='id identifier rubyid_x_offset'>x_offset</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_image_width'>image_width</span> <span class='op'>?</span> <span class='id identifier rubyid_image_width'>image_width</span> <span class='op'>-</span> <span class='id identifier rubyid_start_x'>start_x</span> <span class='op'>+</span> <span class='id identifier rubyid_x_offset'>x_offset</span> <span class='op'>:</span> <span class='id identifier rubyid_end_x'>end_x</span> <span class='op'>-</span> <span class='id identifier rubyid_start_x'>start_x</span>
+
+    <span class='id identifier rubyid_grab'>grab</span> <span class='op'>=</span> <span class='id identifier rubyid_draw_width'>draw_width</span><span class='period'>.</span><span class='id identifier rubyid_abs'>abs</span>
+    <span class='id identifier rubyid_raster_lines'>raster_lines</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span>
+      <span class='label'>x:</span> <span class='id identifier rubyid_start_x'>start_x</span><span class='comma'>,</span>
+      <span class='label'>y:</span> <span class='id identifier rubyid_y_iter'>y_iter</span><span class='comma'>,</span>
+      <span class='label'>w:</span> <span class='id identifier rubyid_draw_width'>draw_width</span><span class='comma'>,</span>
+      <span class='label'>h:</span> <span class='int'>1</span><span class='comma'>,</span>
+      <span class='label'>r:</span> <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_g'>g</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_a'>a</span><span class='comma'>,</span>
+      <span class='label'>path:</span> <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span>
+      <span class='label'>source_x:</span> <span class='id identifier rubyid_start_x'>start_x</span> <span class='op'>-</span> <span class='id identifier rubyid_x_offset'>x_offset</span><span class='comma'>,</span> <span class='label'>source_y:</span> <span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>-</span> <span class='id identifier rubyid_y_offset'>y_offset</span><span class='comma'>,</span>
+      <span class='label'>source_w:</span> <span class='id identifier rubyid_grab'>grab</span><span class='comma'>,</span> <span class='label'>source_h:</span> <span class='int'>1</span>
+    <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_sprite!'>sprite!</span>
+    <span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>-=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>=</span> <span class='id identifier rubyid_vertex4'>vertex4</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+  <span class='kw'>while</span> <span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>&gt;=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_start_x'>start_x</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>-</span> <span class='id identifier rubyid_leg2_intercept'>leg2_intercept</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='id identifier rubyid_leg2_slope'>leg2_slope</span>
+    <span class='id identifier rubyid_end_x'>end_x</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>-</span> <span class='id identifier rubyid_leg3_intercept'>leg3_intercept</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='id identifier rubyid_leg3_slope'>leg3_slope</span>
+
+    <span class='id identifier rubyid_sort_list'>sort_list</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_start_x'>start_x</span><span class='comma'>,</span> <span class='id identifier rubyid_end_x'>end_x</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_sort'>sort</span>
+    <span class='id identifier rubyid_small_x'>small_x</span> <span class='op'>=</span> <span class='id identifier rubyid_sort_list'>sort_list</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_big_x'>big_x</span> <span class='op'>=</span> <span class='id identifier rubyid_sort_list'>sort_list</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
+
+    <span class='id identifier rubyid_start_x'>start_x</span> <span class='op'>=</span> <span class='id identifier rubyid_small_x'>small_x</span>
+    <span class='id identifier rubyid_end_x'>end_x</span> <span class='op'>=</span> <span class='id identifier rubyid_big_x'>big_x</span>
+
+    <span class='id identifier rubyid_draw_width'>draw_width</span> <span class='op'>=</span> <span class='id identifier rubyid_end_x'>end_x</span> <span class='op'>-</span> <span class='id identifier rubyid_x_offset'>x_offset</span> <span class='op'>&gt;</span> <span class='id identifier rubyid_image_width'>image_width</span> <span class='op'>?</span> <span class='id identifier rubyid_image_width'>image_width</span> <span class='op'>-</span> <span class='id identifier rubyid_start_x'>start_x</span> <span class='op'>+</span> <span class='id identifier rubyid_x_offset'>x_offset</span> <span class='op'>:</span> <span class='id identifier rubyid_end_x'>end_x</span> <span class='op'>-</span> <span class='id identifier rubyid_start_x'>start_x</span>
+
+    <span class='id identifier rubyid_grab'>grab</span> <span class='op'>=</span> <span class='id identifier rubyid_draw_width'>draw_width</span><span class='period'>.</span><span class='id identifier rubyid_abs'>abs</span>
+    <span class='id identifier rubyid_raster_lines'>raster_lines</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span>
+      <span class='label'>x:</span> <span class='id identifier rubyid_start_x'>start_x</span><span class='comma'>,</span>
+      <span class='label'>y:</span> <span class='id identifier rubyid_y_iter'>y_iter</span><span class='comma'>,</span>
+      <span class='label'>w:</span> <span class='id identifier rubyid_draw_width'>draw_width</span><span class='comma'>,</span>
+      <span class='label'>h:</span> <span class='int'>1</span><span class='comma'>,</span>
+      <span class='label'>r:</span> <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_g'>g</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_a'>a</span><span class='comma'>,</span>
+      <span class='label'>path:</span> <span class='id identifier rubyid_path'>path</span><span class='comma'>,</span>
+      <span class='label'>source_x:</span> <span class='id identifier rubyid_start_x'>start_x</span> <span class='op'>-</span> <span class='id identifier rubyid_x_offset'>x_offset</span><span class='comma'>,</span> <span class='label'>source_y:</span> <span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>-</span> <span class='id identifier rubyid_y_offset'>y_offset</span><span class='comma'>,</span>
+      <span class='label'>source_w:</span> <span class='id identifier rubyid_grab'>grab</span><span class='comma'>,</span> <span class='label'>source_h:</span> <span class='int'>1</span>
+    <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_sprite'>sprite</span>
+    <span class='id identifier rubyid_y_iter'>y_iter</span> <span class='op'>-=</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+  <span class='id identifier rubyid_raster_lines'>raster_lines</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+
+      <div id="footer">
+  Generated on Thu Nov 11 07:29:53 2021 by
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.9.26 (ruby-2.5.5).
+</div>
+
+    </div>
+  </body>
+</html>
