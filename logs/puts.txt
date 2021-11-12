@@ -1,4 +1,0 @@
--> RUBY_VERSIon
-* EXCEPTION: uninitialized constant (class GTK::Console (included_modules [ConsoleDeprecated]) )::RUBY_VERSIon
--> RUBY_VERSION
-=> 2.0
