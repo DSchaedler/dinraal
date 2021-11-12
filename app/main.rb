@@ -44,13 +44,18 @@ def triangle(options = {})
       [pair[0].x, pair[1].x].sort
     end
 
-    args.outputs.lines << x_bounds[0].floor.upto(x_bounds[1].ceil).map do |x|
+    args.outputs.primitives << x_bounds[0].floor.upto(x_bounds[1].ceil).map do |x|
       ys = eqns.zip(ranges).map do |eqn, range|
         eqn.call(x) if x.between?(*range)
       end.compact
 
       y1, y2 = ys.minmax
-      { x: x, y: y1, x2: x, y2: y2 }.merge(color)
+      { x: x, y: y1, x2: x, y2: y2 }.merge(color).merge(
+        { 
+          path: path,
+          source_x: start_x - x_offset, source_y: y_iter - y_offset,
+          source_w: grab, source_h: 1
+        }.sprite!)
     end
   else
      # sweep along y axis instead
@@ -62,13 +67,18 @@ def triangle(options = {})
       [pair[0].y, pair[1].y].sort
     end
 
-    args.outputs.lines << y_bounds[0].floor.upto(y_bounds[1].ceil).map do |y|
+    args.outputs.primitives << y_bounds[0].floor.upto(y_bounds[1].ceil).map do |y|
       xs = eqns.zip(ranges).map do |eqn, range|
         eqn.call(y) if y.between?(*range)
       end.compact
 
       x1, x2 = xs.minmax
-      { x: x1, y: y, x2: x2, y2: y }.merge(color)
+      { x: x1, y: y, x2: x2, y2: y }.merge(color).merge(
+        { 
+          path: path,
+          source_x: start_x - x_offset, source_y: y_iter - y_offset,
+          source_w: grab, source_h: 1
+        }.sprite!)
     end
   end
 end
