@@ -23,7 +23,7 @@ def point_difference p1, p2
 end
 
 def vertex_angle v1, v2
-  Math::acos(dot(v1, v2) / (norm(v1) * norm(v2))) * sign(cross(v1, v2))
+  Math::acos(vector_dot_product(v1, v2) / (norm(v1) * norm(v2))) * sign(cross(v1, v2))
 end
 
 def vector_normal vec
