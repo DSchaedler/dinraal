@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Module provides some Triangle generation and manipulation methods to DragonRuby Game Toolkit.
 # By D Schaedler. Released under MIT License.
 # https://github.com/DSchaedler/dinraal
@@ -130,7 +132,7 @@ module Dinraal
     y3 = triangle[:y3]
 
     triangle = [[x, y], [x2, y2], [x3, y3]]
-    triangle = triangle.sort_by { |point| point[1] }
+    triangle = triangle.sort_by { |sort_point| sort_point[1] }
     triangle = triangle.reverse
 
     leg0 = [triangle[0], triangle[1]]
@@ -293,17 +295,24 @@ module Dinraal
 
   def rectangle_inside_triangle?(rectangle:, triangle:)
     return false unless point_inside_triangle?(point: { x: rectangle[:x],                 y: rectangle[:y] }, triangle: triangle)
+
     return false unless point_inside_triangle?(point: { x: rectangle[:x] + rectangle[:w], y: rectangle[:y] }, triangle: triangle)
+
     return false unless point_inside_triangle?(point: { x: rectangle[:x],                 y: rectangle[:y] + rectangle[:h] }, triangle: triangle)
+
     return false unless point_inside_triangle?(point: { x: rectangle[:x] + rectangle[:w], y: rectangle[:y] + rectangle[:h] }, triangle: triangle)
+
     true
   end
 
   def triangle_inside_triangle?(inner:, outer:)
     # Return true if tri1 is contained by tri2
     return false unless point_inside_triangle?(point: { x: inner[:x], y: inner[:y] }, triangle: outer)
+
     return false unless point_inside_triangle?(point: { x: inner[:x2], y: inner[:y2] }, triangle: outer)
+
     return false unless point_inside_triangle?(point: { x: inner[:x3], y: inner[:y3] }, triangle: outer)
+
     true
   end
 end
