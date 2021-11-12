@@ -65,7 +65,7 @@ module Dinraal
   # @option options b [Integer] Color green value.
   # @option options a [Integer] Color alpha value.
   #
-  # @return [Array] An array of `primitive` `solids` in hash notation.
+  # @return [Array] An array of `solids` in hash notation.
   def circle_outline(options = {})
     x = options[:x]
     y = options[:y]
@@ -108,7 +108,7 @@ module Dinraal
   # @option options b [Integer] Color green value.
   # @option options a [Integer] Color alpha value.
   #
-  # @return [Array] An array of `primitive` `solids` in hash notation.
+  # @return [Array] An array of `solids` in hash notation.
   def circle_raster(options = {})
     args = $gtk.args
 
@@ -200,7 +200,7 @@ module Dinraal
   # @option options b [Integer] Color green value.
   # @option options a [Integer] Color alpha value.
   #
-  # @return [Array] An array of `primitive` `solids` in hash notation.
+  # @return [Array] An array of `solids` in hash notation.
   def triangle_outline(options = {})
     x = options[:x]
     y = options[:y]
@@ -256,7 +256,7 @@ module Dinraal
   # @option options path [String] Optional. Image path. Defaults to `'pixel'`.
   # @option options image_width [Float] Optional. Image width. Defaults to `triangle` width.
   #
-  # @return [Array] of `primitive` `solids` in hash notation.
+  # @return [Array] An array of `solids` in hash notation.
   def triangle_raster(options = {})
     x = options[:x]
     y = options[:y]
@@ -368,7 +368,7 @@ module Dinraal
   # @param rectangle [Hash] `rect` in DR hash notation.
   # @param triangle [Hash] `triangle` in Dinraal hash notation.
   #
-  # @return [Boolean] `true` or `false`
+  # @return [Boolean] `true` or `false` 
   def rectangle_inside_triangle?(rectangle:, triangle:)
     return false unless point_inside_triangle?(point: { x: rectangle[:x],                 y: rectangle[:y] }, triangle: triangle)
 
@@ -386,7 +386,7 @@ module Dinraal
   # @param inner [Hash] `triangle` in Dinraal hash notation.
   # @param outer [Hash] `triangle` in Dinraal hash notation.
   #
-  # @return [Boolean] `true` or `false`
+  # @return [Boolean] `true` or `false` 
   def triangle_inside_triangle?(inner:, outer:)
     # Return true if tri1 is contained by tri2
     return false unless point_inside_triangle?(point: { x: inner[:x], y: inner[:y] }, triangle: outer)
