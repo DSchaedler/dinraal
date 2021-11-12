@@ -54,6 +54,18 @@ module Dinraal
     { x: ((x + x2 + x3) / 3).to_i, y: ((y + y2 + y3) / 3).to_i }
   end
 
+  # Creates the outline of a circle.
+  #
+  # @param options [Hash]
+  # @option options x [Float] Center x position.
+  # @option options y [Float] Center y position.
+  # @option options radius [Float] Radius of the Circle.
+  # @option options r [Int] Color red value.
+  # @option options g [Int] Color blue value.
+  # @option options b [Int] Color green value.
+  # @option options a [Int] Color alpha value.
+  #
+  # @return [Array] An array of `primitive` `solids` in hash notation.
   def circle_outline(options = {})
     x = options[:x]
     y = options[:y]
