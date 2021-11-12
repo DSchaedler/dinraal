@@ -23,4 +23,4 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gem-
     - name: YARD
-      -run: yard doc -m markdown -o docs --exclude app/main.rb 
+      - run: yard doc -m markdown -o docs --exclude app/main.rb 
