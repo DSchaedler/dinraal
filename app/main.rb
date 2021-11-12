@@ -50,7 +50,7 @@ def draw_fast_triangle args, p1, p2, p3
   end
 
   # we want the points to be clockwise
-  th1 = vertex_angle diff(p2, p1), diff(p3, p1)
+  th1 = vertex_angle point_difference(p2, p1), point_difference(p3, p1)
   if th1 < 0
     tmp_p = p2
     p2 = p3
@@ -68,8 +68,8 @@ def draw_fast_triangle args, p1, p2, p3
   l1 = point_distance p1, p3
   l2 = point_distance p2, p3
 
-  th1 = vertex_angle diff(p2, p1), diff(p3, p1)
-  th2 = vertex_angle diff(p1, p2), diff(p3, p2)
+  th1 = vertex_angle point_difference(p2, p1), point_difference(p3, p1)
+  th2 = vertex_angle point_difference(p1, p2), point_difference(p3, p2)
 
   h = l1 * Math::sin(th1.abs)
   w1 = l1 * Math::cos(th1.abs)
