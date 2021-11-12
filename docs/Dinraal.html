@@ -192,7 +192,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#point_inside_triangle%3F-instance_method" title="#point_inside_triangle? (instance method)">#<strong>point_inside_triangle?</strong>(point:, triangle:)  &#x21d2; Boolean </a>
+      <a href="#point_inside_triangle%3F-instance_method" title="#point_inside_triangle? (instance method)">#<strong>point_inside_triangle?</strong>(point:, triangle:)  &#x21d2; Bool </a>
     
 
     
@@ -206,7 +206,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Determine if the given point is in the given triangle.</p>
+</div></span>
   
 </li>
 
@@ -837,20 +839,20 @@
       <pre class="lines">
 
 
-202
-203
-204
-205
-206
-207
-208
-209
-210
-211
-212</pre>
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 202</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 215</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_point_at_distance_angle'>point_at_distance_angle</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:point</span><span class='rbracket'>]</span>
@@ -871,7 +873,7 @@
       <div class="method_details ">
   <h3 class="signature " id="point_inside_triangle?-instance_method">
   
-    #<strong>point_inside_triangle?</strong>(point:, triangle:)  &#x21d2; <tt>Boolean</tt> 
+    #<strong>point_inside_triangle?</strong>(point:, triangle:)  &#x21d2; <tt>Bool</tt> 
   
 
   
@@ -880,18 +882,41 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Determine if the given point is in the given triangle.</p>
+
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
     <li>
       
       
-        <span class='type'>(<tt>Boolean</tt>)</span>
+        <span class='type'>(<tt>Bool</tt>)</span>
       
       
       
@@ -905,19 +930,6 @@
       <pre class="lines">
 
 
-146
-147
-148
-149
-150
-151
-152
-153
-154
-155
-156
-157
-158
 159
 160
 161
@@ -940,10 +952,23 @@
 178
 179
 180
-181</pre>
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 146</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 159</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span><span class='comma'>,</span> <span class='label'>triangle:</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='gvar'>$gtk</span><span class='period'>.</span><span class='id identifier rubyid_args'>args</span>
@@ -1023,20 +1048,20 @@
       <pre class="lines">
 
 
-320
-321
-322
-323
-324
-325
-326
-327
-328
-329
-330</pre>
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 320</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 333</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rectangle_inside_triangle?'>rectangle_inside_triangle?</span><span class='lparen'>(</span><span class='label'>rectangle:</span><span class='comma'>,</span> <span class='label'>triangle:</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span><span class='comma'>,</span>                 <span class='label'>y:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='rparen'>)</span>
@@ -1104,7 +1129,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 1 x position.</p>
+<p>Vertex 1 x position.</p>
 </div>
           
         </li>
@@ -1117,7 +1142,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 1 x position.</p>
+<p>Vertex 1 y position.</p>
 </div>
           
         </li>
@@ -1130,7 +1155,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 2 x position.</p>
+<p>Vertex 2 x position.</p>
 </div>
           
         </li>
@@ -1143,7 +1168,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 2 x position.</p>
+<p>Vertex 2 y position.</p>
 </div>
           
         </li>
@@ -1156,7 +1181,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 3 x position.</p>
+<p>Vertex 3 x position.</p>
 </div>
           
         </li>
@@ -1169,7 +1194,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 3 x position.</p>
+<p>Vertex 3 y position.</p>
 </div>
           
         </li>
@@ -1293,7 +1318,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 1 x position.</p>
+<p>Vertex 1 x position.</p>
 </div>
           
         </li>
@@ -1306,7 +1331,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 1 x position.</p>
+<p>Vertex 1 y position.</p>
 </div>
           
         </li>
@@ -1319,7 +1344,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 2 x position.</p>
+<p>Vertex 2 x position.</p>
 </div>
           
         </li>
@@ -1332,7 +1357,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 2 x position.</p>
+<p>Vertex 2 y position.</p>
 </div>
           
         </li>
@@ -1345,7 +1370,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 3 x position.</p>
+<p>Vertex 3 x position.</p>
 </div>
           
         </li>
@@ -1358,7 +1383,7 @@
           </span>
           
             &mdash; <div class='inline'>
-<p>Point 3 x position.</p>
+<p>Vertex 3 y position.</p>
 </div>
           
         </li>
@@ -1457,19 +1482,19 @@
       <pre class="lines">
 
 
-332
-333
-334
-335
-336
-337
-338
-339
-340
-341</pre>
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 332</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 345</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle_inside_triangle?'>triangle_inside_triangle?</span><span class='lparen'>(</span><span class='label'>inner:</span><span class='comma'>,</span> <span class='label'>outer:</span><span class='rparen'>)</span>
   <span class='comment'># Return true if tri1 is contained by tri2
@@ -1501,27 +1526,27 @@
       <pre class="lines">
 
 
-183
-184
-185
-186
-187
-188
-189
-190
-191
-192
-193
-194
-195
 196
 197
 198
 199
-200</pre>
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 183</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 196</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle_outline'>triangle_outline</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
@@ -1561,19 +1586,6 @@
       <pre class="lines">
 
 
-214
-215
-216
-217
-218
-219
-220
-221
-222
-223
-224
-225
-226
 227
 228
 229
@@ -1665,10 +1677,23 @@
 315
 316
 317
-318</pre>
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 214</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 227</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle_raster'>triangle_raster</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
@@ -1785,7 +1810,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Nov 12 15:46:35 2021 by
+  Generated on Fri Nov 12 15:53:23 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.2).
 </div>
