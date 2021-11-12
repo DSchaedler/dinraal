@@ -28,7 +28,6 @@ PLATFORMS
 
 DEPENDENCIES
   rubocop (~> 1.22)
-  yard (~> 0.9.26)
 
 BUNDLED WITH
    2.2.29
