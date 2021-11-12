@@ -17,7 +17,7 @@ jobs:
     - name: Install Gems
       run: bundle install
     - name: RuboCop Linter Action
-      run: rubocop -a 
+      run: rubocop -a --fail-level error
     - name: Run Yard
       run: yard doc -m markdown -o docs --exclude app/main.rb
     - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version.
