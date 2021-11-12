@@ -97,6 +97,18 @@ module Dinraal
     pixels
   end
 
+  # Create a filled circle using raster method
+  #
+  # @param options [Hash]
+  # @option options x [Float] Center x position.
+  # @option options y [Float] Center y position.
+  # @option options radius [Float] Radius of the Circle.
+  # @option options r [Int] Color red value.
+  # @option options g [Int] Color blue value.
+  # @option options b [Int] Color green value.
+  # @option options a [Int] Color alpha value.
+  #
+  # @return [Array] An array of `primitive` `solids` in hash notation.
   def circle_raster(options = {})
     args = $gtk.args
 
@@ -151,19 +163,19 @@ module Dinraal
     leg0_slope = args.geometry.line_slope(leg0.flatten, replace_infinity: 1080)
     leg0_intercept = triangle[0][1] - (leg0_slope * triangle[0][0])
 
-    return false unless point_y <= (leg0_slope * point_x) + leg0_intercept
+    return false unless point_y <= leg0_slope * point_x + leg0_intercept
 
     leg1 = [triangle[0], triangle[2]]
     leg1_slope = args.geometry.line_slope(leg1.flatten, replace_infinity: 1080)
     leg1_intercept = triangle[0][1] - (leg1_slope * triangle[0][0])
 
-    return false unless point_y <= (leg1_slope * point_x) + leg1_intercept
+    return false unless point_y <= leg1_slope * point_x + leg1_intercept
 
     leg2 = [triangle[1], triangle[2]]
     leg2_slope = args.geometry.line_slope(leg2.flatten, replace_infinity: 1080)
     leg2_intercept = triangle[2][1] - (leg2_slope * triangle[2][0])
 
-    return false unless point_y >= (leg2_slope * point_x) + leg2_intercept
+    return false unless point_y >= leg2_slope * point_x + leg2_intercept
 
     true
   end
