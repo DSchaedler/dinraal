@@ -22,9 +22,6 @@ def triangle(options = {})
 
   color = {r: r, g: g, b: b, a: a}
 
-  path = options[:path].nil? ? 'pixel' : options[:path]
-  image_width = options[:image_width].nil? ? [x, x2, x3].max - [x, x2, x3].min : options[:image_width]
-
   all_xs = [x, x2, x3]
   x_bounds = all_xs.minmax
   all_ys = [y, y2, y3]
@@ -50,12 +47,7 @@ def triangle(options = {})
       end.compact
 
       y1, y2 = ys.minmax
-      { x: x, y: y1, x2: x, y2: y2 }.merge(color).merge(
-        { 
-          path: path,
-          source_x: start_x - x_offset, source_y: y_iter - y_offset,
-          source_w: grab, source_h: 1
-        }.sprite!)
+      { x: x, y: y1, x2: x, y2: y2 }.merge(color).line!
     end
   else
      # sweep along y axis instead
@@ -73,12 +65,7 @@ def triangle(options = {})
       end.compact
 
       x1, x2 = xs.minmax
-      { x: x1, y: y, x2: x2, y2: y }.merge(color).merge(
-        { 
-          path: path,
-          source_x: start_x - x_offset, source_y: y_iter - y_offset,
-          source_w: grab, source_h: 1
-        }.sprite!)
+      { x: x1, y: y, x2: x2, y2: y }.merge(color).line!
     end
   end
 end
