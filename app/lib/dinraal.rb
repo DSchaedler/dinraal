@@ -145,8 +145,8 @@ module Dinraal
 
   # Determine if the given point is in the given triangle.
   #
-  # @param point [Hash]  `point` in DR notation. E.g. {x: 100, y: 100}
-  # @param triangle [Hash] `triangle` in Dinraal notation. E.g. { x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y, r: red, g: green, b: blue, a: alpha }
+  # @param point [Hash]  `point` in DR notation. E.g. `{x: 100, y: 100}`
+  # @param triangle [Hash] `triangle` in Dinraal notation. E.g. `{ x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y, r: red, g: green, b: blue, a: alpha }`
   #
   # @return [Boolean] `true` or `false`
   def point_inside_triangle?(point:, triangle:)
@@ -223,11 +223,11 @@ module Dinraal
   # Calculates a new point given a starting point, distance, and angle.
   #
   # @param options [Hash]
-  # @option options point [Hash] `point` in DR notation. E.g. {x: 100, y: 100}
+  # @option options point [Hash] `point` in DR notation. E.g. `{x: 100, y: 100}`
   # @option options distance [Float] Distance between the given and generated point.
   # @option options angle [Float] Angle from given point to generated point in degrees.
   #
-  # @return [Hash] `point` in DR notation. E.g. {x: 100, y: 100}
+  # @return [Hash] `point` in DR notation. E.g. `{x: 100, y: 100}`
   def point_at_distance_angle(options = {})
     point = options[:point]
     distance = options[:distance]
