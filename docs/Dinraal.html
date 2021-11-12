@@ -232,7 +232,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Determines if the given <code>rect</code> is inside of the given <code>triangle</code>.</p>
+</div></span>
   
 </li>
 
@@ -302,7 +304,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Determines if the <code>inner</code> <code>triangle</code> is contained by the <code>outer</code> <code>triangle</code>.</p>
+</div></span>
   
 </li>
 
@@ -348,7 +352,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a filled <code>triangle</code> using the raster method.</p>
+</div></span>
   
 </li>
 
@@ -1141,11 +1147,49 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Determines if the given <code>rect</code> is inside of the given <code>triangle</code>.</p>
+
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>rectangle</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><code>rect</code> in DR hash notation.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>triangle</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><code>triangle</code> in Dinraal hash notation.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -1155,6 +1199,11 @@
         <span class='type'>(<tt>Boolean</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p><code>true</code> or <code>false</code></p>
+</div>
       
     </li>
   
@@ -1166,20 +1215,20 @@
       <pre class="lines">
 
 
-349
-350
-351
-352
-353
-354
-355
-356
-357
-358
-359</pre>
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 349</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 372</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rectangle_inside_triangle?'>rectangle_inside_triangle?</span><span class='lparen'>(</span><span class='label'>rectangle:</span><span class='comma'>,</span> <span class='label'>triangle:</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span><span class='comma'>,</span>                 <span class='label'>y:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='rparen'>)</span>
@@ -1575,11 +1624,49 @@
 </h3><div class="docstring">
   <div class="discussion">
     
+<p>Determines if the <code>inner</code> <code>triangle</code> is contained by the <code>outer</code> <code>triangle</code>.</p>
+
 
   </div>
 </div>
 <div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
   
+    <li>
+      
+        <span class='name'>inner</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><code>triangle</code> in Dinraal hash notation.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>outer</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><code>triangle</code> in Dinraal hash notation.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
 <p class="tag_title">Returns:</p>
 <ul class="return">
   
@@ -1589,6 +1676,11 @@
         <span class='type'>(<tt>Boolean</tt>)</span>
       
       
+      
+        &mdash;
+        <div class='inline'>
+<p><code>true</code> or <code>false</code></p>
+</div>
       
     </li>
   
@@ -1600,19 +1692,19 @@
       <pre class="lines">
 
 
-361
-362
-363
-364
-365
-366
-367
-368
-369
-370</pre>
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 361</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 390</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle_inside_triangle?'>triangle_inside_triangle?</span><span class='lparen'>(</span><span class='label'>inner:</span><span class='comma'>,</span> <span class='label'>outer:</span><span class='rparen'>)</span>
   <span class='comment'># Return true if tri1 is contained by tri2
@@ -1883,29 +1975,223 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a filled <code>triangle</code> using the raster method.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">x</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 1 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 1 y position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">x2</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 2 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y2</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 2 y position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">x3</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 3 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y3</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 3 y position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">r</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color red value. Defaults to <code>0</code>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">g</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color blue value. Defaults to <code>0</code>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">b</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color green value. Defaults to <code>0</code>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">a</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color alpha value. Defaults to <code>0</code>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">path</span>
+          <span class="type">(<tt>String</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Image path. Defaults to &#39;pixel&#39;.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">image_width</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Image width. Defaults to triangle size.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>[]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-243
-244
-245
-246
-247
-248
-249
-250
-251
-252
-253
-254
-255
-256
-257
-258
-259
 260
 261
 262
@@ -1993,10 +2279,27 @@
 344
 345
 346
-347</pre>
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 243</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 260</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle_raster'>triangle_raster</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
@@ -2113,7 +2416,7 @@
 </div>
 
       <div id="footer">
-  Generated on Fri Nov 12 16:54:01 2021 by
+  Generated on Fri Nov 12 17:45:31 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.2).
 </div>
