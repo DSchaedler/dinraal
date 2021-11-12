@@ -1,6 +1,6 @@
 def tick args
   #draw_triangle args, [100, 400], [140, 350], [args.mouse.x, args.mouse.y], { r: 255, a: 50 }
-  triangle({x: 100, y: 400, x2: 140, y2: 350, x3: args.mouse.x, y3: args.mouse.y})
+  triangle({x: 100, y: 400, x2: 140, y2: 350, x3: args.mouse.x, y3: args.mouse.y, path: 'sprites/rick.png', image_width: 300})
 
   args.outputs.debug << args.gtk.framerate_diagnostics_primitives
 end
