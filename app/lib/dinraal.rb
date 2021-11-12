@@ -4,7 +4,7 @@
 # By D Schaedler. Released under MIT License.
 # https://github.com/DSchaedler/dinraal
 module Dinraal
-  # Calculates a `border` `rect` for the bounding box of the provided triangle
+  # Calculates a `border` `rect` for the bounding box of the given triangle
   #
   # @param options [Hash]
   # @option options x [Float]  Vertex 1 x position.
@@ -32,7 +32,7 @@ module Dinraal
     { x: x_min, y: y_min, w: x_max - x_min, h: y_max - y_min }.border!
   end
 
-  # Calculates the center `point` of the provided triangle
+  # Calculates the center `point` of the given triangle
   #
   # @param options [Hash]
   # @option options x [Float]  Vertex 1 x position.
@@ -155,7 +155,7 @@ module Dinraal
   # @option options x3 [Float] Vertex 3 x position.
   # @option options y3 [Float] Vertex 3 y position.
   #
-  # @return [Bool]
+  # @return [Bool] `true` or `false`
   def point_inside_triangle?(point:, triangle:)
     args = $gtk.args
 
