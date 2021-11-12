@@ -1,78 +1,55 @@
-def tick args
-  #draw_triangle args, [100, 400], [140, 350], [args.mouse.x, args.mouse.y], { r: 255, a: 50 }
-  args.outputs.primitives << triangle({x: 100, y: 400, x2: 140, y2: 350, x3: args.mouse.x, y3: args.mouse.y, path: 'sprites/rick.png', image_width: 300})
+$gtk.reset
 
-  args.outputs.debug << args.gtk.framerate_diagnostics_primitives
+require 'app/lib/dinraal.rb'
+
+def make_rt(args)
+  args.render_target(:static_rt).clear_before_render = true
+  args.render_target(:static_rt).primitives << Dinraal.triangle_raster(args.state.tri1)
+
+  args.render_target(:static_rt).primitives << Dinraal.circle_outline(x: 20, y: 580, radius: 20, g: 255)
+  args.render_target(:static_rt).primitives << Dinraal.circle_raster(x: 70, y: 580, radius: 20, b: 255)
+
+  args.render_target(:static_rt).primitives << Dinraal.triangle_outline(args.state.tri1)
+  args.render_target(:static_rt).primitives << Dinraal.triangle_outline(args.state.tri2)
+
+  args.render_target(:static_rt).primitives << Dinraal.triangle_center(args.state.tri1).merge(w: 5, h: 5, g: 255).solid!
+  args.render_target(:static_rt).primitives << Dinraal.triangle_center(args.state.tri2).merge(w: 5, h: 5, g: 255).solid!
+
+  args.render_target(:static_rt).primitives << Dinraal.triangle_bounding_box(args.state.tri1)
+  args.render_target(:static_rt).primitives << Dinraal.triangle_bounding_box(args.state.tri2)
 end
 
-def triangle(options = {})
-  args = $gtk.args
+def tick(args)
+  # args.state.tri1 ||= { x: 800, y: 500, x2: 450, y2: 650, x3: 400, y3: 300, path: 'sprites/rick.png', image_width: 300 }
+  args.state.tri1 ||= { x: 800, y: 500, x2: 450, y2: 650, x3: 400, y3: 300, g: 255 }
+  args.state.tri2 ||= { x: 200, y: 600, x2: 400, y2: 600, x3: 275, y3: 500, r: 255 }
 
-  x = options[:x]
-  y = options[:y]
-  x2 = options[:x2]
-  y2 = options[:y2]
-  x3 = options[:x3]
-  y3 = options[:y3]
+  new_tri = args.state.tri1.merge(x: args.inputs.mouse.x, y: args.inputs.mouse.y)
 
-  r = options[:r].nil? ? 0 : options[:r]
-  g = options[:g].nil? ? 0 : options[:g]
-  b = options[:b].nil? ? 0 : options[:b]
-  a = options[:a].nil? ? 255 : options[:a]
-
-  color = {r: r, g: g, b: b, a: a}
-
-  all_xs = [x, x2, x3]
-  x_bounds = all_xs.minmax
-  all_ys = [y, y2, y3]
-  y_bounds = all_ys.minmax
-  
-  pairs = [[{x: x, y: y}, {x: x2, y: y2}], [{x: x2, y: y2}, {x: x3, y: y3}], [{x: x3, y: y3}, {x: x, y: y}]]
-
-  lines = []
-
-  # we want to sweep along the "shorter" axis so that we don't have to compute as much
-  # this code can definitely be simplified XD
-  if (x_bounds[1] - x_bounds[0]) < (y_bounds[1] - y_bounds[0])
-    # sweep along x axis
-    eqns = pairs.map do |pair|
-      two_point_eq *pair
-    end
-
-    ranges = pairs.map do |pair|
-      [pair[0].x, pair[1].x].sort
-    end
-
-    lines << x_bounds[0].floor.upto(x_bounds[1].ceil).map do |x|
-      ys = eqns.zip(ranges).map do |eqn, range|
-        eqn.call(x) if x.between?(*range)
-      end.compact
-
-      y1, y2 = ys.minmax
-      { x: x, y: y1, x2: x, y2: y2 }.merge(color).line!
-    end
+  if args.state.tick_count.zero?
+    make_rt(args)
+  elsif args.inputs.mouse.up && new_tri != args.state.tri1
+    args.state.tri1 = new_tri
+    make_rt(args)
   else
-     # sweep along y axis instead
-    eqns = pairs.map do |pair|
-      two_point_eq [pair[0].y, pair[0].x], [pair[1].y, pair[1].x]
-    end
-
-    ranges = pairs.map do |pair|
-      [pair[0].y, pair[1].y].sort
-    end
-
-    lines << y_bounds[0].floor.upto(y_bounds[1].ceil).map do |y|
-      xs = eqns.zip(ranges).map do |eqn, range|
-        eqn.call(y) if y.between?(*range)
-      end.compact
-
-      x1, x2 = xs.minmax
-      { x: x1, y: y, x2: x2, y2: y }.merge(color).line!
-    end
+    args.render_target(:static_rt).clear_before_render = false
   end
-  lines
-end
 
-def two_point_eq p0, p1
-  -> (x) { (p1.y - p0.y) / (p1.x - p0.x) * (x - p0.x) + p0.y }
+  outputs = []
+  outputs << { x: 0, y: 0, w: 1280, h: 720, path: :static_rt }.sprite!
+
+  mouse_x = args.inputs.mouse.x
+  mouse_y = args.inputs.mouse.y
+
+  mouse_inside = Dinraal.point_inside_triangle?(point: { x: mouse_x, y: mouse_y }, triangle: args.state.tri1)
+
+  outputs << { x: args.grid.center_x, y: 720, text: "Mouse inside image: #{mouse_inside}", alignment_enum: 1 }.label!
+
+  two_contains_one = Dinraal.triangle_inside_triangle?(inner: args.state.tri2, outer: args.state.tri1)
+  outputs << { x: args.grid.center_x, y: 700, text: "Image contains red triangle: #{two_contains_one}", alignment_enum: 1 }.label!
+
+  args.outputs.primitives << outputs
+
+  # Optional Debug Information. Uncomment to show
+  # args.outputs.debug << args.gtk.framerate_diagnostics_primitives
 end

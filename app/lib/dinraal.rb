@@ -397,6 +397,78 @@ module Dinraal
 
     true
   end
+
+  def triangle(options = {})
+    args = $gtk.args
+
+    x = options[:x]
+    y = options[:y]
+    x2 = options[:x2]
+    y2 = options[:y2]
+    x3 = options[:x3]
+    y3 = options[:y3]
+
+    r = options[:r].nil? ? 0 : options[:r]
+    g = options[:g].nil? ? 0 : options[:g]
+    b = options[:b].nil? ? 0 : options[:b]
+    a = options[:a].nil? ? 255 : options[:a]
+
+    color = {r: r, g: g, b: b, a: a}
+
+    all_xs = [x, x2, x3]
+    x_bounds = all_xs.minmax
+    all_ys = [y, y2, y3]
+    y_bounds = all_ys.minmax
+    
+    pairs = [[{x: x, y: y}, {x: x2, y: y2}], [{x: x2, y: y2}, {x: x3, y: y3}], [{x: x3, y: y3}, {x: x, y: y}]]
+
+    lines = []
+
+    # we want to sweep along the "shorter" axis so that we don't have to compute as much
+    # this code can definitely be simplified XD
+    if (x_bounds[1] - x_bounds[0]) < (y_bounds[1] - y_bounds[0])
+      # sweep along x axis
+      eqns = pairs.map do |pair|
+        two_point_eq *pair
+      end
+
+      ranges = pairs.map do |pair|
+        [pair[0].x, pair[1].x].sort
+      end
+
+      lines << x_bounds[0].floor.upto(x_bounds[1].ceil).map do |x|
+        ys = eqns.zip(ranges).map do |eqn, range|
+          eqn.call(x) if x.between?(*range)
+        end.compact
+
+        y1, y2 = ys.minmax
+        { x: x, y: y1, x2: x, y2: y2 }.merge(color).line!
+      end
+    else
+      # sweep along y axis instead
+      eqns = pairs.map do |pair|
+        two_point_eq [pair[0].y, pair[0].x], [pair[1].y, pair[1].x]
+      end
+
+      ranges = pairs.map do |pair|
+        [pair[0].y, pair[1].y].sort
+      end
+
+      lines << y_bounds[0].floor.upto(y_bounds[1].ceil).map do |y|
+        xs = eqns.zip(ranges).map do |eqn, range|
+          eqn.call(y) if y.between?(*range)
+        end.compact
+
+        x1, x2 = xs.minmax
+        { x: x1, y: y, x2: x2, y2: y }.merge(color).line!
+      end
+    end
+    lines
+  end
+
+  def two_point_eq p0, p1
+    -> (x) { (p1.y - p0.y) / (p1.x - p0.x) * (x - p0.x) + p0.y }
+  end
 end
 
 Dinraal.extend Dinraal
