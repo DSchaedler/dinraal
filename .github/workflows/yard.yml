@@ -22,12 +22,8 @@ jobs:
         key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
         restore-keys: |
           ${{ runner.os }}-gem-
-    - name: Add YARD
-      run: bundle add yard
-    - name: Install
-      run: bundle install
     - name: Run Yard
-      run: yard doc -m markdown -o docs --exclude app/main.rb 
+      run: bundle exec yard doc -m markdown -o docs --exclude app/main.rb 
     - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version.
       with:
         # The arguments for the `git add` command (see the paragraph below for more info)
