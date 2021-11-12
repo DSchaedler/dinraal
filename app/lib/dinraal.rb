@@ -4,7 +4,7 @@
 # By D Schaedler. Released under MIT License.
 # https://github.com/DSchaedler/dinraal
 module Dinraal
-  # Calculates a `border` `rect` for the bounding box of the given `triangle`.
+  # Calculates a `border` for the bounding box of the given `triangle`.
   #
   # @param options [Hash]
   # @option options x [Float]  Vertex 1 x position.
@@ -143,7 +143,7 @@ module Dinraal
     pixels
   end
 
-  # Determine if the given `point` is in the given `triangle`.
+  # Determines if the given `point` is in the given `triangle`.
   #
   # @param point [Hash]  `point` in DR hash notation.
   # @param triangle [Hash] `triangle` in Dinraal hash notation.
@@ -252,7 +252,7 @@ module Dinraal
   # @option options r [Integer] Optional. Color red value. Defaults to `0`.
   # @option options g [Integer] Optional. Color blue value. Defaults to `0`.
   # @option options b [Integer] Optional. Color green value. Defaults to `0`.
-  # @option options a [Integer] Optional. Color alpha value. Defaults to `0`.
+  # @option options a [Integer] Optional. Color alpha value. Defaults to `255`.
   # @option options path [String] Optional. Image path. Defaults to `'pixel'`.
   # @option options image_width [Float] Optional. Image width. Defaults to `triangle` width.
   #
@@ -368,7 +368,7 @@ module Dinraal
   # @param rectangle [Hash] `rect` in DR hash notation.
   # @param triangle [Hash] `triangle` in Dinraal hash notation.
   #
-  # @return [Boolean] `true` or `false`
+  # @return [Boolean] `true` or `false` 
   def rectangle_inside_triangle?(rectangle:, triangle:)
     return false unless point_inside_triangle?(point: { x: rectangle[:x],                 y: rectangle[:y] }, triangle: triangle)
 
@@ -386,7 +386,7 @@ module Dinraal
   # @param inner [Hash] `triangle` in Dinraal hash notation.
   # @param outer [Hash] `triangle` in Dinraal hash notation.
   #
-  # @return [Boolean] `true` or `false`
+  # @return [Boolean] `true` or `false` 
   def triangle_inside_triangle?(inner:, outer:)
     # Return true if tri1 is contained by tri2
     return false unless point_inside_triangle?(point: { x: inner[:x], y: inner[:y] }, triangle: outer)
