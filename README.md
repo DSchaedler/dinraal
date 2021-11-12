@@ -1,6 +1,6 @@
 # dinraal
 
-[![Ruby - Rubocop](https://github.com/DSchaedler/dinraal/actions/workflows/rubocop.yml/badge.svg)](https://github.com/DSchaedler/dinraal/actions/workflows/rubocop.yml)
+[![Ruby - Rubocop](https://github.com/DSchaedler/dinraal/actions/workflows/rubocop.yml/badge.svg)](https://github.com/DSchaedler/dinraal/actions/workflows/rubocop.yml)[![YARD](https://github.com/DSchaedler/dinraal/actions/workflows/yard.yml/badge.svg)](https://github.com/DSchaedler/dinraal/actions/workflows/yard.yml)
 
 Dinraal is a library for working with shapes in DragonRuby Game Toolkit. By default, DRGTK does not support rendering or working with any shapes outside of rectangles. Until now, other shapes have been provided by sprites.
 
