@@ -220,7 +220,7 @@ module Dinraal
     lines
   end
 
-  # Calculates a new `point` given a starting point, distance, and angle.
+  # Calculates a new `point` given a starting `point`, distance, and angle.
   #
   # @param options [Hash]
   # @option options point [Hash] `point` in DR notation. E.g. `{x: 100, y: 100}`
