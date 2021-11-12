@@ -227,6 +227,14 @@ module Dinraal
     lines
   end
 
+  # Calculates a new point given a starting point, distance, and angle.
+  #
+  # @param options [Hash]
+  # @option options point [Hash] `point` in DR notation. E.g. {x: 100, y: 100}
+  # @option options distance [Float] Distance between the given and generated point.
+  # @option options angle [Float] Angle from given point to generated point in degrees.
+  #
+  # @return [Hash] `point` in DR notation. E.g. {x: 100, y: 100}
   def point_at_distance_angle(options = {})
     point = options[:point]
     distance = options[:distance]
