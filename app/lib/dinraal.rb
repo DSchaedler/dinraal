@@ -413,14 +413,14 @@ module Dinraal
     b = options[:b].nil? ? 0 : options[:b]
     a = options[:a].nil? ? 255 : options[:a]
 
-    color = {r: r, g: g, b: b, a: a}
+    color = { r: r, g: g, b: b, a: a }
 
     all_xs = [x, x2, x3]
     x_bounds = all_xs.minmax
     all_ys = [y, y2, y3]
     y_bounds = all_ys.minmax
-    
-    pairs = [[{x: x, y: y}, {x: x2, y: y2}], [{x: x2, y: y2}, {x: x3, y: y3}], [{x: x3, y: y3}, {x: x, y: y}]]
+
+    pairs = [[{ x: x, y: y }, { x: x2, y: y2 }], [{ x: x2, y: y2 }, { x: x3, y: y3 }], [{ x: x3, y: y3 }, { x: x, y: y }]]
 
     lines = []
 
@@ -429,7 +429,7 @@ module Dinraal
     if (x_bounds[1] - x_bounds[0]) < (y_bounds[1] - y_bounds[0])
       # sweep along x axis
       eqns = pairs.map do |pair|
-        two_point_eq *pair
+        two_point_eq(*pair)
       end
 
       ranges = pairs.map do |pair|
@@ -466,8 +466,8 @@ module Dinraal
     lines
   end
 
-  def two_point_eq p0, p1
-    -> (x) { (p1.y - p0.y) / (p1.x - p0.x) * (x - p0.x) + p0.y }
+  def two_point_eq(p0, p1)
+    ->(x) { ((p1.y - p0.y) / (p1.x - p0.x) * (x - p0.x)) + p0.y }
   end
 end
 
