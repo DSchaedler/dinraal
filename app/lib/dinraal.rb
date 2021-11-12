@@ -469,6 +469,70 @@ module Dinraal
   def two_point_eq(p0, p1)
     ->(x) { ((p1.y - p0.y) / (p1.x - p0.x) * (x - p0.x)) + p0.y }
   end
+
+  def triangle_fast(options = {})
+    args = $gtk.args
+
+    x = options[:x]
+    y = options[:y]
+    x2 = options[:x2]
+    y2 = options[:y2]
+    x3 = options[:x3]
+    y3 = options[:y3]
+
+    r = options[:r].nil? ? 0 : options[:r]
+    g = options[:g].nil? ? 0 : options[:g]
+    b = options[:b].nil? ? 0 : options[:b]
+    a = options[:a].nil? ? 255 : options[:a]
+
+    color = { r: r, g: g, b: b, a: a }
+
+    all_xs = [x, x2, x3]
+    x_bounds = all_xs.minmax
+    all_ys = [y, y2, y3]
+    y_bounds = all_ys.minmax
+
+    pairs = [[{ x: x, y: y }, { x: x2, y: y2 }], [{ x: x2, y: y2 }, { x: x3, y: y3 }], [{ x: x3, y: y3 }, { x: x, y: y }]]
+
+    lines = []
+  end
+  
+  def point_distance p1, p2
+    dx = p2.x - p1.x
+    dy = p2.y - p1.y
+    Math::sqrt(dx * dx + dy * dy)
+  end
+  
+  def point_distance_squared p1, p2
+    dx = p2.x - p1.x
+    dy = p2.y - p1.y
+    dx * dx + dy * dy
+  end
+  
+  def point_difference p1, p2
+    [p1.x - p2.x, p1.y - p2.y]
+  end
+  
+  def vertex_angle v1, v2
+    Math::acos(dot(v1, v2) / (norm(v1) * norm(v2))) * sign(cross(v1, v2))
+  end
+  
+  def vector_normal vec
+    Math::sqrt(vec.x * vec.x + vec.y * vec.y)
+  end
+  
+  def vertex_dot_product v1, v2
+    v1.x * v2.x + v1.y * v2.y
+  end
+  
+  def vertex_cross_product v1, v2
+    v1.x * v2.y - v2.x * v1.y
+  end
+  
+  def numeric_sign v
+    v <=> 0
+  end
+  
 end
 
 Dinraal.extend Dinraal
