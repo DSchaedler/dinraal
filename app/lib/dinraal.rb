@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Module provides some Triangle generation and manipulation methods to DragonRuby Game Toolkit.
+# Module provides methods for manipulating shapes to DragonRuby Game Toolkit.
 # By D Schaedler. Released under MIT License.
 # https://github.com/DSchaedler/dinraal
 module Dinraal
@@ -368,7 +368,7 @@ module Dinraal
   # @param rectangle [Hash] `rect` in DR hash notation.
   # @param triangle [Hash] `triangle` in Dinraal hash notation.
   #
-  # @return [Boolean] `true` or `false`
+  # @return [Boolean] `true` or `false` 
   def rectangle_inside_triangle?(rectangle:, triangle:)
     return false unless point_inside_triangle?(point: { x: rectangle[:x],                 y: rectangle[:y] }, triangle: triangle)
 
@@ -386,7 +386,7 @@ module Dinraal
   # @param inner [Hash] `triangle` in Dinraal hash notation.
   # @param outer [Hash] `triangle` in Dinraal hash notation.
   #
-  # @return [Boolean] `true` or `false`
+  # @return [Boolean] `true` or `false` 
   def triangle_inside_triangle?(inner:, outer:)
     # Return true if tri1 is contained by tri2
     return false unless point_inside_triangle?(point: { x: inner[:x], y: inner[:y] }, triangle: outer)
