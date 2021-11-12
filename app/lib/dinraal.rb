@@ -4,7 +4,7 @@
 # By D Schaedler. Released under MIT License.
 # https://github.com/DSchaedler/dinraal
 module Dinraal
-  # Calculates a `border` `rect` for the bounding box of the given triangle
+  # Calculates a `border` `rect` for the bounding box of the given triangle.
   #
   # @param options [Hash]
   # @option options x [Float]  Vertex 1 x position.
@@ -32,7 +32,7 @@ module Dinraal
     { x: x_min, y: y_min, w: x_max - x_min, h: y_max - y_min }.border!
   end
 
-  # Calculates the center `point` of the given triangle
+  # Calculates the center `point` of the given triangle.
   #
   # @param options [Hash]
   # @option options x [Float]  Vertex 1 x position.
@@ -97,7 +97,7 @@ module Dinraal
     pixels
   end
 
-  # Create a filled circle using raster method
+  # Create a filled circle using raster method.
   #
   # @param options [Hash]
   # @option options x [Float] Center x position.
@@ -193,6 +193,21 @@ module Dinraal
     true
   end
 
+  # Creates the outline of a triangle.
+  #
+  # @param options [Hash]
+  # @option options x [Float]  Vertex 1 x position.
+  # @option options y [Float]  Vertex 1 y position.
+  # @option options x2 [Float] Vertex 2 x position.
+  # @option options y2 [Float] Vertex 2 y position.
+  # @option options x3 [Float] Vertex 3 x position.
+  # @option options y3 [Float] Vertex 3 y position.
+  # @option options r [Integer] Color red value.
+  # @option options g [Integer] Color blue value.
+  # @option options b [Integer] Color green value.
+  # @option options a [Integer] Color alpha value.
+  #
+  # @return [Array] An array of `primitive` `solids` in hash notation.
   def triangle_outline(options = {})
     x = options[:x]
     y = options[:y]
