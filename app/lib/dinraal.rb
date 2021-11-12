@@ -7,12 +7,12 @@ module Dinraal
   # Calculates a `border` `rect` for the bounding box of the provided triangle
   #
   # @param options [Hash]
-  # @option options x [Float]  Point 1 x position.
-  # @option options y [Float]  Point 1 x position.
-  # @option options x2 [Float] Point 2 x position.
-  # @option options y2 [Float] Point 2 x position.
-  # @option options x3 [Float] Point 3 x position.
-  # @option options y3 [Float] Point 3 x position.
+  # @option options x [Float]  Vertex 1 x position.
+  # @option options y [Float]  Vertex 1 y position.
+  # @option options x2 [Float] Vertex 2 x position.
+  # @option options y2 [Float] Vertex 2 y position.
+  # @option options x3 [Float] Vertex 3 x position.
+  # @option options y3 [Float] Vertex 3 y position.
   #
   # @return [Hash] A DR `border` hash. E.g. `{x: 100, y: 150, w: 300, h: 400}.border!`
   def triangle_bounding_box(options = {})
@@ -35,12 +35,12 @@ module Dinraal
   # Calculates the center `point` of the provided triangle
   #
   # @param options [Hash]
-  # @option options x [Float]  Point 1 x position.
-  # @option options y [Float]  Point 1 x position.
-  # @option options x2 [Float] Point 2 x position.
-  # @option options y2 [Float] Point 2 x position.
-  # @option options x3 [Float] Point 3 x position.
-  # @option options y3 [Float] Point 3 x position.
+  # @option options x [Float]  Vertex 1 x position.
+  # @option options y [Float]  Vertex 1 y position.
+  # @option options x2 [Float] Vertex 2 x position.
+  # @option options y2 [Float] Vertex 2 y position.
+  # @option options x3 [Float] Vertex 3 x position.
+  # @option options y3 [Float] Vertex 3 y position.
   #
   # @return [Hash] A DR `point` hash. E.g. `{x: 20, y: 45}`
   def triangle_center(options = {})
@@ -143,6 +143,19 @@ module Dinraal
     pixels
   end
 
+  # Determine if the given point is in the given triangle.
+  #
+  # @param options [Hash]
+  # @option options point_x [Float]  Point x position.
+  # @option options point_y [Float]  Point y position.
+  # @option options x [Float]  Vertex 1 x position.
+  # @option options y [Float]  Vertex 1 y position.
+  # @option options x2 [Float] Vertex 2 x position.
+  # @option options y2 [Float] Vertex 2 y position.
+  # @option options x3 [Float] Vertex 3 x position.
+  # @option options y3 [Float] Vertex 3 y position.
+  #
+  # @return [Bool]
   def point_inside_triangle?(point:, triangle:)
     args = $gtk.args
 
