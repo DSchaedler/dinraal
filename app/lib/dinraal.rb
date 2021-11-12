@@ -4,7 +4,7 @@
 # By D Schaedler. Released under MIT License.
 # https://github.com/DSchaedler/dinraal
 module Dinraal
-  # Calculates a `border` `rect` for the bounding box of the given triangle.
+  # Calculates a `border` `rect` for the bounding box of the given `triangle`.
   #
   # @param options [Hash]
   # @option options x [Float]  Vertex 1 x position.
@@ -32,7 +32,7 @@ module Dinraal
     { x: x_min, y: y_min, w: x_max - x_min, h: y_max - y_min }.border!
   end
 
-  # Calculates the center `point` of the given triangle.
+  # Calculates the center `point` of the given `triangle`.
   #
   # @param options [Hash]
   # @option options x [Float]  Vertex 1 x position.
@@ -54,12 +54,12 @@ module Dinraal
     { x: ((x + x2 + x3) / 3).to_i, y: ((y + y2 + y3) / 3).to_i }
   end
 
-  # Creates the outline of a circle.
+  # Creates the outline of a `circle` .
   #
   # @param options [Hash]
   # @option options x [Float] Center x position.
   # @option options y [Float] Center y position.
-  # @option options radius [Float] Radius of the Circle.
+  # @option options radius [Float] Radius of the `circle` .
   # @option options r [Integer] Color red value.
   # @option options g [Integer] Color blue value.
   # @option options b [Integer] Color green value.
@@ -97,7 +97,7 @@ module Dinraal
     pixels
   end
 
-  # Create a filled circle using raster method.
+  # Create a filled `circle` using raster method.
   #
   # @param options [Hash]
   # @option options x [Float] Center x position.
@@ -143,7 +143,7 @@ module Dinraal
     pixels
   end
 
-  # Determine if the given point is in the given triangle.
+  # Determine if the given `point` is in the given `triangle`.
   #
   # @param point [Hash]  `point` in DR notation. E.g. `{x: 100, y: 100}`
   # @param triangle [Hash] `triangle` in Dinraal notation. E.g. `{ x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y, r: red, g: green, b: blue, a: alpha }`
@@ -186,7 +186,7 @@ module Dinraal
     true
   end
 
-  # Creates the outline of a triangle.
+  # Creates the outline of a `triangle`.
   #
   # @param options [Hash]
   # @option options x [Float]  Vertex 1 x position.
@@ -220,12 +220,12 @@ module Dinraal
     lines
   end
 
-  # Calculates a new point given a starting point, distance, and angle.
+  # Calculates a new `point` given a starting point, distance, and angle.
   #
   # @param options [Hash]
   # @option options point [Hash] `point` in DR notation. E.g. `{x: 100, y: 100}`
   # @option options distance [Float] Distance between the given and generated point.
-  # @option options angle [Float] Angle from given point to generated point in degrees.
+  # @option options angle [Float] Angle from given `point` to generated `point` in degrees.
   #
   # @return [Hash] `point` in DR notation. E.g. `{x: 100, y: 100}`
   def point_at_distance_angle(options = {})
