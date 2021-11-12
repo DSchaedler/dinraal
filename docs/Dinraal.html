@@ -95,9 +95,8 @@
 
 <h2>Overview</h2><div class="docstring">
   <div class="discussion">
-    <p>Module provides some Triangle generation and manipulation methods to DragonRuby Game Toolkit.
-By D Schaedler. Released under MIT License.
-<a href="https://github.com/DSchaedler/dinraal">https://github.com/DSchaedler/dinraal</a></p>
+    
+<p>Module provides some Triangle generation and manipulation methods to DragonRuby Game Toolkit. By D Schaedler. Released under MIT License. <a href="https://github.com/DSchaedler/dinraal">github.com/DSchaedler/dinraal</a></p>
 
 
   </div>
@@ -247,7 +246,8 @@ By D Schaedler. Released under MIT License.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Calculates a <code>border</code> <code>rect</code> for the bounding box of the provided triangle.</p>
+    <span class="summary_desc"><div class='inline'>
+<p>Calculates a <code>border</code> <code>rect</code> for the bounding box of the provided triangle.</p>
 </div></span>
   
 </li>
@@ -270,7 +270,8 @@ By D Schaedler. Released under MIT License.
   
 
   
-    <span class="summary_desc"><div class='inline'><p>Calculates the center <code>point</code> of the provided triangle.</p>
+    <span class="summary_desc"><div class='inline'>
+<p>Calculates the center <code>point</code> of the provided triangle.</p>
 </div></span>
   
 </li>
@@ -366,8 +367,6 @@ By D Schaedler. Released under MIT License.
       <pre class="lines">
 
 
-55
-56
 57
 58
 59
@@ -395,10 +394,12 @@ By D Schaedler. Released under MIT License.
 81
 82
 83
-84</pre>
+84
+85
+86</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 55</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 57</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_circle_outline'>circle_outline</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
@@ -450,8 +451,6 @@ By D Schaedler. Released under MIT License.
       <pre class="lines">
 
 
-86
-87
 88
 89
 90
@@ -482,10 +481,12 @@ By D Schaedler. Released under MIT License.
 115
 116
 117
-118</pre>
+118
+119
+120</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 86</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 88</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_circle_raster'>circle_raster</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='gvar'>$gtk</span><span class='period'>.</span><span class='id identifier rubyid_args'>args</span>
@@ -540,8 +541,6 @@ By D Schaedler. Released under MIT License.
       <pre class="lines">
 
 
-176
-177
 178
 179
 180
@@ -550,10 +549,12 @@ By D Schaedler. Released under MIT License.
 183
 184
 185
-186</pre>
+186
+187
+188</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 176</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 178</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_point_at_distance_angle'>point_at_distance_angle</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_point'>point</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:point</span><span class='rbracket'>]</span>
@@ -608,8 +609,6 @@ By D Schaedler. Released under MIT License.
       <pre class="lines">
 
 
-120
-121
 122
 123
 124
@@ -643,10 +642,12 @@ By D Schaedler. Released under MIT License.
 152
 153
 154
-155</pre>
+155
+156
+157</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 120</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 122</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span><span class='comma'>,</span> <span class='label'>triangle:</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='gvar'>$gtk</span><span class='period'>.</span><span class='id identifier rubyid_args'>args</span>
@@ -661,7 +662,7 @@ By D Schaedler. Released under MIT License.
   <span class='id identifier rubyid_y3'>y3</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='symbol'>:y3</span><span class='rbracket'>]</span>
 
   <span class='id identifier rubyid_triangle'>triangle</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_y'>y</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_y2'>y2</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x3'>x3</span><span class='comma'>,</span> <span class='id identifier rubyid_y3'>y3</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
-  <span class='id identifier rubyid_triangle'>triangle</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_point'>point</span><span class='op'>|</span> <span class='id identifier rubyid_point'>point</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_triangle'>triangle</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='period'>.</span><span class='id identifier rubyid_sort_by'>sort_by</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id identifier rubyid_sort_point'>sort_point</span><span class='op'>|</span> <span class='id identifier rubyid_sort_point'>sort_point</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='rbrace'>}</span>
   <span class='id identifier rubyid_triangle'>triangle</span> <span class='op'>=</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='period'>.</span><span class='id identifier rubyid_reverse'>reverse</span>
 
   <span class='id identifier rubyid_leg0'>leg0</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
@@ -726,22 +727,30 @@ By D Schaedler. Released under MIT License.
       <pre class="lines">
 
 
-294
-295
 296
 297
 298
 299
-300</pre>
+300
+301
+302
+303
+304
+305
+306</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 294</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 296</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_rectangle_inside_triangle?'>rectangle_inside_triangle?</span><span class='lparen'>(</span><span class='label'>rectangle:</span><span class='comma'>,</span> <span class='label'>triangle:</span><span class='rparen'>)</span>
   <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span><span class='comma'>,</span>                 <span class='label'>y:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='rparen'>)</span>
+
   <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:w</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='rparen'>)</span>
+
   <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span><span class='comma'>,</span>                 <span class='label'>y:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:h</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='rparen'>)</span>
+
   <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:w</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='op'>+</span> <span class='id identifier rubyid_rectangle'>rectangle</span><span class='lbracket'>[</span><span class='symbol'>:h</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='rparen'>)</span>
+
   <span class='kw'>true</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -760,7 +769,8 @@ By D Schaedler. Released under MIT License.
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Calculates a <code>border</code> <code>rect</code> for the bounding box of the provided triangle</p>
+    
+<p>Calculates a <code>border</code> <code>rect</code> for the bounding box of the provided triangle</p>
 
 
   </div>
@@ -797,7 +807,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 1 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 1 x position.</p>
 </div>
           
         </li>
@@ -809,7 +820,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 1 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 1 x position.</p>
 </div>
           
         </li>
@@ -821,7 +833,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 2 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 2 x position.</p>
 </div>
           
         </li>
@@ -833,7 +846,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 2 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 2 x position.</p>
 </div>
           
         </li>
@@ -845,7 +859,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 3 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 3 x position.</p>
 </div>
           
         </li>
@@ -857,7 +872,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 3 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 3 x position.</p>
 </div>
           
         </li>
@@ -876,7 +892,8 @@ By D Schaedler. Released under MIT License.
       
       
         &mdash;
-        <div class='inline'><p>A DR <code>border</code> hash. E.g. <code>{x: 100, y: 150, w: 300, h: 400}.border!</code></p>
+        <div class='inline'>
+<p>A DR <code>border</code> hash. E.g. <code>{x: 100, y: 150, w: 300, h: 400}.border!</code></p>
 </div>
       
     </li>
@@ -889,8 +906,6 @@ By D Schaedler. Released under MIT License.
       <pre class="lines">
 
 
-16
-17
 18
 19
 20
@@ -904,10 +919,12 @@ By D Schaedler. Released under MIT License.
 28
 29
 30
-31</pre>
+31
+32
+33</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 16</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 18</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle_bounding_box'>triangle_bounding_box</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
@@ -941,7 +958,8 @@ By D Schaedler. Released under MIT License.
   
 </h3><div class="docstring">
   <div class="discussion">
-    <p>Calculates the center <code>point</code> of the provided triangle</p>
+    
+<p>Calculates the center <code>point</code> of the provided triangle</p>
 
 
   </div>
@@ -978,7 +996,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 1 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 1 x position.</p>
 </div>
           
         </li>
@@ -990,7 +1009,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 1 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 1 x position.</p>
 </div>
           
         </li>
@@ -1002,7 +1022,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 2 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 2 x position.</p>
 </div>
           
         </li>
@@ -1014,7 +1035,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 2 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 2 x position.</p>
 </div>
           
         </li>
@@ -1026,7 +1048,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 3 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 3 x position.</p>
 </div>
           
         </li>
@@ -1038,7 +1061,8 @@ By D Schaedler. Released under MIT License.
             
           </span>
           
-            &mdash; <div class='inline'><p>Point 3 x position.</p>
+            &mdash; <div class='inline'>
+<p>Point 3 x position.</p>
 </div>
           
         </li>
@@ -1057,7 +1081,8 @@ By D Schaedler. Released under MIT License.
       
       
         &mdash;
-        <div class='inline'><p>A DR <code>point</code> hash. E.g. <code>{x: 20, y: 45}</code></p>
+        <div class='inline'>
+<p>A DR <code>point</code> hash. E.g. <code>{x: 20, y: 45}</code></p>
 </div>
       
     </li>
@@ -1070,8 +1095,6 @@ By D Schaedler. Released under MIT License.
       <pre class="lines">
 
 
-44
-45
 46
 47
 48
@@ -1079,10 +1102,12 @@ By D Schaedler. Released under MIT License.
 50
 51
 52
-53</pre>
+53
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 44</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 46</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle_center'>triangle_center</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
@@ -1136,22 +1161,28 @@ By D Schaedler. Released under MIT License.
       <pre class="lines">
 
 
-302
-303
-304
-305
-306
-307
-308</pre>
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 302</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 308</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle_inside_triangle?'>triangle_inside_triangle?</span><span class='lparen'>(</span><span class='label'>inner:</span><span class='comma'>,</span> <span class='label'>outer:</span><span class='rparen'>)</span>
   <span class='comment'># Return true if tri1 is contained by tri2
 </span>  <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:y</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_outer'>outer</span><span class='rparen'>)</span>
+
   <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:x2</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:y2</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_outer'>outer</span><span class='rparen'>)</span>
+
   <span class='kw'>return</span> <span class='kw'>false</span> <span class='kw'>unless</span> <span class='id identifier rubyid_point_inside_triangle?'>point_inside_triangle?</span><span class='lparen'>(</span><span class='label'>point:</span> <span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:x3</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_inner'>inner</span><span class='lbracket'>[</span><span class='symbol'>:y3</span><span class='rbracket'>]</span> <span class='rbrace'>}</span><span class='comma'>,</span> <span class='label'>triangle:</span> <span class='id identifier rubyid_outer'>outer</span><span class='rparen'>)</span>
+
   <span class='kw'>true</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1174,8 +1205,6 @@ By D Schaedler. Released under MIT License.
       <pre class="lines">
 
 
-157
-158
 159
 160
 161
@@ -1191,10 +1220,12 @@ By D Schaedler. Released under MIT License.
 171
 172
 173
-174</pre>
+174
+175
+176</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 157</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 159</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle_outline'>triangle_outline</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
@@ -1234,8 +1265,6 @@ By D Schaedler. Released under MIT License.
       <pre class="lines">
 
 
-188
-189
 190
 191
 192
@@ -1338,10 +1367,12 @@ By D Schaedler. Released under MIT License.
 289
 290
 291
-292</pre>
+292
+293
+294</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 188</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 190</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle_raster'>triangle_raster</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_x'>x</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:x</span><span class='rbracket'>]</span>
@@ -1458,9 +1489,9 @@ By D Schaedler. Released under MIT License.
 </div>
 
       <div id="footer">
-  Generated on Thu Nov 11 07:32:24 2021 by
+  Generated on Fri Nov 12 04:35:42 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.5.5).
+  0.9.26 (ruby-3.0.2).
 </div>
 
     </div>

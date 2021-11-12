@@ -57,12 +57,14 @@
         <div class="clear"></div>
       </div>
 
-      <div id="content"><div id='filecontents'><h1 id="dinraal">dinraal</h1>
+      <div id="content"><div id='filecontents'>
+<h1 id="label-dinraal">dinraal</h1>
+
+<p><a href="https://github.com/DSchaedler/dinraal/actions/workflows/rubocop.yml"><img src="https://github.com/DSchaedler/dinraal/actions/workflows/rubocop.yml/badge.svg"></a></p>
 
 <p>Dinraal is a library for working with shapes in DragonRuby Game Toolkit. By default, DRGTK does not support rendering or working with any shapes outside of rectangles. Until now, other shapes have been provided by sprites.</p>
 
-<p>Full Documentation can be found at <a href="https://dschaedler.github.io/dinraal/">https://dschaedler.github.io/dinraal/</a></p>
-
+<p>Full Documentation can be found at <a href="https://dschaedler.github.io/dinraal">dschaedler.github.io/dinraal</a>/</p>
 <hr>
 
 <p>Our killer feature is the <code>triangle_raster</code> method. This returns an array of primitives ready to be drawn.</p>
@@ -77,64 +79,64 @@
 <span class='kw'>end</span>
 </code></pre>
 
-<p>The library source file can be found at <a href="https://github.com/DSchaedler/dinraal/blob/main/app/lib/dinraal.rb">app/lib/dinraal.rb</a>.</p>
+<p>The library source file can be found at <a href="https://github_com/DSchaedler/dinraal/blob/main/app/lib/dinraal_rb.html">app/lib/dinraal.rb</a>.</p>
 
-<p>A more detailed sample app is at <a href="https://github.com/DSchaedler/dinraal/blob/main/app/main.rb">app/main.rb</a>.</p>
+<p>A more detailed sample app is at <a href="https://github_com/DSchaedler/dinraal/blob/main/app/main_rb.html">app/main.rb</a>.</p>
 
 <p>Triangles are defined as a hash of points, with any additional information.</p>
 
 <pre class="code ruby"><code class="ruby"><span class='lbrace'>{</span> <span class='label'>x:</span> <span class='id identifier rubyid_point1_x'>point1_x</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_point1_y'>point1_y</span><span class='comma'>,</span> <span class='label'>x2:</span> <span class='id identifier rubyid_point2_x'>point2_x</span><span class='comma'>,</span> <span class='label'>y2:</span> <span class='id identifier rubyid_point2_y'>point2_y</span><span class='comma'>,</span> <span class='label'>x3:</span> <span class='id identifier rubyid_point3_x'>point3_x</span><span class='comma'>,</span> <span class='label'>y3:</span> <span class='id identifier rubyid_point3_y'>point3_y</span><span class='comma'>,</span> <span class='label'>r:</span> <span class='id identifier rubyid_red'>red</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_green'>green</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_blue'>blue</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_alpha'>alpha</span> <span class='rbrace'>}</span>
 </code></pre>
 
-<h1 id="todo">TODO</h1>
+<h1 id="label-TODO">TODO</h1>
+<ul><li>
+<p>Document new circle methods</p>
+</li><li>
+<p>Alphabetize methods in <code>dinrall.rb</code></p>
+</li><li>
+<p>Create <code>triangle_intersects_triangle?</code> method</p>
+</li><li>
+<p>Create <code>rectangle_intersects_triangle?</code> method</p>
+</li><li>
+<p>Create <code>triangle_inradius</code> method - <a href="https://artofproblemsolving.com/wiki/index.php/Incircle">Incircle Math Breakdown</a></p>
+</li><li>
+<p>Create <code>triangle_area</code> method - <a href="https://artofproblemsolving.com/wiki/index.php/Heron%27s_Formula">Heron’s Formula</a></p>
+</li><li>
+<p>Vector based calculations will be faster, but less straightforward to impliment</p>
+</li><li>
+<p>Create <code>triangle_perimiter</code> method</p>
+</li></ul>
 
-<ul>
-<li>Document new circle methods</li>
-<li>Alphabetize methods in <code>dinrall.rb</code></li>
-<li>Create <code>triangle_intersects_triangle?</code> method</li>
-<li>Create <code>rectangle_intersects_triangle?</code> method</li>
-<li>Create <code>triangle_inradius</code> method - <a href="https://artofproblemsolving.com/wiki/index.php/Incircle">Incircle Math Breakdown</a></li>
-<li>Create <code>triangle_area</code> method - <a href="https://artofproblemsolving.com/wiki/index.php/Heron%27s_Formula">Heron&#39;s Formula</a>
+<h1 id="label-How+to+contribute">How to contribute</h1>
+<ul><li>
+<p>Submit a Pull Request with any code improvements</p>
+</li><li>
+<p>Impliment any item from the TODO list.</p>
+</li><li>
+<p>Write a sample app that more clearly shows all methods</p>
+</li><li>
+<p>Write a tutorial</p>
+</li><li>
+<p>Submit improved calculation methods</p>
+</li><li>
+<p>Speed improvements to the <code>triangle_raster</code> and <code>circle_raster</code> methods</p>
+</li><li>
+<p>Vector calculations for area over Heron&#39;s Formula</p>
+</li></ul>
 
-<ul>
-<li>Vector based calculations will be faster, but less straightforward to impliment</li>
-</ul></li>
-<li>Create <code>triangle_perimiter</code> method</li>
-</ul>
+<h1 id="label-About+Dinraal">About Dinraal</h1>
 
-<h1 id="how-to-contribute">How to contribute</h1>
+<p>Dinraal is created by Dee Schaedler. Many thanks to the DragonRuby Discord server for inspiration and feedback. <a href="https://discord.dragonruby.org">discord.dragonruby.org</a></p>
 
-<ul>
-<li>Submit a Pull Request with any code improvements</li>
-<li>Impliment any item from the TODO list.</li>
-<li>Write a sample app that more clearly shows all methods</li>
-<li>Write a tutorial</li>
-<li>Submit improved calculation methods
-
-<ul>
-<li>Speed improvements to the <code>triangle_raster</code> and <code>circle_raster</code> methods</li>
-<li>Vector calculations for area over Heron&#39;s Formula</li>
-</ul></li>
-</ul>
-
-<h1 id="about-dinraal">About Dinraal</h1>
-
-<p>Dinraal is created by Dee Schaedler. Many thanks to the DragonRuby Discord server for inspiration and feedback. <a href="https://discord.dragonruby.org">https://discord.dragonruby.org</a></p>
-
-<p>Specific thanks to:</p>
-
-<ul>
-<li>leviondiscord#5978    - Optimization contribution</li>
-<li>theanxietybuster#8491 - Catching a project-ending typo</li>
-</ul>
+<p>Specific thanks to: - leviondiscord#5978 - Optimization contribution - theanxietybuster#8491 - Catching a project-ending typo</p>
 
 <p>Most DragonRuby packages and libraries are named after various dragons. Dinraal is a <a href="https://en.wikipedia.org/wiki/Japanese_dragon">Japanese Dragon</a> from <a href="https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild">The Legend of Zelda: Breath of the Wild</a>. Dinraal is the dragon of fire, and the gatekeeper of the Shrine at the <a href="https://zelda.fandom.com/wiki/Spring_of_Power">Spring of Power</a>.</p>
 </div></div>
 
       <div id="footer">
-  Generated on Thu Nov 11 07:32:23 2021 by
+  Generated on Fri Nov 12 04:35:42 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.5.5).
+  0.9.26 (ruby-3.0.2).
 </div>
 
     </div>
