@@ -1,6 +1,6 @@
 def tick args
-  draw_triangle args, [100, 400], [140, 350], [args.mouse.x, args.mouse.y], { r: 255, a: 50 }
-  #triangle({x: 100, y: 400, x2: 140, y2: 350, x3: args.mouse.x, y3: args.mouse.y})
+  #draw_triangle args, [100, 400], [140, 350], [args.mouse.x, args.mouse.y], { r: 255, a: 50 }
+  triangle({x: 100, y: 400, x2: 140, y2: 350, x3: args.mouse.x, y3: args.mouse.y})
 
   args.outputs.debug << args.gtk.framerate_diagnostics_primitives
 end
@@ -30,7 +30,7 @@ def triangle(options = {})
   all_ys = [y, y2, y3]
   y_bounds = all_ys.minmax
   
-  pairs = [[{x: x, y: y}, {x: x2, y: y2}], [{x: x2, y: y2}, {x: x3, y: y3}], [{x: x3, y: y3}, {x: x2, y: y2}]]
+  pairs = [[{x: x, y: y}, {x: x2, y: y2}], [{x: x2, y: y2}, {x: x3, y: y3}], [{x: x3, y: y3}, {x: x, y: y}]]
 
   # we want to sweep along the "shorter" axis so that we don't have to compute as much
   # this code can definitely be simplified XD
