@@ -32,7 +32,6 @@ Triangles are defined as a hash of points, with any additional information.
 ```
 
 # TODO
-- Document new circle methods
 - Alphabetize methods in `dinrall.rb`
 - Create `triangle_intersects_triangle?` method
 - Create `rectangle_intersects_triangle?` method
@@ -46,6 +45,7 @@ Triangles are defined as a hash of points, with any additional information.
 - Impliment any item from the TODO list.
 - Write a sample app that more clearly shows all methods
 - Write a tutorial
+- Improve Documentation
 - Submit improved calculation methods
   - Speed improvements to the `triangle_raster` and `circle_raster` methods
   - Vector calculations for area over Heron's Formula
