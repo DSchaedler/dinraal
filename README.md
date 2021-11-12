@@ -50,6 +50,9 @@ Triangles are defined as a hash of points, with any additional information.
   - Speed improvements to the `triangle_raster` and `circle_raster` methods
   - Vector calculations for area over Heron's Formula
 
+## YARD
+When documenting with YARD, use the full variable / object type names found here https://rubydoc.info/gems/yard/0.9.26/YARD/CodeObjects#BUILTIN_ALL-constant
+
 # About Dinraal
 Dinraal is created by Dee Schaedler. Many thanks to the DragonRuby Discord server for inspiration and feedback. https://discord.dragonruby.org
 

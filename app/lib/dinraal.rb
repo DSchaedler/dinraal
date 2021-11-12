@@ -60,10 +60,10 @@ module Dinraal
   # @option options x [Float] Center x position.
   # @option options y [Float] Center y position.
   # @option options radius [Float] Radius of the Circle.
-  # @option options r [Int] Color red value.
-  # @option options g [Int] Color blue value.
-  # @option options b [Int] Color green value.
-  # @option options a [Int] Color alpha value.
+  # @option options r [Integer] Color red value.
+  # @option options g [Integer] Color blue value.
+  # @option options b [Integer] Color green value.
+  # @option options a [Integer] Color alpha value.
   #
   # @return [Array] An array of `primitive` `solids` in hash notation.
   def circle_outline(options = {})
@@ -103,10 +103,10 @@ module Dinraal
   # @option options x [Float] Center x position.
   # @option options y [Float] Center y position.
   # @option options radius [Float] Radius of the Circle.
-  # @option options r [Int] Color red value.
-  # @option options g [Int] Color blue value.
-  # @option options b [Int] Color green value.
-  # @option options a [Int] Color alpha value.
+  # @option options r [Integer] Color red value.
+  # @option options g [Integer] Color blue value.
+  # @option options b [Integer] Color green value.
+  # @option options a [Integer] Color alpha value.
   #
   # @return [Array] An array of `primitive` `solids` in hash notation.
   def circle_raster(options = {})
@@ -155,7 +155,7 @@ module Dinraal
   # @option options x3 [Float] Vertex 3 x position.
   # @option options y3 [Float] Vertex 3 y position.
   #
-  # @return [Bool] `true` or `false`
+  # @return [Boolean] `true` or `false`
   def point_inside_triangle?(point:, triangle:)
     args = $gtk.args
 
