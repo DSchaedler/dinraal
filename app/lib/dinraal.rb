@@ -145,15 +145,8 @@ module Dinraal
 
   # Determine if the given point is in the given triangle.
   #
-  # @param options [Hash]
-  # @option options point_x [Float]  Point x position.
-  # @option options point_y [Float]  Point y position.
-  # @option options x [Float]  Vertex 1 x position.
-  # @option options y [Float]  Vertex 1 y position.
-  # @option options x2 [Float] Vertex 2 x position.
-  # @option options y2 [Float] Vertex 2 y position.
-  # @option options x3 [Float] Vertex 3 x position.
-  # @option options y3 [Float] Vertex 3 y position.
+  # @param point [Hash]  `point` in DR notation. E.g. {x: 100, y: 100}
+  # @param triangle [Hash] `triangle` in Dinraal notation. E.g. { x: point1_x, y: point1_y, x2: point2_x, y2: point2_y, x3: point3_x, y3: point3_y, r: red, g: green, b: blue, a: alpha }
   #
   # @return [Boolean] `true` or `false`
   def point_inside_triangle?(point:, triangle:)
