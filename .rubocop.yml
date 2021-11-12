@@ -3,6 +3,7 @@ AllCops:
     - 'app/main.rb'
     - Gemfile
     - Gemfile.lock
+  NewCops: enable
 
 Layout/LineLength:
   Max: 150

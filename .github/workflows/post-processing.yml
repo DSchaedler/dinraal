@@ -1,6 +1,6 @@
-# .github/workflows/rubocop.yml
+# .github/workflows/post-processing.yml
 
-name: YARD
+name: Post-Processing
 
 on: [push, pull_request]
 
@@ -14,20 +14,12 @@ jobs:
       uses: actions/setup-ruby@v1
       with:
         ruby-version: 3.0.2 # Replace with your ruby version
-    - name: Gems Cache
-      id: gem-cache
-      uses: actions/cache@v1
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gem-
-    - name: Add YARD
-      run: bundle add yard
-    - name: Install
+    - name: Install Gems
       run: bundle install
+    - name: RuboCop Linter Action
+      run: rubocop -a --fail-level error
     - name: Run Yard
-      run: yard doc -m markdown -o docs --exclude app/main.rb 
+      run: yard doc -m markdown -o docs --exclude app/main.rb
     - uses: EndBug/add-and-commit@v7 # You can change this to use a specific version.
       with:
         # The arguments for the `git add` command (see the paragraph below for more info)
@@ -55,7 +47,7 @@ jobs:
 
         # The message for the commit.
         # Default: 'Commit from GitHub Actions (name of the workflow)'
-        message: 'Generate new YARD docs'
+        message: 'Run RuboCop Linter and update YARD docs'
 
         # The way the action should handle pathspec errors from the add and remove commands. Three options are available:
         # - ignore -> errors will be logged but the step won't fail

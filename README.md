@@ -1,6 +1,6 @@
 # dinraal
 
-[![Ruby - Rubocop](https://github.com/DSchaedler/dinraal/actions/workflows/rubocop.yml/badge.svg)](https://github.com/DSchaedler/dinraal/actions/workflows/rubocop.yml)[![YARD](https://github.com/DSchaedler/dinraal/actions/workflows/yard.yml/badge.svg)](https://github.com/DSchaedler/dinraal/actions/workflows/yard.yml)
+[![Post-Processing](https://github.com/DSchaedler/dinraal/actions/workflows/post-processing.yml/badge.svg)](https://github.com/DSchaedler/dinraal/actions/workflows/post-proecessing.yml)
 
 Dinraal is a library for working with shapes in DragonRuby Game Toolkit. By default, DRGTK does not support rendering or working with any shapes outside of rectangles. Until now, other shapes have been provided by sprites.
 
@@ -49,6 +49,9 @@ Triangles are defined as a hash of points, with any additional information.
 - Submit improved calculation methods
   - Speed improvements to the `triangle_raster` and `circle_raster` methods
   - Vector calculations for area over Heron's Formula
+
+## YARD
+When documenting with YARD, use the full variable / object type names found here https://rubydoc.info/gems/yard/0.9.26/YARD/CodeObjects#BUILTIN_ALL-constant
 
 # About Dinraal
 Dinraal is created by Dee Schaedler. Many thanks to the DragonRuby Discord server for inspiration and feedback. https://discord.dragonruby.org

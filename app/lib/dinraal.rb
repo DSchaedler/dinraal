@@ -1,20 +1,20 @@
 # frozen_string_literal: true
 
-# Module provides some Triangle generation and manipulation methods to DragonRuby Game Toolkit.
+# Module provides methods for manipulating shapes to DragonRuby Game Toolkit.
 # By D Schaedler. Released under MIT License.
 # https://github.com/DSchaedler/dinraal
 module Dinraal
-  # Calculates a `border` `rect` for the bounding box of the provided triangle
+  # Calculates a `border` for the bounding box of the given `triangle`.
   #
   # @param options [Hash]
-  # @option options x [Float]  Point 1 x position.
-  # @option options y [Float]  Point 1 x position.
-  # @option options x2 [Float] Point 2 x position.
-  # @option options y2 [Float] Point 2 x position.
-  # @option options x3 [Float] Point 3 x position.
-  # @option options y3 [Float] Point 3 x position.
+  # @option options x [Float]  Vertex 1 x position.
+  # @option options y [Float]  Vertex 1 y position.
+  # @option options x2 [Float] Vertex 2 x position.
+  # @option options y2 [Float] Vertex 2 y position.
+  # @option options x3 [Float] Vertex 3 x position.
+  # @option options y3 [Float] Vertex 3 y position.
   #
-  # @return [Hash] A DR `border` hash. E.g. `{x: 100, y: 150, w: 300, h: 400}.border!`
+  # @return [Hash] A DR `border` hash.
   def triangle_bounding_box(options = {})
     x = options[:x]
     y = options[:y]
@@ -32,17 +32,17 @@ module Dinraal
     { x: x_min, y: y_min, w: x_max - x_min, h: y_max - y_min }.border!
   end
 
-  # Calculates the center `point` of the provided triangle
+  # Calculates the center `point` of the given `triangle`.
   #
   # @param options [Hash]
-  # @option options x [Float]  Point 1 x position.
-  # @option options y [Float]  Point 1 x position.
-  # @option options x2 [Float] Point 2 x position.
-  # @option options y2 [Float] Point 2 x position.
-  # @option options x3 [Float] Point 3 x position.
-  # @option options y3 [Float] Point 3 x position.
+  # @option options x [Float]  Vertex 1 x position.
+  # @option options y [Float]  Vertex 1 y position.
+  # @option options x2 [Float] Vertex 2 x position.
+  # @option options y2 [Float] Vertex 2 y position.
+  # @option options x3 [Float] Vertex 3 x position.
+  # @option options y3 [Float] Vertex 3 y position.
   #
-  # @return [Hash] A DR `point` hash. E.g. `{x: 20, y: 45}`
+  # @return [Hash] A DR `point` hash.
   def triangle_center(options = {})
     x = options[:x]
     y = options[:y]
@@ -54,6 +54,18 @@ module Dinraal
     { x: ((x + x2 + x3) / 3).to_i, y: ((y + y2 + y3) / 3).to_i }
   end
 
+  # Creates the outline of a `circle` .
+  #
+  # @param options [Hash]
+  # @option options x [Float] Center x position.
+  # @option options y [Float] Center y position.
+  # @option options radius [Float] Radius of the `circle` .
+  # @option options r [Integer] Color red value.
+  # @option options g [Integer] Color blue value.
+  # @option options b [Integer] Color green value.
+  # @option options a [Integer] Color alpha value.
+  #
+  # @return [Array] An array of `solids` in hash notation.
   def circle_outline(options = {})
     x = options[:x]
     y = options[:y]
@@ -85,6 +97,18 @@ module Dinraal
     pixels
   end
 
+  # Create a filled `circle` using raster method.
+  #
+  # @param options [Hash]
+  # @option options x [Float] Center x position.
+  # @option options y [Float] Center y position.
+  # @option options radius [Float] Radius of the `circle``.
+  # @option options r [Integer] Color red value.
+  # @option options g [Integer] Color blue value.
+  # @option options b [Integer] Color green value.
+  # @option options a [Integer] Color alpha value.
+  #
+  # @return [Array] An array of `solids` in hash notation.
   def circle_raster(options = {})
     args = $gtk.args
 
@@ -119,6 +143,12 @@ module Dinraal
     pixels
   end
 
+  # Determines if the given `point` is in the given `triangle`.
+  #
+  # @param point [Hash]  `point` in DR hash notation.
+  # @param triangle [Hash] `triangle` in Dinraal hash notation.
+  #
+  # @return [Boolean] `true` or `false`
   def point_inside_triangle?(point:, triangle:)
     args = $gtk.args
 
@@ -139,23 +169,38 @@ module Dinraal
     leg0_slope = args.geometry.line_slope(leg0.flatten, replace_infinity: 1080)
     leg0_intercept = triangle[0][1] - (leg0_slope * triangle[0][0])
 
-    return false unless point_y <= leg0_slope * point_x + leg0_intercept
+    return false unless point_y <= (leg0_slope * point_x) + leg0_intercept
 
     leg1 = [triangle[0], triangle[2]]
     leg1_slope = args.geometry.line_slope(leg1.flatten, replace_infinity: 1080)
     leg1_intercept = triangle[0][1] - (leg1_slope * triangle[0][0])
 
-    return false unless point_y <= leg1_slope * point_x + leg1_intercept
+    return false unless point_y <= (leg1_slope * point_x) + leg1_intercept
 
     leg2 = [triangle[1], triangle[2]]
     leg2_slope = args.geometry.line_slope(leg2.flatten, replace_infinity: 1080)
     leg2_intercept = triangle[2][1] - (leg2_slope * triangle[2][0])
 
-    return false unless point_y >= leg2_slope * point_x + leg2_intercept
+    return false unless point_y >= (leg2_slope * point_x) + leg2_intercept
 
     true
   end
 
+  # Creates the outline of a `triangle`.
+  #
+  # @param options [Hash]
+  # @option options x [Float]  Vertex 1 x position.
+  # @option options y [Float]  Vertex 1 y position.
+  # @option options x2 [Float] Vertex 2 x position.
+  # @option options y2 [Float] Vertex 2 y position.
+  # @option options x3 [Float] Vertex 3 x position.
+  # @option options y3 [Float] Vertex 3 y position.
+  # @option options r [Integer] Color red value.
+  # @option options g [Integer] Color blue value.
+  # @option options b [Integer] Color green value.
+  # @option options a [Integer] Color alpha value.
+  #
+  # @return [Array] An array of `solids` in hash notation.
   def triangle_outline(options = {})
     x = options[:x]
     y = options[:y]
@@ -175,6 +220,14 @@ module Dinraal
     lines
   end
 
+  # Calculates a new `point` given a starting `point`, distance, and angle.
+  #
+  # @param options [Hash]
+  # @option options point [Hash] `point` in DR hash notation.
+  # @option options distance [Float] Distance between the given and generated point.
+  # @option options angle [Float] Angle from given `point` to generated `point` in degrees.
+  #
+  # @return [Hash] `point` in DR hash notation.
   def point_at_distance_angle(options = {})
     point = options[:point]
     distance = options[:distance]
@@ -187,6 +240,23 @@ module Dinraal
     new_point
   end
 
+  # Creates a filled `triangle` using the raster method.
+  #
+  # @param options [Hash]
+  # @option options x [Float]  Vertex 1 x position.
+  # @option options y [Float]  Vertex 1 y position.
+  # @option options x2 [Float] Vertex 2 x position.
+  # @option options y2 [Float] Vertex 2 y position.
+  # @option options x3 [Float] Vertex 3 x position.
+  # @option options y3 [Float] Vertex 3 y position.
+  # @option options r [Integer] Optional. Color red value. Defaults to `0`.
+  # @option options g [Integer] Optional. Color blue value. Defaults to `0`.
+  # @option options b [Integer] Optional. Color green value. Defaults to `0`.
+  # @option options a [Integer] Optional. Color alpha value. Defaults to `255`.
+  # @option options path [String] Optional. Image path. Defaults to `'pixel'`.
+  # @option options image_width [Float] Optional. Image width. Defaults to `triangle` width.
+  #
+  # @return [Array] An array of `solids` in hash notation.
   def triangle_raster(options = {})
     x = options[:x]
     y = options[:y]
@@ -293,6 +363,12 @@ module Dinraal
     raster_lines
   end
 
+  # Determines if the given `rect` is inside of the given `triangle`.
+  #
+  # @param rectangle [Hash] `rect` in DR hash notation.
+  # @param triangle [Hash] `triangle` in Dinraal hash notation.
+  #
+  # @return [Boolean] `true` or `false`
   def rectangle_inside_triangle?(rectangle:, triangle:)
     return false unless point_inside_triangle?(point: { x: rectangle[:x],                 y: rectangle[:y] }, triangle: triangle)
 
@@ -305,6 +381,12 @@ module Dinraal
     true
   end
 
+  # Determines if the `inner` `triangle` is contained by the `outer` `triangle`.
+  #
+  # @param inner [Hash] `triangle` in Dinraal hash notation.
+  # @param outer [Hash] `triangle` in Dinraal hash notation.
+  #
+  # @return [Boolean] `true` or `false`
   def triangle_inside_triangle?(inner:, outer:)
     # Return true if tri1 is contained by tri2
     return false unless point_inside_triangle?(point: { x: inner[:x], y: inner[:y] }, triangle: outer)
