@@ -28,11 +28,11 @@ def tick(args)
   mouse_x = args.inputs.mouse.x
   mouse_y = args.inputs.mouse.y
 
-  mouse_inside = Dinraal.point_inside_triangle?(point: { x: mouse_x, y: mouse_y }, triangle: args.state.tri1)
+  mouse_inside = Dinraal.point_inside_triangle?(point: { x: mouse_x, y: mouse_y }, triangle: tri1)
 
   outputs << { x: args.grid.center_x, y: 720, text: "Mouse inside image: #{mouse_inside}", alignment_enum: 1 }.label!
 
-  two_contains_one = Dinraal.triangle_inside_triangle?(inner: args.state.tri2, outer: args.state.tri1)
+  two_contains_one = Dinraal.triangle_inside_triangle?(inner: args.state.tri2, outer: tri1)
   outputs << { x: args.grid.center_x, y: 700, text: "Image contains red triangle: #{two_contains_one}", alignment_enum: 1 }.label!
 
   args.outputs.primitives << outputs
