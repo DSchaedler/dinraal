@@ -497,39 +497,39 @@ module Dinraal
     lines = []
   end
 
-  def point_distance p1, p2
+  def point_distance(p1, p2)
     dx = p2.x - p1.x
     dy = p2.y - p1.y
-    Math::sqrt(dx * dx + dy * dy)
+    Math.sqrt((dx * dx) + (dy * dy))
   end
-  
-  def point_distance_squared p1, p2
+
+  def point_distance_squared(p1, p2)
     dx = p2.x - p1.x
     dy = p2.y - p1.y
-    dx * dx + dy * dy
+    (dx * dx) + (dy * dy)
   end
-  
-  def point_difference p1, p2
+
+  def point_difference(p1, p2)
     [p1.x - p2.x, p1.y - p2.y]
   end
-  
-  def vertex_angle v1, v2
-    Math::acos(vertex_dot_product(v1, v2) / (vector_normal(v1) * vector_normal(v2))) * numeric_sign(vertex_cross_product(v1, v2))
+
+  def vertex_angle(v1, v2)
+    Math.acos(vertex_dot_product(v1, v2) / (vector_normal(v1) * vector_normal(v2))) * numeric_sign(vertex_cross_product(v1, v2))
   end
-  
-  def vector_normal vec
-    Math::sqrt(vec.x * vec.x + vec.y * vec.y)
+
+  def vector_normal(vec)
+    Math.sqrt((vec.x * vec.x) + (vec.y * vec.y))
   end
-  
-  def vertex_dot_product v1, v2
-    v1.x * v2.x + v1.y * v2.y
+
+  def vertex_dot_product(v1, v2)
+    (v1.x * v2.x) + (v1.y * v2.y)
   end
-  
-  def vertex_cross_product v1, v2
-    v1.x * v2.y - v2.x * v1.y
+
+  def vertex_cross_product(v1, v2)
+    (v1.x * v2.y) - (v2.x * v1.y)
   end
-  
-  def numeric_sign v
+
+  def numeric_sign(v)
     v <=> 0
   end
 end
