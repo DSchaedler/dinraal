@@ -41,7 +41,7 @@ def numeric_sign v
   v <=> 0
 end
 
-def draw_fast_triangle args, p1, p2, p3
+def draw_fast_triangle p1, p2, p3
   args = $gtk.args
 
   $dinraal_have_rt ||= false
