@@ -414,7 +414,6 @@ module Dinraal
     a = options[:a].nil? ? 255 : options[:a]
 
     color = { r: r, g: g, b: b, a: a }
-    puts color
 
     all_xs = [x, x2, x3]
     x_bounds = all_xs.minmax
@@ -525,6 +524,7 @@ module Dinraal
     a = options[:a].nil? ? 255 : options[:a]
 
     color = { r: r, g: g, b: b, a: a }
+    puts color
 
     $dinraal_have_rt ||= false
     unless $dinraal_have_rt
