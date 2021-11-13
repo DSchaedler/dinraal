@@ -473,62 +473,64 @@ module Dinraal
   def point_distance(point1:, point2:)
     dx = point2.x - point1.x
     dy = point2.y - point1.y
-    Math::sqrt(dx * dx + dy * dy)
+    Math.sqrt((dx * dx) + (dy * dy))
   end
-  
+
   def point_distance_squared(point1:, point2:)
     dx = point2.x - point1.x
     dy = point2.y - point1.y
-    dx * dx + dy * dy
+    (dx * dx) + (dy * dy)
   end
-  
+
   def point_difference(point1:, point2:)
     [point1.x - point2.x, point1.y - point2.y]
   end
-  
+
   def vector_angle(vector1:, vector2:)
-    Math::acos(vector_dot_product(vector1: vector1, vector2: vector2) / (vector_normal(vector: vector1) * vector_normal(vector: vector2))) * numeric_sign(value: vector_cross_product(vector1: vector1, vector2: vector2))
+    Math.acos(vector_dot_product(vector1: vector1,
+                                 vector2: vector2) / (vector_normal(vector: vector1) * vector_normal(vector: vector2))) * numeric_sign(value: vector_cross_product(vector1: vector1,
+                                                                                                                                                                   vector2: vector2))
   end
-  
+
   def vector_normal(vector:)
-    Math::sqrt(vector.x * vector.x + vector.y * vector.y)
+    Math.sqrt((vector.x * vector.x) + (vector.y * vector.y))
   end
-  
+
   def vector_dot_product(vector1:, vector2:)
-    vector1.x * vector2.x + vector1.y * vector2.y
+    (vector1.x * vector2.x) + (vector1.y * vector2.y)
   end
-  
+
   def vector_cross_product(vector1:, vector2:)
-    vector1.x * vector2.y - vector2.x * vector1.y
+    (vector1.x * vector2.y) - (vector2.x * vector1.y)
   end
-  
+
   def numeric_sign(value:)
     value <=> 0
   end
-  
+
   def triangle(options = {})
     args = $gtk.args
-  
+
     x = options[:x]
     y = options[:y]
     x2 = options[:x2]
     y2 = options[:y2]
     x3 = options[:x3]
     y3 = options[:y3]
-  
+
     r = options[:r].nil? ? 0 : options[:r]
     g = options[:g].nil? ? 0 : options[:g]
     b = options[:b].nil? ? 0 : options[:b]
     a = options[:a].nil? ? 255 : options[:a]
-  
+
     color = { r: r, g: g, b: b, a: a }
-  
+
     $dinraal_have_rt ||= false
     unless $dinraal_have_rt
       rt_width = 1280
-      sqrt2 = Math::sqrt(2)
+      sqrt2 = Math.sqrt(2)
       square_width = rt_width * sqrt2
-    
+
       args.outputs[:dinraal_solid].w = square_width
       args.outputs[:dinraal_solid].h = square_width
       args.outputs[:dinraal_solid].solids << {
@@ -543,41 +545,41 @@ module Dinraal
       }
       $dinraal_have_rt = true
     end
-  
+
     p1 = [x, y]
     p2 = [x2, y2]
     p3 = [x3, y3]
-  
+
     # we want the points to be clockwise
-    th1 = vector_angle( vector1: point_difference(point1: p2, point2: p1), vector2: point_difference(point1: p3, point2: p1) )
+    th1 = vector_angle(vector1: point_difference(point1: p2, point2: p1), vector2: point_difference(point1: p3, point2: p1))
     if th1 < 0
       temp_point = p2
       p2 = p3
       p3 = temp_point
     end
     points = [p1, p2, p3]
-  
+
     # we want p1 -> p2 to be the longest dist
     lengths = (points + [points[0]]).each_cons(2).map do |a, b|
       point_distance_squared(point1: a, point2: b)
     end
     idx = lengths.index(lengths.max)
     p1, p2, p3 = points.rotate(lengths.index(lengths.max))[0..2]
-  
-    l1 = point_distance( point1: p1, point2: p3 )
-    l2 = point_distance( point1: p2, point2: p3 )
-  
-    th1 = vector_angle(vector1: point_difference(point1: p2, point2: p1), vector2: point_difference(point1: p3, point2: p1) )
-    th2 = vector_angle(vector1: point_difference(point1: p1, point2: p2), vector2: point_difference(point1: p3, point2: p2) )
-  
-    h = l1 * Math::sin(th1.abs)
-    w1 = l1 * Math::cos(th1.abs)
-    w2 = l2 * Math::cos(th2.abs)
-  
-    th = Math::atan2(p2.y - p1.y, p2.x - p1.x)
-  
+
+    l1 = point_distance(point1: p1, point2: p3)
+    l2 = point_distance(point1: p2, point2: p3)
+
+    th1 = vector_angle(vector1: point_difference(point1: p2, point2: p1), vector2: point_difference(point1: p3, point2: p1))
+    th2 = vector_angle(vector1: point_difference(point1: p1, point2: p2), vector2: point_difference(point1: p3, point2: p2))
+
+    h = l1 * Math.sin(th1.abs)
+    w1 = l1 * Math.cos(th1.abs)
+    w2 = l2 * Math.cos(th2.abs)
+
+    th = Math.atan2(p2.y - p1.y, p2.x - p1.x)
+
     primitives = []
-  
+
     primitives << {
       x: p1.x, y: p1.y,
       w: w1, h: h,
@@ -587,30 +589,30 @@ module Dinraal
       angle: th * 180 / Math::PI
     }.merge(color).sprite!
     primitives << {
-      x: p1.x + w1 * Math::cos(th), y: p1.y + w1 * Math::sin(th),
+      x: p1.x + (w1 * Math.cos(th)), y: p1.y + (w1 * Math.sin(th)),
       angle_anchor_x: 0, angle_anchor_y: 0,
       w: w2, h: h,
       path: :dinraal_triangle_part,
       angle: th * 180 / Math::PI
-    }.merge(color).sprite! 
-  
+    }.merge(color).sprite!
+
     primitives << {
-      x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
+      x: p1.x + (w1 * Math.cos(th)) + 0.5, y: p1.y + (w1 * Math.sin(th)) + 0.5,
       x2: p3.x + 0.5, y2: p3.y + 0.5
     }.merge(color).line!
     primitives << {
-      x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
+      x: p1.x + (w1 * Math.cos(th)) - 0.5, y: p1.y + (w1 * Math.sin(th)) - 0.5,
       x2: p3.x - 0.5, y2: p3.y - 0.5
     }.merge(color).line!
     primitives << {
-      x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
+      x: p1.x + (w1 * Math.cos(th)) + 0.5, y: p1.y + (w1 * Math.sin(th)) - 0.5,
       x2: p3.x + 0.5, y2: p3.y - 0.5
     }.merge(color).lines
     primitives << {
-      x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
+      x: p1.x + (w1 * Math.cos(th)) - 0.5, y: p1.y + (w1 * Math.sin(th)) + 0.5,
       x2: p3.x - 0.5, y2: p3.y + 0.5
     }.merge(color).line!
-  
+
     primitives
   end
 end
