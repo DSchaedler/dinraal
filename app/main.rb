@@ -94,16 +94,16 @@ def draw_fast_triangle(options = {})
 
   # we want p1 -> p2 to be the longest dist
   lengths = (points + [points[0]]).each_cons(2).map do |a, b|
-    point_distance_squared a, b
+    point_distance_squared(point1: a, point2: b)
   end
   idx = lengths.index(lengths.max)
   p1, p2, p3 = points.rotate(lengths.index(lengths.max))[0..2]
 
-  l1 = point_distance p1, p3
-  l2 = point_distance p2, p3
+  l1 = point_distance( point1: p1, point2: p3 )
+  l2 = point_distance( point1: p2, point2: p3 )
 
-  th1 = vector_angle point_difference(p2, p1), point_difference(p3, p1)
-  th2 = vector_angle point_difference(p1, p2), point_difference(p3, p2)
+  th1 = vector_angle(vector1: point_difference(point1: p2, point2: p1), vector2: point_difference(point1: p3, point2: p1) )
+  th2 = vector_angle(vector1: point_difference(point1: p1, point2: p2), vector2: point_difference(point1: p3, point2: p2) )
 
   h = l1 * Math::sin(th1.abs)
   w1 = l1 * Math::cos(th1.abs)
