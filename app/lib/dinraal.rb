@@ -527,7 +527,7 @@ module Dinraal
     $rt_color_old ||= rt_color
 
     $dinraal_have_rt ||= false
-    unless rt_color != $rt_color_old || $dinraal_have_rt
+    unless rt_color != $rt_color_old|| $dinraal_have_rt 
       $rt_color_old = rt_color
 
       rt_width = 1280
@@ -602,19 +602,19 @@ module Dinraal
     primitives << {
       x: p1.x + (w1 * Math.cos(th)) + 0.5, y: p1.y + (w1 * Math.sin(th)) + 0.5,
       x2: p3.x + 0.5, y2: p3.y + 0.5
-    }.merge(color).line!
+    }.merge($rt_color_old).line!
     primitives << {
       x: p1.x + (w1 * Math.cos(th)) - 0.5, y: p1.y + (w1 * Math.sin(th)) - 0.5,
       x2: p3.x - 0.5, y2: p3.y - 0.5
-    }.merge(color).line!
+    }.merge($rt_color_old).line!
     primitives << {
       x: p1.x + (w1 * Math.cos(th)) + 0.5, y: p1.y + (w1 * Math.sin(th)) - 0.5,
       x2: p3.x + 0.5, y2: p3.y - 0.5
-    }.merge(color).lines
+    }.merge($rt_color_old).lines
     primitives << {
       x: p1.x + (w1 * Math.cos(th)) - 0.5, y: p1.y + (w1 * Math.sin(th)) + 0.5,
       x2: p3.x - 0.5, y2: p3.y + 0.5
-    }.merge(color).line!
+    }.merge($rt_color_old).line!
 
     primitives
   end
