@@ -21,24 +21,24 @@ def point_difference(point1:, point2:)
   {x: point1.x - point2.x, y: point1.y - point2.y}
 end
 
-def vector_angle v1, v2
-  Math::acos(vector_dot_product(v1, v2) / (vector_normal(v1) * vector_normal(v2))) * numeric_sign(vector_dot_product(v1, v2))
+def vector_angle(vector1:, vector2:)
+  Math::acos(vector_dot_product(vector1: vector1, vector2: vector2) / (vector_normal(vector: vector1) * vector_normal(vector: vector2))) * numeric_sign(value: vector_dot_product(vector1: vector1, vector2: vector2))
 end
 
-def vector_normal vec
-  Math::sqrt(vec.x * vec.x + vec.y * vec.y)
+def vector_normal(vector:)
+  Math::sqrt(vector.x * vector.x + vector.y * vector.y)
 end
 
-def vector_dot_product v1, v2
-  v1.x * v2.x + v1.y * v2.y
+def vector_dot_product(vector1:, vector2:)
+  vector1.x * vector2.x + vector1.y * vector2.y
 end
 
-def vector_dot_product v1, v2
-  v1.x * v2.y - v2.x * v1.y
+def vector_dot_product(vector1:, vector2:)
+  vector1.x * vector2.y - vector2.x * vector1.y
 end
 
-def numeric_sign v
-  v <=> 0
+def numeric_sign(value:)
+  value <=> 0
 end
 
 def draw_fast_triangle(options = {})
