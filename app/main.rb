@@ -43,11 +43,11 @@ def numeric_sign v
 end
 
 def draw_fast_triangle args, p1, p2, p3
-  args.outputs.borders << [p1, p2, p3].map do |p|
-    {
-      x: p.x - 4, y: p.y - 4, w: 8, h: 8, r: 255
-    }
-  end
+  # args.outputs.borders << [p1, p2, p3].map do |p|
+  #   {
+  #     x: p.x - 4, y: p.y - 4, w: 8, h: 8, r: 255
+  #   }
+  # end
 
   # we want the points to be clockwise
   th1 = vertex_angle point_difference(p2, p1), point_difference(p3, p1)
