@@ -481,12 +481,12 @@ module Dinraal
     lines
   end
 
-  # 
+  #
   #
   # @param p0 [Array] A `point` in array notation
   # @param p1 [Array] A `point` in array notation
   #
-  # @return [] 
+  # @return []
   def two_point_eq(p0, p1)
     ->(x) { ((p1.y - p0.y) / (p1.x - p0.x) * (x - p0.x)) + p0.y }
   end
@@ -496,7 +496,7 @@ module Dinraal
   # @param point1: [Array] A `point` in array notation
   # @param point2: [Array] A `point` in array notation
   #
-  # @return [Float] 
+  # @return [Float]
   def point_distance(point1:, point2:)
     dx = point2.x - point1.x
     dy = point2.y - point1.y
@@ -508,7 +508,7 @@ module Dinraal
   # @param point1: [Array] A `point` in array notation
   # @param point2: [Array] A `point` in array notation
   #
-  # @return [Float] 
+  # @return [Float]
   def point_distance_squared(point1:, point2:)
     dx = point2.x - point1.x
     dy = point2.y - point1.y
@@ -545,7 +545,7 @@ module Dinraal
 
   # Determines the sign of the provided value
   #
-  # @param value: [Float] 
+  # @param value: [Float]
   #
   # @return [Int] `-1`, `0`, or `1`
   def numeric_sign(value:)

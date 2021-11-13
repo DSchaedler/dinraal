@@ -170,7 +170,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#numeric_sign-instance_method" title="#numeric_sign (instance method)">#<strong>numeric_sign</strong>(value:)  &#x21d2; Object </a>
+      <a href="#numeric_sign-instance_method" title="#numeric_sign (instance method)">#<strong>numeric_sign</strong>(value:)  &#x21d2; Int </a>
     
 
     
@@ -184,7 +184,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Determines the sign of the provided value.</p>
+</div></span>
   
 </li>
 
@@ -216,7 +218,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#point_difference-instance_method" title="#point_difference (instance method)">#<strong>point_difference</strong>(point1:, point2:)  &#x21d2; Object </a>
+      <a href="#point_difference-instance_method" title="#point_difference (instance method)">#<strong>point_difference</strong>(point1:, point2:)  &#x21d2; Array </a>
     
 
     
@@ -230,7 +232,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Calculates the difference between two points.</p>
+</div></span>
   
 </li>
 
@@ -238,7 +242,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#point_distance-instance_method" title="#point_distance (instance method)">#<strong>point_distance</strong>(point1:, point2:)  &#x21d2; Object </a>
+      <a href="#point_distance-instance_method" title="#point_distance (instance method)">#<strong>point_distance</strong>(point1:, point2:)  &#x21d2; Float </a>
     
 
     
@@ -252,7 +256,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Calculates the distance between two points.</p>
+</div></span>
   
 </li>
 
@@ -260,7 +266,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#point_distance_squared-instance_method" title="#point_distance_squared (instance method)">#<strong>point_distance_squared</strong>(point1:, point2:)  &#x21d2; Object </a>
+      <a href="#point_distance_squared-instance_method" title="#point_distance_squared (instance method)">#<strong>point_distance_squared</strong>(point1:, point2:)  &#x21d2; Float </a>
     
 
     
@@ -274,7 +280,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Calculates the distance squared between two points.</p>
+</div></span>
   
 </li>
 
@@ -330,7 +338,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#triangle-instance_method" title="#triangle (instance method)">#<strong>triangle</strong>(options = {})  &#x21d2; Object </a>
+      <a href="#triangle-instance_method" title="#triangle (instance method)">#<strong>triangle</strong>(options = {})  &#x21d2; Array </a>
     
 
     
@@ -344,7 +352,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a filled <code>triangle</code>.</p>
+</div></span>
   
 </li>
 
@@ -472,7 +482,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="#triangle_raster_fast-instance_method" title="#triangle_raster_fast (instance method)">#<strong>triangle_raster_fast</strong>(options = {})  &#x21d2; Object </a>
+      <a href="#triangle_raster_fast-instance_method" title="#triangle_raster_fast (instance method)">#<strong>triangle_raster_fast</strong>(options = {})  &#x21d2; Array </a>
     
 
     
@@ -486,7 +496,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>A faster method for drawing raster triangles.</p>
+</div></span>
   
 </li>
 
@@ -508,7 +520,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>[].</p>
+</div></span>
   
 </li>
 
@@ -1079,24 +1093,68 @@
       <div class="method_details ">
   <h3 class="signature " id="numeric_sign-instance_method">
   
-    #<strong>numeric_sign</strong>(value:)  &#x21d2; <tt>Object</tt> 
+    #<strong>numeric_sign</strong>(value:)  &#x21d2; <tt>Int</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Determines the sign of the provided value</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>value:</span>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Int</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p><code>-1</code>, <code>0</code>, or <code>1</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-507
-508
-509</pre>
+551
+552
+553</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 507</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 551</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_numeric_sign'>numeric_sign</span><span class='lparen'>(</span><span class='label'>value:</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_value'>value</span> <span class='op'>&lt;=&gt;</span> <span class='int'>0</span>
@@ -1249,24 +1307,89 @@
       <div class="method_details ">
   <h3 class="signature " id="point_difference-instance_method">
   
-    #<strong>point_difference</strong>(point1:, point2:)  &#x21d2; <tt>Object</tt> 
+    #<strong>point_difference</strong>(point1:, point2:)  &#x21d2; <tt>Array</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculates the difference between two points</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point1:</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A <code>point</code> in array notation</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>point2:</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A <code>point</code> in array notation</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array with the x difference as <code>[0]</code> and the y distance as <code>[1]</code></p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-485
-486
-487</pre>
+524
+525
+526</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 485</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 524</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_point_difference'>point_difference</span><span class='lparen'>(</span><span class='label'>point1:</span><span class='comma'>,</span> <span class='label'>point2:</span><span class='rparen'>)</span>
   <span class='lbracket'>[</span><span class='id identifier rubyid_point1'>point1</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span> <span class='op'>-</span> <span class='id identifier rubyid_point2'>point2</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_point1'>point1</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span> <span class='op'>-</span> <span class='id identifier rubyid_point2'>point2</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span><span class='rbracket'>]</span>
@@ -1279,26 +1402,86 @@
       <div class="method_details ">
   <h3 class="signature " id="point_distance-instance_method">
   
-    #<strong>point_distance</strong>(point1:, point2:)  &#x21d2; <tt>Object</tt> 
+    #<strong>point_distance</strong>(point1:, point2:)  &#x21d2; <tt>Float</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculates the distance between two points</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point1:</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A <code>point</code> in array notation</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>point2:</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A <code>point</code> in array notation</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-473
-474
-475
-476
-477</pre>
+500
+501
+502
+503
+504</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 473</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 500</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_point_distance'>point_distance</span><span class='lparen'>(</span><span class='label'>point1:</span><span class='comma'>,</span> <span class='label'>point2:</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dx'>dx</span> <span class='op'>=</span> <span class='id identifier rubyid_point2'>point2</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span> <span class='op'>-</span> <span class='id identifier rubyid_point1'>point1</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span>
@@ -1313,26 +1496,86 @@
       <div class="method_details ">
   <h3 class="signature " id="point_distance_squared-instance_method">
   
-    #<strong>point_distance_squared</strong>(point1:, point2:)  &#x21d2; <tt>Object</tt> 
+    #<strong>point_distance_squared</strong>(point1:, point2:)  &#x21d2; <tt>Float</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Calculates the distance squared between two points</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>point1:</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A <code>point</code> in array notation</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>point2:</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A <code>point</code> in array notation</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Float</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-479
-480
-481
-482
-483</pre>
+512
+513
+514
+515
+516</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 479</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 512</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_point_distance_squared'>point_distance_squared</span><span class='lparen'>(</span><span class='label'>point1:</span><span class='comma'>,</span> <span class='label'>point2:</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_dx'>dx</span> <span class='op'>=</span> <span class='id identifier rubyid_point2'>point2</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span> <span class='op'>-</span> <span class='id identifier rubyid_point1'>point1</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span>
@@ -1619,77 +1862,203 @@
       <div class="method_details ">
   <h3 class="signature " id="triangle-instance_method">
   
-    #<strong>triangle</strong>(options = {})  &#x21d2; <tt>Object</tt> 
+    #<strong>triangle</strong>(options = {})  &#x21d2; <tt>Array</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Creates a filled <code>triangle</code>.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">x</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 1 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 1 y position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">x2</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 2 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y2</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 2 y position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">x3</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 3 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y3</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 3 y position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">r</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color red value. Defaults to <code>0</code>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">g</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color blue value. Defaults to <code>0</code>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">b</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color green value. Defaults to <code>0</code>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">a</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color alpha value. Defaults to <code>255</code>.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of <code>primitives</code> in hash notation.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-511
-512
-513
-514
-515
-516
-517
-518
-519
-520
-521
-522
-523
-524
-525
-526
-527
-528
-529
-530
-531
-532
-533
-534
-535
-536
-537
-538
-539
-540
-541
-542
-543
-544
-545
-546
-547
-548
-549
-550
-551
-552
-553
-554
-555
-556
-557
-558
-559
-560
-561
-562
-563
-564
-565
-566
-567
-568
-569
 570
 571
 572
@@ -1740,10 +2109,69 @@
 617
 618
 619
-620</pre>
+620
+621
+622
+623
+624
+625
+626
+627
+628
+629
+630
+631
+632
+633
+634
+635
+636
+637
+638
+639
+640
+641
+642
+643
+644
+645
+646
+647
+648
+649
+650
+651
+652
+653
+654
+655
+656
+657
+658
+659
+660
+661
+662
+663
+664
+665
+666
+667
+668
+669
+670
+671
+672
+673
+674
+675
+676
+677
+678
+679</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 511</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 570</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle'>triangle</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='gvar'>$gtk</span><span class='period'>.</span><span class='id identifier rubyid_args'>args</span>
@@ -3028,33 +3456,203 @@
       <div class="method_details ">
   <h3 class="signature " id="triangle_raster_fast-instance_method">
   
-    #<strong>triangle_raster_fast</strong>(options = {})  &#x21d2; <tt>Object</tt> 
+    #<strong>triangle_raster_fast</strong>(options = {})  &#x21d2; <tt>Array</tt> 
   
 
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>A faster method for drawing raster triangles. Does not support images</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    <p class="tag_title">Options Hash (<tt>options</tt>):</p>
+    <ul class="option">
+      
+        <li>
+          <span class="name">x</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 1 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 1 y position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">x2</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 2 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y2</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 2 y position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">x3</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 3 x position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">y3</span>
+          <span class="type">(<tt>Float</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Vertex 3 y position.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">r</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color red value. Defaults to <code>0</code>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">g</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color blue value. Defaults to <code>0</code>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">b</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color green value. Defaults to <code>0</code>.</p>
+</div>
+          
+        </li>
+      
+        <li>
+          <span class="name">a</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+          </span>
+          
+            &mdash; <div class='inline'>
+<p>Optional. Color alpha value. Defaults to <code>255</code>.</p>
+</div>
+          
+        </li>
+      
+    </ul>
+  
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of <code>lines</code> in hash notation.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-401
-402
-403
-404
-405
-406
-407
-408
-409
-410
-411
-412
-413
-414
-415
 416
 417
 418
@@ -3106,10 +3704,25 @@
 464
 465
 466
-467</pre>
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 401</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 416</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_triangle_raster_fast'>triangle_raster_fast</span><span class='lparen'>(</span><span class='id identifier rubyid_options'>options</span> <span class='op'>=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
   <span class='id identifier rubyid_args'>args</span> <span class='op'>=</span> <span class='gvar'>$gtk</span><span class='period'>.</span><span class='id identifier rubyid_args'>args</span>
@@ -3192,18 +3805,83 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Returns [].</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>p0</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A <code>point</code> in array notation</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>p1</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>A <code>point</code> in array notation</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+<p class="tag_title">Returns:</p>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'></span>
+      
+      
+      
+        
+        <div class='inline'>
+<p>[]</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-469
-470
-471</pre>
+490
+491
+492</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 469</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 490</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_two_point_eq'>two_point_eq</span><span class='lparen'>(</span><span class='id identifier rubyid_p0'>p0</span><span class='comma'>,</span> <span class='id identifier rubyid_p1'>p1</span><span class='rparen'>)</span>
   <span class='tlambda'>-&gt;</span><span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span> <span class='tlambeg'>{</span> <span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_p1'>p1</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span> <span class='op'>-</span> <span class='id identifier rubyid_p0'>p0</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='lparen'>(</span><span class='id identifier rubyid_p1'>p1</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span> <span class='op'>-</span> <span class='id identifier rubyid_p0'>p0</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span> <span class='op'>*</span> <span class='lparen'>(</span><span class='id identifier rubyid_x'>x</span> <span class='op'>-</span> <span class='id identifier rubyid_p0'>p0</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='id identifier rubyid_p0'>p0</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span> <span class='rbrace'>}</span>
@@ -3228,14 +3906,14 @@
       <pre class="lines">
 
 
-489
-490
-491
-492
-493</pre>
+528
+529
+530
+531
+532</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 489</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 528</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_vector_angle'>vector_angle</span><span class='lparen'>(</span><span class='label'>vector1:</span><span class='comma'>,</span> <span class='label'>vector2:</span><span class='rparen'>)</span>
   <span class='const'>Math</span><span class='period'>.</span><span class='id identifier rubyid_acos'>acos</span><span class='lparen'>(</span><span class='id identifier rubyid_vector_dot_product'>vector_dot_product</span><span class='lparen'>(</span><span class='label'>vector1:</span> <span class='id identifier rubyid_vector1'>vector1</span><span class='comma'>,</span>
@@ -3262,12 +3940,12 @@
       <pre class="lines">
 
 
-503
-504
-505</pre>
+542
+543
+544</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 503</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 542</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_vector_cross_product'>vector_cross_product</span><span class='lparen'>(</span><span class='label'>vector1:</span><span class='comma'>,</span> <span class='label'>vector2:</span><span class='rparen'>)</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_vector1'>vector1</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span> <span class='op'>*</span> <span class='id identifier rubyid_vector2'>vector2</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span> <span class='op'>-</span> <span class='lparen'>(</span><span class='id identifier rubyid_vector2'>vector2</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span> <span class='op'>*</span> <span class='id identifier rubyid_vector1'>vector1</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
@@ -3292,12 +3970,12 @@
       <pre class="lines">
 
 
-499
-500
-501</pre>
+538
+539
+540</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 499</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 538</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_vector_dot_product'>vector_dot_product</span><span class='lparen'>(</span><span class='label'>vector1:</span><span class='comma'>,</span> <span class='label'>vector2:</span><span class='rparen'>)</span>
   <span class='lparen'>(</span><span class='id identifier rubyid_vector1'>vector1</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span> <span class='op'>*</span> <span class='id identifier rubyid_vector2'>vector2</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_vector1'>vector1</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span> <span class='op'>*</span> <span class='id identifier rubyid_vector2'>vector2</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span>
@@ -3322,12 +4000,12 @@
       <pre class="lines">
 
 
-495
-496
-497</pre>
+534
+535
+536</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 495</span>
+      <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 534</span>
 
 <span class='kw'>def</span> <span class='id identifier rubyid_vector_normal'>vector_normal</span><span class='lparen'>(</span><span class='label'>vector:</span><span class='rparen'>)</span>
   <span class='const'>Math</span><span class='period'>.</span><span class='id identifier rubyid_sqrt'>sqrt</span><span class='lparen'>(</span><span class='lparen'>(</span><span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span> <span class='op'>*</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span> <span class='op'>*</span> <span class='id identifier rubyid_vector'>vector</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span><span class='rparen'>)</span><span class='rparen'>)</span>
@@ -3342,7 +4020,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Nov 13 12:49:11 2021 by
+  Generated on Sat Nov 13 13:12:53 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.2).
 </div>
