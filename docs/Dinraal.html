@@ -1738,7 +1738,9 @@
 615
 616
 617
-618</pre>
+618
+619
+620</pre>
     </td>
     <td>
       <pre class="code"><span class="info file"># File 'app/lib/dinraal.rb', line 511</span>
@@ -1758,11 +1760,13 @@
   <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:b</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:b</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:a</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='int'>255</span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:a</span><span class='rbracket'>]</span>
 
-  <span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>r:</span> <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_g'>g</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_a'>a</span> <span class='rbrace'>}</span>
-  <span class='id identifier rubyid_puts'>puts</span> <span class='id identifier rubyid_color'>color</span>
+  <span class='id identifier rubyid_rt_color'>rt_color</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>r:</span> <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_g'>g</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_a'>a</span> <span class='rbrace'>}</span>
+  <span class='gvar'>$rt_color_old</span> <span class='op'>||=</span> <span class='id identifier rubyid_rt_color'>rt_color</span>
 
   <span class='gvar'>$dinraal_have_rt</span> <span class='op'>||=</span> <span class='kw'>false</span>
-  <span class='kw'>unless</span> <span class='gvar'>$dinraal_have_rt</span>
+  <span class='kw'>unless</span> <span class='id identifier rubyid_rt_color'>rt_color</span> <span class='op'>!=</span> <span class='gvar'>$rt_color_old</span> <span class='op'>||</span> <span class='gvar'>$dinraal_have_rt</span>
+    <span class='gvar'>$rt_color_old</span> <span class='op'>=</span> <span class='id identifier rubyid_rt_color'>rt_color</span>
+
     <span class='id identifier rubyid_rt_width'>rt_width</span> <span class='op'>=</span> <span class='int'>1280</span>
     <span class='id identifier rubyid_sqrt2'>sqrt2</span> <span class='op'>=</span> <span class='const'>Math</span><span class='period'>.</span><span class='id identifier rubyid_sqrt'>sqrt</span><span class='lparen'>(</span><span class='int'>2</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_square_width'>square_width</span> <span class='op'>=</span> <span class='id identifier rubyid_rt_width'>rt_width</span> <span class='op'>*</span> <span class='id identifier rubyid_sqrt2'>sqrt2</span>
@@ -1771,14 +1775,14 @@
     <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_outputs'>outputs</span><span class='lbracket'>[</span><span class='symbol'>:dinraal_solid</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_h'>h</span> <span class='op'>=</span> <span class='id identifier rubyid_square_width'>square_width</span>
     <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_outputs'>outputs</span><span class='lbracket'>[</span><span class='symbol'>:dinraal_solid</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_solids'>solids</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span>
       <span class='label'>w:</span> <span class='id identifier rubyid_square_width'>square_width</span><span class='comma'>,</span> <span class='label'>h:</span> <span class='id identifier rubyid_square_width'>square_width</span>
-    <span class='rbrace'>}</span>
+    <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='gvar'>$rt_color_old</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_outputs'>outputs</span><span class='lbracket'>[</span><span class='symbol'>:dinraal_triangle_part</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_w'>w</span> <span class='op'>=</span> <span class='id identifier rubyid_rt_width'>rt_width</span>
     <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_outputs'>outputs</span><span class='lbracket'>[</span><span class='symbol'>:dinraal_triangle_part</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_h'>h</span> <span class='op'>=</span> <span class='id identifier rubyid_rt_width'>rt_width</span>
     <span class='id identifier rubyid_args'>args</span><span class='period'>.</span><span class='id identifier rubyid_outputs'>outputs</span><span class='lbracket'>[</span><span class='symbol'>:dinraal_triangle_part</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_sprites'>sprites</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span>
       <span class='label'>x:</span> <span class='op'>-</span><span class='id identifier rubyid_rt_width'>rt_width</span> <span class='op'>/</span> <span class='id identifier rubyid_sqrt2'>sqrt2</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='op'>-</span><span class='id identifier rubyid_rt_width'>rt_width</span> <span class='op'>/</span> <span class='id identifier rubyid_sqrt2'>sqrt2</span><span class='comma'>,</span>
       <span class='label'>w:</span> <span class='id identifier rubyid_square_width'>square_width</span><span class='comma'>,</span> <span class='label'>h:</span> <span class='id identifier rubyid_square_width'>square_width</span><span class='comma'>,</span>
       <span class='label'>angle:</span> <span class='int'>45</span><span class='comma'>,</span> <span class='label'>path:</span> <span class='symbol'>:dinraal_solid</span>
-    <span class='rbrace'>}</span>
+    <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='gvar'>$rt_color_old</span><span class='rparen'>)</span>
     <span class='gvar'>$dinraal_have_rt</span> <span class='op'>=</span> <span class='kw'>true</span>
   <span class='kw'>end</span>
 
@@ -1823,14 +1827,14 @@
     <span class='label'>flip_horizontally:</span> <span class='kw'>true</span><span class='comma'>,</span>
     <span class='label'>path:</span> <span class='symbol'>:dinraal_triangle_part</span><span class='comma'>,</span>
     <span class='label'>angle:</span> <span class='id identifier rubyid_th'>th</span> <span class='op'>*</span> <span class='int'>180</span> <span class='op'>/</span> <span class='const'>Math</span><span class='op'>::</span><span class='const'>PI</span>
-  <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_color'>color</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_sprite!'>sprite!</span>
+  <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_sprite!'>sprite!</span>
   <span class='id identifier rubyid_primitives'>primitives</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span>
     <span class='label'>x:</span> <span class='id identifier rubyid_p1'>p1</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_w1'>w1</span> <span class='op'>*</span> <span class='const'>Math</span><span class='period'>.</span><span class='id identifier rubyid_cos'>cos</span><span class='lparen'>(</span><span class='id identifier rubyid_th'>th</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_p1'>p1</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_w1'>w1</span> <span class='op'>*</span> <span class='const'>Math</span><span class='period'>.</span><span class='id identifier rubyid_sin'>sin</span><span class='lparen'>(</span><span class='id identifier rubyid_th'>th</span><span class='rparen'>)</span><span class='rparen'>)</span><span class='comma'>,</span>
     <span class='label'>angle_anchor_x:</span> <span class='int'>0</span><span class='comma'>,</span> <span class='label'>angle_anchor_y:</span> <span class='int'>0</span><span class='comma'>,</span>
     <span class='label'>w:</span> <span class='id identifier rubyid_w2'>w2</span><span class='comma'>,</span> <span class='label'>h:</span> <span class='id identifier rubyid_h'>h</span><span class='comma'>,</span>
     <span class='label'>path:</span> <span class='symbol'>:dinraal_triangle_part</span><span class='comma'>,</span>
     <span class='label'>angle:</span> <span class='id identifier rubyid_th'>th</span> <span class='op'>*</span> <span class='int'>180</span> <span class='op'>/</span> <span class='const'>Math</span><span class='op'>::</span><span class='const'>PI</span>
-  <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_merge'>merge</span><span class='lparen'>(</span><span class='id identifier rubyid_color'>color</span><span class='rparen'>)</span><span class='period'>.</span><span class='id identifier rubyid_sprite!'>sprite!</span>
+  <span class='rbrace'>}</span><span class='period'>.</span><span class='id identifier rubyid_sprite!'>sprite!</span>
 
   <span class='id identifier rubyid_primitives'>primitives</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span>
     <span class='label'>x:</span> <span class='id identifier rubyid_p1'>p1</span><span class='period'>.</span><span class='id identifier rubyid_x'>x</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_w1'>w1</span> <span class='op'>*</span> <span class='const'>Math</span><span class='period'>.</span><span class='id identifier rubyid_cos'>cos</span><span class='lparen'>(</span><span class='id identifier rubyid_th'>th</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='float'>0.5</span><span class='comma'>,</span> <span class='label'>y:</span> <span class='id identifier rubyid_p1'>p1</span><span class='period'>.</span><span class='id identifier rubyid_y'>y</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id identifier rubyid_w1'>w1</span> <span class='op'>*</span> <span class='const'>Math</span><span class='period'>.</span><span class='id identifier rubyid_sin'>sin</span><span class='lparen'>(</span><span class='id identifier rubyid_th'>th</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='op'>+</span> <span class='float'>0.5</span><span class='comma'>,</span>
@@ -3338,7 +3342,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Nov 13 12:42:50 2021 by
+  Generated on Sat Nov 13 12:46:12 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.2).
 </div>
