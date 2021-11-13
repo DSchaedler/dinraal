@@ -33,7 +33,7 @@ def vector_dot_product(vector1:, vector2:)
   vector1.x * vector2.x + vector1.y * vector2.y
 end
 
-def vector_dot_product(vector1:, vector2:)
+def vector_cross_product(vector1:, vector2:)
   vector1.x * vector2.y - vector2.x * vector1.y
 end
 
