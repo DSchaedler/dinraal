@@ -527,7 +527,7 @@ module Dinraal
     $rt_color_old ||= rt_color
 
     $dinraal_have_rt ||= false
-    unless rt_color != $rt_color_old|| $dinraal_have_rt 
+    unless rt_color != $rt_color_old || $dinraal_have_rt
       $rt_color_old = rt_color
 
       rt_width = 1280
