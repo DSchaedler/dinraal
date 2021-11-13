@@ -93,22 +93,22 @@ def draw_fast_triangle args, p1, p2, p3
     angle: th * 180 / Math::PI
   }
 
-  args.outputs.lines << {
-    x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
-    x2: p3.x + 0.5, y2: p3.y + 0.5
-  }
-  args.outputs.lines << {
-    x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
-    x2: p3.x - 0.5, y2: p3.y - 0.5
-  }
-  args.outputs.lines << {
-    x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
-    x2: p3.x + 0.5, y2: p3.y - 0.5
-  }
-  args.outputs.lines << {
-    x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
-    x2: p3.x - 0.5, y2: p3.y + 0.5
-  }
+  # args.outputs.lines << {
+  #   x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
+  #   x2: p3.x + 0.5, y2: p3.y + 0.5
+  # }
+  # args.outputs.lines << {
+  #   x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
+  #   x2: p3.x - 0.5, y2: p3.y - 0.5
+  # }
+  # args.outputs.lines << {
+  #   x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
+  #   x2: p3.x + 0.5, y2: p3.y - 0.5
+  # }
+  # args.outputs.lines << {
+  #   x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
+  #   x2: p3.x - 0.5, y2: p3.y + 0.5
+  # }
 end
 
 def create_rt args
