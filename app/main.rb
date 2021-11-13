@@ -18,7 +18,7 @@ def point_distance_squared(point1:, point2:)
 end
 
 def point_difference(point1:, point2:)
-  {x: point1.x - point2.x, y: point1.y - point2.y}
+  [point1.x - point2.x, point1.y - point2.y]
 end
 
 def vector_angle(vector1:, vector2:)
