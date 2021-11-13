@@ -413,7 +413,8 @@ module Dinraal
     b = options[:b].nil? ? 0 : options[:b]
     a = options[:a].nil? ? 255 : options[:a]
 
-    color = { r: abs(r - 255), g: abs(g - 255), b: abs(b - 255), a: a }
+    color = { r: r, g: g, b: b, a: a }
+    puts color
 
     all_xs = [x, x2, x3]
     x_bounds = all_xs.minmax
