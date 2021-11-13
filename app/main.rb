@@ -81,7 +81,7 @@ def draw_fast_triangle(options = {})
 
   p1 = [x, y]
   p2 = [x2, y2]
-  p3 = [x3. y3]
+  p3 = [x3, y3]
 
   # we want the points to be clockwise
   th1 = vector_angle( vector1: point_difference(point1: p2, point2: p1), vector2: point_difference(point1: p3, point2: p1) )
