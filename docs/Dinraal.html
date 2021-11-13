@@ -3120,7 +3120,7 @@
   <span class='id identifier rubyid_b'>b</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:b</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='int'>0</span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:b</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_a'>a</span> <span class='op'>=</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:a</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_nil?'>nil?</span> <span class='op'>?</span> <span class='int'>255</span> <span class='op'>:</span> <span class='id identifier rubyid_options'>options</span><span class='lbracket'>[</span><span class='symbol'>:a</span><span class='rbracket'>]</span>
 
-  <span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>r:</span> <span class='id identifier rubyid_r'>r</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_g'>g</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_b'>b</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_a'>a</span> <span class='rbrace'>}</span>
+  <span class='id identifier rubyid_color'>color</span> <span class='op'>=</span> <span class='lbrace'>{</span> <span class='label'>r:</span> <span class='id identifier rubyid_abs'>abs</span><span class='lparen'>(</span><span class='id identifier rubyid_r'>r</span> <span class='op'>-</span> <span class='int'>255</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='label'>g:</span> <span class='id identifier rubyid_abs'>abs</span><span class='lparen'>(</span><span class='id identifier rubyid_g'>g</span> <span class='op'>-</span> <span class='int'>255</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='label'>b:</span> <span class='id identifier rubyid_abs'>abs</span><span class='lparen'>(</span><span class='id identifier rubyid_b'>b</span> <span class='op'>-</span> <span class='int'>255</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='label'>a:</span> <span class='id identifier rubyid_a'>a</span> <span class='rbrace'>}</span>
 
   <span class='id identifier rubyid_all_xs'>all_xs</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id identifier rubyid_x'>x</span><span class='comma'>,</span> <span class='id identifier rubyid_x2'>x2</span><span class='comma'>,</span> <span class='id identifier rubyid_x3'>x3</span><span class='rbracket'>]</span>
   <span class='id identifier rubyid_x_bounds'>x_bounds</span> <span class='op'>=</span> <span class='id identifier rubyid_all_xs'>all_xs</span><span class='period'>.</span><span class='id identifier rubyid_minmax'>minmax</span>
@@ -3336,7 +3336,7 @@
 </div>
 
       <div id="footer">
-  Generated on Sat Nov 13 12:35:02 2021 by
+  Generated on Sat Nov 13 12:38:37 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-3.0.2).
 </div>
