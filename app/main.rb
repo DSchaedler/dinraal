@@ -1,6 +1,6 @@
 def tick args
-  draw_fast_triangle({x: 300, y: 100, x2: 900, y2: 200, x3: 500, y3: 400 })
-  draw_fast_triangle({x: 700, y: 700, x2: args.mouse.x, y2: args.mouse.y, x3: 500, y3: 500})
+  args.ouptuts.primitives << draw_fast_triangle({x: 300, y: 100, x2: 900, y2: 200, x3: 500, y3: 400 })
+  args.ouptuts.primitives << draw_fast_triangle({x: 700, y: 700, x2: args.mouse.x, y2: args.mouse.y, x3: 500, y3: 500})
 
   args.outputs.debug << args.gtk.framerate_diagnostics_primitives
 end
@@ -111,36 +111,40 @@ def draw_fast_triangle(options = {})
 
   th = Math::atan2(p2.y - p1.y, p2.x - p1.x)
 
-  args.outputs.sprites << {
+  primitives = []
+
+  primitives << {
     x: p1.x, y: p1.y,
     w: w1, h: h,
     angle_anchor_x: 0, angle_anchor_y: 0,
     flip_horizontally: true,
     path: :dinraal_triangle_part,
     angle: th * 180 / Math::PI
-  }
-  args.outputs.sprites << {
+  }.merge(color).sprite!
+  primitives << {
     x: p1.x + w1 * Math::cos(th), y: p1.y + w1 * Math::sin(th),
     angle_anchor_x: 0, angle_anchor_y: 0,
     w: w2, h: h,
     path: :dinraal_triangle_part,
     angle: th * 180 / Math::PI
-  }
+  }.merge(color).sprite! 
 
-  args.outputs.lines << {
+  primitives << {
     x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
     x2: p3.x + 0.5, y2: p3.y + 0.5
-  }
-  args.outputs.lines << {
+  }.merge(color).line!
+  primitives << {
     x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
     x2: p3.x - 0.5, y2: p3.y - 0.5
-  }
-  args.outputs.lines << {
+  }.merge(color).line!
+  primitives << {
     x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
     x2: p3.x + 0.5, y2: p3.y - 0.5
-  }
-  args.outputs.lines << {
+  }.merge(color).lines
+  primitives << {
     x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
     x2: p3.x - 0.5, y2: p3.y + 0.5
-  }
+  }.merge(color).line!
+
+  primitives
 end
