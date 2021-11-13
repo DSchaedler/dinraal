@@ -398,6 +398,21 @@ module Dinraal
     true
   end
 
+  # A faster method for drawing raster triangles. Does not support images
+  #
+  # @param options [Hash]
+  # @option options x [Float]  Vertex 1 x position.
+  # @option options y [Float]  Vertex 1 y position.
+  # @option options x2 [Float] Vertex 2 x position.
+  # @option options y2 [Float] Vertex 2 y position.
+  # @option options x3 [Float] Vertex 3 x position.
+  # @option options y3 [Float] Vertex 3 y position.
+  # @option options r [Integer] Optional. Color red value. Defaults to `0`.
+  # @option options g [Integer] Optional. Color blue value. Defaults to `0`.
+  # @option options b [Integer] Optional. Color green value. Defaults to `0`.
+  # @option options a [Integer] Optional. Color alpha value. Defaults to `255`.
+  #
+  # @return [Array] An array of `lines` in hash notation.
   def triangle_raster_fast(options = {})
     args = $gtk.args
 
@@ -466,22 +481,46 @@ module Dinraal
     lines
   end
 
+  # 
+  #
+  # @param p0 [Array] A `point` in array notation
+  # @param p1 [Array] A `point` in array notation
+  #
+  # @return [] 
   def two_point_eq(p0, p1)
     ->(x) { ((p1.y - p0.y) / (p1.x - p0.x) * (x - p0.x)) + p0.y }
   end
 
+  # Calculates the distance between two points
+  #
+  # @param point1: [Array] A `point` in array notation
+  # @param point2: [Array] A `point` in array notation
+  #
+  # @return [Float] 
   def point_distance(point1:, point2:)
     dx = point2.x - point1.x
     dy = point2.y - point1.y
     Math.sqrt((dx * dx) + (dy * dy))
   end
 
+  # Calculates the distance squared between two points
+  #
+  # @param point1: [Array] A `point` in array notation
+  # @param point2: [Array] A `point` in array notation
+  #
+  # @return [Float] 
   def point_distance_squared(point1:, point2:)
     dx = point2.x - point1.x
     dy = point2.y - point1.y
     (dx * dx) + (dy * dy)
   end
 
+  # Calculates the difference between two points
+  #
+  # @param point1: [Array] A `point` in array notation
+  # @param point2: [Array] A `point` in array notation
+  #
+  # @return [Array] An array with the x difference as `[0]` and the y distance as `[1]`
   def point_difference(point1:, point2:)
     [point1.x - point2.x, point1.y - point2.y]
   end
@@ -504,10 +543,30 @@ module Dinraal
     (vector1.x * vector2.y) - (vector2.x * vector1.y)
   end
 
+  # Determines the sign of the provided value
+  #
+  # @param value: [Float] 
+  #
+  # @return [Int] `-1`, `0`, or `1`
   def numeric_sign(value:)
     value <=> 0
   end
 
+  # Creates a filled `triangle`.
+  #
+  # @param options [Hash]
+  # @option options x [Float]  Vertex 1 x position.
+  # @option options y [Float]  Vertex 1 y position.
+  # @option options x2 [Float] Vertex 2 x position.
+  # @option options y2 [Float] Vertex 2 y position.
+  # @option options x3 [Float] Vertex 3 x position.
+  # @option options y3 [Float] Vertex 3 y position.
+  # @option options r [Integer] Optional. Color red value. Defaults to `0`.
+  # @option options g [Integer] Optional. Color blue value. Defaults to `0`.
+  # @option options b [Integer] Optional. Color green value. Defaults to `0`.
+  # @option options a [Integer] Optional. Color alpha value. Defaults to `255`.
+  #
+  # @return [Array] An array of `primitives` in hash notation.
   def triangle(options = {})
     args = $gtk.args
 

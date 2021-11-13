@@ -25,8 +25,11 @@ def tick(args)
   end
 
   outputs = []
+  
   outputs << { x: 0, y: 0, w: 1280, h: 720, path: :static_rt }.sprite!
+  
   outputs << Dinraal.triangle(tri1)
+
   mouse_x = args.inputs.mouse.x
   mouse_y = args.inputs.mouse.y
 
