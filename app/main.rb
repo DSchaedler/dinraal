@@ -20,6 +20,10 @@ def tick(args)
   tri1 = { x: 800, y: 500, x2: 450, y2: 650, x3: 400, y3: 300, g: 255 }.merge(x: args.inputs.mouse.x, y: args.inputs.mouse.y)
   args.state.tri2 ||= { x: 200, y: 600, x2: 400, y2: 600, x3: 275, y3: 500, r: 255 }
 
+  if args.state.tick_count.zero?
+    make_rt(args)
+  end
+
   outputs = []
   outputs << { x: 0, y: 0, w: 1280, h: 720, path: :static_rt }.sprite!
   outputs << Dinraal.triangle(tri1)
