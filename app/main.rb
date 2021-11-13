@@ -1,6 +1,6 @@
 def tick args
-  args.outptuts.primitives << draw_fast_triangle({x: 300, y: 100, x2: 900, y2: 200, x3: 500, y3: 400 })
-  args.outptuts.primitives << draw_fast_triangle({x: 700, y: 700, x2: args.mouse.x, y2: args.mouse.y, x3: 500, y3: 500})
+  args.outputs.primitives << draw_fast_triangle({x: 300, y: 100, x2: 900, y2: 200, x3: 500, y3: 400 })
+  args.outputs.primitives << draw_fast_triangle({x: 700, y: 700, x2: args.mouse.x, y2: args.mouse.y, x3: 500, y3: 500})
 
   args.outputs.debug << args.gtk.framerate_diagnostics_primitives
 end
