@@ -1,7 +1,6 @@
 def tick args
-  create_rt args if args.state.tick_count.zero?
-  draw_fast_triangle args, [300, 100], [900, 200], [500, 400]
-  draw_fast_triangle args, [700, 700], [args.mouse.x, args.mouse.y], [500, 500]
+  draw_fast_triangle [300, 100], [900, 200], [500, 400]
+  draw_fast_triangle [700, 700], [args.mouse.x, args.mouse.y], [500, 500]
 
   args.outputs.debug << args.gtk.framerate_diagnostics_primitives
 end
@@ -43,11 +42,28 @@ def numeric_sign v
 end
 
 def draw_fast_triangle args, p1, p2, p3
-  # args.outputs.borders << [p1, p2, p3].map do |p|
-  #   {
-  #     x: p.x - 4, y: p.y - 4, w: 8, h: 8, r: 255
-  #   }
-  # end
+  args = $gtk.args
+
+  $dinraal_have_rt ||= false
+  unless $dinraal_have_rt
+    rt_width = 1280
+    sqrt2 = Math::sqrt(2)
+    square_width = rt_width * sqrt2
+  
+    args.outputs[:dinraal_solid].w = square_width
+    args.outputs[:dinraal_solid].h = square_width
+    args.outputs[:dinraal_solid].solids << {
+      w: square_width, h: square_width
+    }
+    args.outputs[:dinraal_triangle_part].w = rt_width
+    args.outputs[:dinraal_triangle_part].h = rt_width
+    args.outputs[:dinraal_triangle_part].sprites << {
+      x: -rt_width / sqrt2, y: -rt_width / sqrt2,
+      w: square_width, h: square_width,
+      angle: 45, path: :dinraal_solid
+    }
+    $dinraal_have_rt = true
+  end
 
   # we want the points to be clockwise
   th1 = vertex_angle point_difference(p2, p1), point_difference(p3, p1)
@@ -82,50 +98,31 @@ def draw_fast_triangle args, p1, p2, p3
     w: w1, h: h,
     angle_anchor_x: 0, angle_anchor_y: 0,
     flip_horizontally: true,
-    path: :triangle_part,
+    path: :dinraal_triangle_part,
     angle: th * 180 / Math::PI
   }
   args.outputs.sprites << {
     x: p1.x + w1 * Math::cos(th), y: p1.y + w1 * Math::sin(th),
     angle_anchor_x: 0, angle_anchor_y: 0,
     w: w2, h: h,
-    path: :triangle_part,
+    path: :dinraal_triangle_part,
     angle: th * 180 / Math::PI
   }
 
-  # args.outputs.lines << {
-  #   x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
-  #   x2: p3.x + 0.5, y2: p3.y + 0.5
-  # }
-  # args.outputs.lines << {
-  #   x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
-  #   x2: p3.x - 0.5, y2: p3.y - 0.5
-  # }
-  # args.outputs.lines << {
-  #   x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
-  #   x2: p3.x + 0.5, y2: p3.y - 0.5
-  # }
-  # args.outputs.lines << {
-  #   x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
-  #   x2: p3.x - 0.5, y2: p3.y + 0.5
-  # }
-end
-
-def create_rt args
-  w = 720
-  rt2 = Math::sqrt(2)
-  sq_w = w * rt2
-  args.outputs[:solid].w = sq_w
-  args.outputs[:solid].h = sq_w
-  args.outputs[:solid].solids << {
-    w: sq_w, h: sq_w
+  args.outputs.lines << {
+    x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
+    x2: p3.x + 0.5, y2: p3.y + 0.5
   }
-  args.outputs[:triangle_part].w = w
-  args.outputs[:triangle_part].h = w
-  args.outputs[:triangle_part].sprites << {
-    x: -w / rt2, y: -w / rt2,
-    w: sq_w, h: sq_w,
-    angle: 45,
-    path: :solid
+  args.outputs.lines << {
+    x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
+    x2: p3.x - 0.5, y2: p3.y - 0.5
+  }
+  args.outputs.lines << {
+    x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
+    x2: p3.x + 0.5, y2: p3.y - 0.5
+  }
+  args.outputs.lines << {
+    x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
+    x2: p3.x - 0.5, y2: p3.y + 0.5
   }
 end
