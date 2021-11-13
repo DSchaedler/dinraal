@@ -1,39 +1,39 @@
 def tick args
-  draw_fast_triangle [300, 100], [900, 200], [500, 400]
-  draw_fast_triangle [700, 700], [args.mouse.x, args.mouse.y], [500, 500]
+  draw_fast_triangle({x: 300, y: 100, x2: 900, y2: 200, x3: 500, y3: 400 })
+  draw_fast_triangle( {x: 700, y: 700, x2: args.mouse.x, y2: args.mouse.y, x3: 500, y3:500} )
 
   args.outputs.debug << args.gtk.framerate_diagnostics_primitives
 end
 
-def point_distance p1, p2
-  dx = p2.x - p1.x
-  dy = p2.y - p1.y
+def point_distance(point1:, point2:)
+  dx = point2.x - point1.x
+  dy = point2.y - point1.y
   Math::sqrt(dx * dx + dy * dy)
 end
 
-def point_distance_squared p1, p2
-  dx = p2.x - p1.x
-  dy = p2.y - p1.y
+def point_distance_squared(point1:, point2:)
+  dx = point2.x - point1.x
+  dy = point2.y - point1.y
   dx * dx + dy * dy
 end
 
-def point_difference p1, p2
-  [p1.x - p2.x, p1.y - p2.y]
+def point_difference(point1:, point2:)
+  {x: point1.x - point2.x, y: point1.y - point2.y}
 end
 
-def vertex_angle v1, v2
-  Math::acos(vertex_dot_product(v1, v2) / (vector_normal(v1) * vector_normal(v2))) * numeric_sign(vertex_cross_product(v1, v2))
+def vector_angle v1, v2
+  Math::acos(vector_dot_product(v1, v2) / (vector_normal(v1) * vector_normal(v2))) * numeric_sign(vector_dot_product(v1, v2))
 end
 
 def vector_normal vec
   Math::sqrt(vec.x * vec.x + vec.y * vec.y)
 end
 
-def vertex_dot_product v1, v2
+def vector_dot_product v1, v2
   v1.x * v2.x + v1.y * v2.y
 end
 
-def vertex_cross_product v1, v2
+def vector_dot_product v1, v2
   v1.x * v2.y - v2.x * v1.y
 end
 
@@ -41,8 +41,22 @@ def numeric_sign v
   v <=> 0
 end
 
-def draw_fast_triangle p1, p2, p3
+def draw_fast_triangle(options = {})
   args = $gtk.args
+
+  x = options[:x]
+  y = options[:y]
+  x2 = options[:x2]
+  y2 = options[:y2]
+  x3 = options[:x3]
+  y3 = options[:y3]
+
+  r = options[:r].nil? ? 0 : options[:r]
+  g = options[:g].nil? ? 0 : options[:g]
+  b = options[:b].nil? ? 0 : options[:b]
+  a = options[:a].nil? ? 255 : options[:a]
+
+  color = { r: r, g: g, b: b, a: a }
 
   $dinraal_have_rt ||= false
   unless $dinraal_have_rt
@@ -65,12 +79,16 @@ def draw_fast_triangle p1, p2, p3
     $dinraal_have_rt = true
   end
 
+  p1 = [x, y]
+  p2 = [x2, y2]
+  p3 = [x3. y3]
+
   # we want the points to be clockwise
-  th1 = vertex_angle point_difference(p2, p1), point_difference(p3, p1)
+  th1 = vector_angle( vector1: point_difference(point1: p2, point2: p1), vector2: point_difference(point1: p3, point2: p1) )
   if th1 < 0
-    tmp_p = p2
+    temp_point = p2
     p2 = p3
-    p3 = tmp_p
+    p3 = temp_point
   end
   points = [p1, p2, p3]
 
@@ -84,8 +102,8 @@ def draw_fast_triangle p1, p2, p3
   l1 = point_distance p1, p3
   l2 = point_distance p2, p3
 
-  th1 = vertex_angle point_difference(p2, p1), point_difference(p3, p1)
-  th2 = vertex_angle point_difference(p1, p2), point_difference(p3, p2)
+  th1 = vector_angle point_difference(p2, p1), point_difference(p3, p1)
+  th2 = vector_angle point_difference(p1, p2), point_difference(p3, p2)
 
   h = l1 * Math::sin(th1.abs)
   w1 = l1 * Math::cos(th1.abs)
