@@ -8,15 +8,14 @@ Full Documentation can be found at https://dschaedler.github.io/dinraal/
 
 ---
 
-Our killer feature is the `triangle_raster` method. This returns an array of primitives ready to be drawn.
+Our killer feature is the `triangle` method. This returns an array of primitives ready to be drawn.
 
 ```ruby
 require 'app/lib/dinraal.rb'
 
 def tick args
-  if args.state.tick_count.zero?
     triangle = { x: 100, y: 100, x2: 250, y2: 400, x3: 600, y3: 200 }
-    args.outputs.static_primitives << Dinraal.triangle_raster( triangle )
+    args.outputs.static_primitives << Dinraal.triangle( triangle )
   end
 end
 ```
@@ -47,7 +46,6 @@ Triangles are defined as a hash of points, with any additional information.
 - Write a tutorial
 - Improve Documentation
 - Submit improved calculation methods
-  - Speed improvements to the `triangle_raster` and `circle_raster` methods
   - Vector calculations for area over Heron's Formula
 
 ## YARD
@@ -56,8 +54,9 @@ When documenting with YARD, use the full variable / object type names found here
 # About Dinraal
 Dinraal is created by Dee Schaedler. Many thanks to the DragonRuby Discord server for inspiration and feedback. https://discord.dragonruby.org
 
-Specific thanks to:
-- leviondiscord#5978    - Optimization contribution
-- theanxietybuster#8491 - Catching a project-ending typo
+Specific thanks to:  
+- kota#6413             - Implimenting real time triangles  
+- leviondiscord#5978    - Optimization contribution  
+- theanxietybuster#8491 - Catching a project-ending typo  
 
 Most DragonRuby packages and libraries are named after various dragons. Dinraal is a [Japanese Dragon](https://en.wikipedia.org/wiki/Japanese_dragon) from [The Legend of Zelda: Breath of the Wild](https://en.wikipedia.org/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild). Dinraal is the dragon of fire, and the gatekeeper of the Shrine at the [Spring of Power](https://zelda.fandom.com/wiki/Spring_of_Power).
