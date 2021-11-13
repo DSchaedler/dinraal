@@ -1,150 +1,55 @@
-def tick args
-  args.outputs.primitives << draw_fast_triangle({x: 300, y: 100, x2: 900, y2: 200, x3: 500, y3: 400 })
-  args.outputs.primitives << draw_fast_triangle({x: 700, y: 700, x2: args.mouse.x, y2: args.mouse.y, x3: 500, y3: 500})
+$gtk.reset
 
-  args.outputs.debug << args.gtk.framerate_diagnostics_primitives
+require 'app/lib/dinraal.rb'
+
+def make_rt(args)
+  args.render_target(:static_rt).clear_before_render = true
+  args.render_target(:static_rt).primitives << Dinraal.triangle(args.state.tri1)
+
+  args.render_target(:static_rt).primitives << Dinraal.circle_outline(x: 20, y: 580, radius: 20, g: 255)
+  args.render_target(:static_rt).primitives << Dinraal.circle_raster(x: 70, y: 580, radius: 20, b: 255)
+
+  args.render_target(:static_rt).primitives << Dinraal.triangle_outline(args.state.tri1)
+  args.render_target(:static_rt).primitives << Dinraal.triangle_outline(args.state.tri2)
+
+  args.render_target(:static_rt).primitives << Dinraal.triangle_center(args.state.tri1).merge(w: 5, h: 5, g: 255).solid!
+  args.render_target(:static_rt).primitives << Dinraal.triangle_center(args.state.tri2).merge(w: 5, h: 5, g: 255).solid!
+
+  args.render_target(:static_rt).primitives << Dinraal.triangle_bounding_box(args.state.tri1)
+  args.render_target(:static_rt).primitives << Dinraal.triangle_bounding_box(args.state.tri2)
 end
 
-def point_distance(point1:, point2:)
-  dx = point2.x - point1.x
-  dy = point2.y - point1.y
-  Math::sqrt(dx * dx + dy * dy)
-end
+def tick(args)
+  # args.state.tri1 ||= { x: 800, y: 500, x2: 450, y2: 650, x3: 400, y3: 300, path: 'sprites/rick.png', image_width: 300 }
+  args.state.tri1 ||= { x: 800, y: 500, x2: 450, y2: 650, x3: 400, y3: 300, g: 255 }
+  args.state.tri2 ||= { x: 200, y: 600, x2: 400, y2: 600, x3: 275, y3: 500, r: 255 }
 
-def point_distance_squared(point1:, point2:)
-  dx = point2.x - point1.x
-  dy = point2.y - point1.y
-  dx * dx + dy * dy
-end
+  new_tri = args.state.tri1.merge(x: args.inputs.mouse.x, y: args.inputs.mouse.y)
 
-def point_difference(point1:, point2:)
-  [point1.x - point2.x, point1.y - point2.y]
-end
-
-def vector_angle(vector1:, vector2:)
-  Math::acos(vector_dot_product(vector1: vector1, vector2: vector2) / (vector_normal(vector: vector1) * vector_normal(vector: vector2))) * numeric_sign(value: vector_cross_product(vector1: vector1, vector2: vector2))
-end
-
-def vector_normal(vector:)
-  Math::sqrt(vector.x * vector.x + vector.y * vector.y)
-end
-
-def vector_dot_product(vector1:, vector2:)
-  vector1.x * vector2.x + vector1.y * vector2.y
-end
-
-def vector_cross_product(vector1:, vector2:)
-  vector1.x * vector2.y - vector2.x * vector1.y
-end
-
-def numeric_sign(value:)
-  value <=> 0
-end
-
-def draw_fast_triangle(options = {})
-  args = $gtk.args
-
-  x = options[:x]
-  y = options[:y]
-  x2 = options[:x2]
-  y2 = options[:y2]
-  x3 = options[:x3]
-  y3 = options[:y3]
-
-  r = options[:r].nil? ? 0 : options[:r]
-  g = options[:g].nil? ? 0 : options[:g]
-  b = options[:b].nil? ? 0 : options[:b]
-  a = options[:a].nil? ? 255 : options[:a]
-
-  color = { r: r, g: g, b: b, a: a }
-
-  $dinraal_have_rt ||= false
-  unless $dinraal_have_rt
-    rt_width = 1280
-    sqrt2 = Math::sqrt(2)
-    square_width = rt_width * sqrt2
-  
-    args.outputs[:dinraal_solid].w = square_width
-    args.outputs[:dinraal_solid].h = square_width
-    args.outputs[:dinraal_solid].solids << {
-      w: square_width, h: square_width
-    }
-    args.outputs[:dinraal_triangle_part].w = rt_width
-    args.outputs[:dinraal_triangle_part].h = rt_width
-    args.outputs[:dinraal_triangle_part].sprites << {
-      x: -rt_width / sqrt2, y: -rt_width / sqrt2,
-      w: square_width, h: square_width,
-      angle: 45, path: :dinraal_solid
-    }
-    $dinraal_have_rt = true
+  if args.state.tick_count.zero?
+    make_rt(args)
+  elsif args.inputs.mouse.up && new_tri != args.state.tri1
+    args.state.tri1 = new_tri
+    make_rt(args)
+  else
+    args.render_target(:static_rt).clear_before_render = false
   end
 
-  p1 = [x, y]
-  p2 = [x2, y2]
-  p3 = [x3, y3]
+  outputs = []
+  outputs << { x: 0, y: 0, w: 1280, h: 720, path: :static_rt }.sprite!
 
-  # we want the points to be clockwise
-  th1 = vector_angle( vector1: point_difference(point1: p2, point2: p1), vector2: point_difference(point1: p3, point2: p1) )
-  if th1 < 0
-    temp_point = p2
-    p2 = p3
-    p3 = temp_point
-  end
-  points = [p1, p2, p3]
+  mouse_x = args.inputs.mouse.x
+  mouse_y = args.inputs.mouse.y
 
-  # we want p1 -> p2 to be the longest dist
-  lengths = (points + [points[0]]).each_cons(2).map do |a, b|
-    point_distance_squared(point1: a, point2: b)
-  end
-  idx = lengths.index(lengths.max)
-  p1, p2, p3 = points.rotate(lengths.index(lengths.max))[0..2]
+  mouse_inside = Dinraal.point_inside_triangle?(point: { x: mouse_x, y: mouse_y }, triangle: args.state.tri1)
 
-  l1 = point_distance( point1: p1, point2: p3 )
-  l2 = point_distance( point1: p2, point2: p3 )
+  outputs << { x: args.grid.center_x, y: 720, text: "Mouse inside image: #{mouse_inside}", alignment_enum: 1 }.label!
 
-  th1 = vector_angle(vector1: point_difference(point1: p2, point2: p1), vector2: point_difference(point1: p3, point2: p1) )
-  th2 = vector_angle(vector1: point_difference(point1: p1, point2: p2), vector2: point_difference(point1: p3, point2: p2) )
+  two_contains_one = Dinraal.triangle_inside_triangle?(inner: args.state.tri2, outer: args.state.tri1)
+  outputs << { x: args.grid.center_x, y: 700, text: "Image contains red triangle: #{two_contains_one}", alignment_enum: 1 }.label!
 
-  h = l1 * Math::sin(th1.abs)
-  w1 = l1 * Math::cos(th1.abs)
-  w2 = l2 * Math::cos(th2.abs)
+  args.outputs.primitives << outputs
 
-  th = Math::atan2(p2.y - p1.y, p2.x - p1.x)
-
-  primitives = []
-
-  primitives << {
-    x: p1.x, y: p1.y,
-    w: w1, h: h,
-    angle_anchor_x: 0, angle_anchor_y: 0,
-    flip_horizontally: true,
-    path: :dinraal_triangle_part,
-    angle: th * 180 / Math::PI
-  }.merge(color).sprite!
-  primitives << {
-    x: p1.x + w1 * Math::cos(th), y: p1.y + w1 * Math::sin(th),
-    angle_anchor_x: 0, angle_anchor_y: 0,
-    w: w2, h: h,
-    path: :dinraal_triangle_part,
-    angle: th * 180 / Math::PI
-  }.merge(color).sprite! 
-
-  primitives << {
-    x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
-    x2: p3.x + 0.5, y2: p3.y + 0.5
-  }.merge(color).line!
-  primitives << {
-    x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
-    x2: p3.x - 0.5, y2: p3.y - 0.5
-  }.merge(color).line!
-  primitives << {
-    x: p1.x + w1 * Math::cos(th) + 0.5, y: p1.y + w1 * Math::sin(th) - 0.5,
-    x2: p3.x + 0.5, y2: p3.y - 0.5
-  }.merge(color).lines
-  primitives << {
-    x: p1.x + w1 * Math::cos(th) - 0.5, y: p1.y + w1 * Math::sin(th) + 0.5,
-    x2: p3.x - 0.5, y2: p3.y + 0.5
-  }.merge(color).line!
-
-  primitives
+  # Optional Debug Information. Uncomment to show
+  # args.outputs.debug << args.gtk.framerate_diagnostics_primitives
 end
