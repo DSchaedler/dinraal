@@ -625,11 +625,16 @@ module Dinraal
       sqrt2 = Math.sqrt(2)
       square_width = rt_width * sqrt2
 
+      args.render_target(:dinraal_solid).clear_before_render = true
+
       args.outputs[:dinraal_solid].w = square_width
       args.outputs[:dinraal_solid].h = square_width
       args.outputs[:dinraal_solid].solids << {
         w: square_width, h: square_width
       }.merge(rt_color)
+    end
+
+    unless $dinraal_have_rt
       args.outputs[:dinraal_triangle_part].w = rt_width
       args.outputs[:dinraal_triangle_part].h = rt_width
       args.outputs[:dinraal_triangle_part].sprites << {
