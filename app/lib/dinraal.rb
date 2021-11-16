@@ -124,7 +124,7 @@ module Dinraal
     diameter.times do |i|
       h = i - radius
       l = Math.sqrt((radius * radius) - (h * h))
-      lines << { x: x + i, y: y + radius - l, x2: x + i, y2: y + radius + l }.line!.merge(r: r, g: g, b: b, a: a)
+      lines << { x: x + i, y: y + radius - l, x2: x + i, y2: y + radius + l }.line!(r: r, g: g, b: b, a: a)
     end
     lines
   end
