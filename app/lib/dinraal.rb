@@ -113,6 +113,7 @@ module Dinraal
     x = options[:x]
     y = options[:y]
     radius = options[:radius]
+    diameter = radius * 2
 
     # r = options[:r].nil? ? 0 : options[:r]
     # g = options[:g].nil? ? 0 : options[:g]
@@ -120,11 +121,10 @@ module Dinraal
     # a = options[:a].nil? ? 255 : options[:a]
 
     lines = []
-    200.times do |i|
-      r = 100
-      h = i - r
-      l = Math.sqrt((r * r) - (h * h))
-      lines << { x: i, y: r - l, x2: i, y2: r + l }.line! # .merge(r: r, g: g, b: b, a: a)
+    diameter.times do |i|
+      h = i - radius
+      l = Math.sqrt((radius * radius) - (h * h))
+      lines << { x: x + i, y: y + radius - l, x2: x + i, y2: y + radius + l }.line! # .merge(r: r, g: g, b: b, a: a)
     end
     lines
   end
