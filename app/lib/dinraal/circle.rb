@@ -1,4 +1,4 @@
-module Dinraal
+module D_Circle
   # Create a filled `circle`.
   #
   # @param options [Hash]
@@ -75,4 +75,4 @@ module Dinraal
   end
 end
 
-Dinraal.extend Dinraal
+D_Circle.extend Dinraal

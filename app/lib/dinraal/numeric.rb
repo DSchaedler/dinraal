@@ -1,4 +1,4 @@
-module Dinraal
+module D_Numeric
   # Determines the sign of the provided value
   #
   # @param value: [Float]
@@ -9,4 +9,4 @@ module Dinraal
   end
 end
 
-Dinraal.extend Dinraal
+D_Numeric.extend Dinraal

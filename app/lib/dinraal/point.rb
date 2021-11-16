@@ -1,4 +1,4 @@
-module Dinraal
+module D_Point
   # Calculates a new `point` given a starting `point`, distance, and angle.
   #
   # @param options [Hash]
@@ -107,4 +107,4 @@ module Dinraal
   end
 end
 
-Dinraal.extend Dinraal
+D_Point.extend Dinraal

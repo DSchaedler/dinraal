@@ -2,7 +2,7 @@ require 'app/lib/dinraal/numeric.rb'
 require 'app/lib/dinraal/point.rb'
 require 'app/lib/dinraal/vector.rb'
 
-module Dinraal
+module D_Triangle
   # Determines if the given `rect` is inside of the given `triangle`.
   #
   # @param rectangle [Hash] `rect` in DR hash notation.
@@ -458,4 +458,4 @@ module Dinraal
   end
 end
 
-Dinraal.extend Dinraal
+D_Triangle.extend Dinraal
