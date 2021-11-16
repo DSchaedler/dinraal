@@ -122,7 +122,7 @@ module Dinraal
     lines = []
     200.times do |i|
       h = i - radius
-      puts "i: " + i.to_s + " h: " + h.to_s + " sqrt: " + ((radius*radius) - (h * h)).to_s
+      puts 'i: ' + i.to_s + ' h: ' + h.to_s + ' sqrt: ' + ((radius * radius) - (h * h)).to_s
       l = Math.sqrt((radius * radius) - (h * h))
       lines << { x: i, y: radius - l, x2: i, y2: radius + l }.line!.merge(r: r, g: g, b: b, a: a)
     end
