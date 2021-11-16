@@ -124,7 +124,7 @@ module Dinraal
       r = 100
       h = i - r
       l = Math.sqrt((r * r) - (h * h))
-      lines << { x: i, y: radius - l, x2: i, y2: radius + l }.line! # .merge(r: r, g: g, b: b, a: a)
+      lines << { x: i, y: r - l, x2: i, y2: r + l }.line! # .merge(r: r, g: g, b: b, a: a)
     end
     lines
   end
