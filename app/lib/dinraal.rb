@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require 'app/lib/dinraal/circle'
-require 'app/lib/dinraal/numeric'
-require 'app/lib/dinraal/point'
-require 'app/lib/dinraal/triangle'
-require 'app/lib/dinraal/vector'
+require 'app/lib/dinraal/circle.rb'
+require 'app/lib/dinraal/numeric.rb'
+require 'app/lib/dinraal/point.rb'
+require 'app/lib/dinraal/triangle.rb'
+require 'app/lib/dinraal/vector.rb'
 
 # Module provides methods for manipulating shapes to DragonRuby Game Toolkit.
 # By D Schaedler. Released under MIT License.

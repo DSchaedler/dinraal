@@ -13,3 +13,6 @@ Metrics/MethodLength:
 
 Style/GlobalVars:
   Enabled: false
+
+Style/RedundantFileExtensionInRequire:
+  Enabled: false

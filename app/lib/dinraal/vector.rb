@@ -1,4 +1,4 @@
-require 'app/lib/dinraal/numeric'
+require 'app/lib/dinraal/numeric.rb'
 
 module Dinraal
   def vector_angle(vector1:, vector2:)

@@ -1,6 +1,6 @@
-require 'app/lib/dinraal/numeric'
-require 'app/lib/dinraal/point'
-require 'app/lib/dinraal/vector'
+require 'app/lib/dinraal/numeric.rb'
+require 'app/lib/dinraal/point.rb'
+require 'app/lib/dinraal/vector.rb'
 
 module Dinraal
   # Determines if the given `rect` is inside of the given `triangle`.
