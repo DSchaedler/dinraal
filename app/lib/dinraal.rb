@@ -123,8 +123,8 @@ module Dinraal
     200.times do |i|
       r = 100
       h = i - r
-      l = Math::sqrt(r * r - h * h)
-      lines << { x: i, y: radius - l, x2: i, y2: radius + l }.line!#.merge(r: r, g: g, b: b, a: a)
+      l = Math.sqrt((r * r) - (h * h))
+      lines << { x: i, y: radius - l, x2: i, y2: radius + l }.line! # .merge(r: r, g: g, b: b, a: a)
     end
     lines
   end
