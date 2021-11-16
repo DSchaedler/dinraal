@@ -620,7 +620,7 @@ module Dinraal
     unless rt_color != $rt_color_old || $dinraal_have_rt
       $rt_color_old = rt_color
 
-      rt_width = 1280
+      rt_width = 1280 # Resolution of the rectangles used to generate the triangles. Higher is better, but going over 1280 is useless. Recommend 720 or 1280
       sqrt2 = Math.sqrt(2)
       square_width = rt_width * sqrt2
 
