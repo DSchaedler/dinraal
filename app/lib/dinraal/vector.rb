@@ -20,4 +20,4 @@ module D_Vector
   end
 end
 
-D_Vector.extend Dinraal
+Dinraal.extend D_Vector

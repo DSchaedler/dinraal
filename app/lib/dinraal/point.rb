@@ -107,4 +107,4 @@ module D_Point
   end
 end
 
-D_Point.extend Dinraal
+Dinraal.extend D_Point

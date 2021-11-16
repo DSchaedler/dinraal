@@ -9,4 +9,4 @@ module D_Numeric
   end
 end
 
-D_Numeric.extend Dinraal
+Dinraal.extend D_Numeric

@@ -458,4 +458,4 @@ module D_Triangle
   end
 end
 
-D_Triangle.extend Dinraal
+Dinraal.extend D_Triangle

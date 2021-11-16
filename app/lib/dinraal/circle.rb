@@ -75,4 +75,4 @@ module D_Circle
   end
 end
 
-D_Circle.extend Dinraal
+Dinraal.extend D_Circle
