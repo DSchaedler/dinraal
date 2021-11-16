@@ -705,7 +705,7 @@ module Dinraal
     primitives << {
       x: p1.x + (w1 * Math.cos(th)) - 0.5, y: p1.y + (w1 * Math.sin(th)) + 0.5,
       x2: p3.x - 0.5, y2: p3.y + 0.5
-    }.merge($rt_color_old).line!
+    }.merge(rt_color).line!
 
     primitives
   end
