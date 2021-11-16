@@ -37,7 +37,7 @@ def tick(args)
 
   outputs = []
   
-  outputs << circle(x: args.grid.center_x, y: args.grid.center_y, radius: 100, b: 255)
+  outputs << circle(x: 640, y: 360, radius: 100, b: 255)
   outputs << { x: 0, y: 0, w: 1280, h: 720, path: :static_rt }.sprite!
   
   outputs << Dinraal.triangle(tri1)
