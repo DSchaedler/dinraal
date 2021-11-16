@@ -636,7 +636,7 @@ module Dinraal
         x: -rt_width / sqrt2, y: -rt_width / sqrt2,
         w: square_width, h: square_width,
         angle: 45, path: :dinraal_solid
-      }.merge(rt_color)
+      }
       $dinraal_have_rt = true
     end
 
