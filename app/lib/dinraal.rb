@@ -60,10 +60,10 @@ module Dinraal
   # @option options x [Float] Center x position.
   # @option options y [Float] Center y position.
   # @option options radius [Float] Radius of the `circle` .
-  # @option options r [Integer] Color red value.
-  # @option options g [Integer] Color blue value.
-  # @option options b [Integer] Color green value.
-  # @option options a [Integer] Color alpha value.
+  # @option options r [Integer] Optional. Color red value. Defaults to `0`.
+  # @option options g [Integer] Optional. Color blue value. Defaults to `0`.
+  # @option options b [Integer] Optional. Color green value. Defaults to `0`.
+  # @option options a [Integer] Optional. Color alpha value. Defaults to `255`.
   #
   # @return [Array] An array of `solids` in hash notation.
   def circle_outline(options = {})
@@ -95,6 +95,37 @@ module Dinraal
     end
 
     pixels
+  end
+
+  # Create a filled `circle`.
+  #
+  # @param options [Hash]
+  # @option options x [Float] Center x position.
+  # @option options y [Float] Center y position.
+  # @option options radius [Float] Radius of the `circle``.
+  # @option options r [Integer] Optional. Color red value. Defaults to `0`.
+  # @option options g [Integer] Optional. Color blue value. Defaults to `0`.
+  # @option options b [Integer] Optional. Color green value. Defaults to `0`.
+  # @option options a [Integer] Optional. Color alpha value. Defaults to `255`.
+  #
+  # @return [Array] An array of `lines` in hash notation.
+  def circle(options ={})
+    x = options[:x]
+    y = options[:y]
+    radius = options[:radius]
+
+    r = options[:r].nil? ? 0 : options[:r]
+    g = options[:g].nil? ? 0 : options[:g]
+    b = options[:b].nil? ? 0 : options[:b]
+    a = options[:a].nil? ? 255 : options[:a]
+
+    lines = []
+    200.times do |i|
+      h = i - radius
+      l = Math::sqrt(radius * radius - h * h)  
+      lines << {x: i, y: radius - l, x2: i, y2: radius + l}.line!.merge(r: r, g: g, b: b, a: a)
+    end
+    lines
   end
 
   # Create a filled `circle` using raster method.

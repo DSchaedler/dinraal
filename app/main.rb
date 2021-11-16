@@ -2,31 +2,10 @@ $gtk.reset
 
 require 'app/lib/dinraal.rb'
 
-def circle(options ={})
-  x = options[:x]
-  y = options[:y]
-  radius = options[:radius]
-
-  r = options[:r].nil? ? 0 : options[:r]
-  g = options[:g].nil? ? 0 : options[:g]
-  b = options[:b].nil? ? 0 : options[:b]
-  a = options[:a].nil? ? 255 : options[:a]
-
-  lines = []
-  200.times do |i|
-    h = i - radius
-    l = Math::sqrt(radius * radius - h * h)  
-    lines << {x: i, y: radius - l, x2: i, y2: radius + l}.line!.merge(r: r, g: g, b: b, a: a)
-  end
-  lines
-end
-
 def make_rt(args)
   args.render_target(:static_rt).clear_before_render = true
 
   args.render_target(:static_rt).primitives << Dinraal.circle_outline(x: 20, y: 580, radius: 20, g: 255)
-  #args.render_target(:static_rt).primitives << Dinraal.circle_raster(x: 70, y: 580, radius: 20, b: 255)
-  #args.render_target(:static_rt).primitives << circle(x: 70, y: 580, radius: 20, b: 255)
 
   args.render_target(:static_rt).primitives << Dinraal.triangle_outline(args.state.tri2)
 
@@ -46,7 +25,7 @@ def tick(args)
 
   outputs = []
   
-  outputs << circle({x: 640, y: 360, radius: 100, b: 255})
+  outputs << Dinraal.circle({x: 640, y: 360, radius: 100, b: 255})
   outputs << { x: 0, y: 0, w: 1280, h: 720, path: :static_rt }.sprite!
   
   outputs << Dinraal.triangle(tri1)
