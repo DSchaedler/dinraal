@@ -109,7 +109,7 @@ module Dinraal
   # @option options a [Integer] Optional. Color alpha value. Defaults to `255`.
   #
   # @return [Array] An array of `lines` in hash notation.
-  def circle(options ={})
+  def circle(options = {})
     x = options[:x]
     y = options[:y]
     radius = options[:radius]
@@ -122,8 +122,8 @@ module Dinraal
     lines = []
     200.times do |i|
       h = i - radius
-      l = Math::sqrt(radius * radius - h * h)  
-      lines << {x: i, y: radius - l, x2: i, y2: radius + l}.line!.merge(r: r, g: g, b: b, a: a)
+      l = Math.sqrt((radius * radius) - (h * h))
+      lines << { x: i, y: radius - l, x2: i, y2: radius + l }.line!.merge(r: r, g: g, b: b, a: a)
     end
     lines
   end
