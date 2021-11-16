@@ -19,7 +19,7 @@ def tick(args)
 
   hue = (args.state.tick_count % 360).round
 
-  tri1 = { x: 800, y: 500, x2: 450, y2: 650, x3: 400, y3: 300}.merge(x: args.inputs.mouse.x, y: args.inputs.mouse.y).merge(hsv_to_rgb(hue, 1, 1))
+  tri1 = { x: 800, y: 500, x2: 450, y2: 650, x3: 400, y3: 300}.merge(x: args.inputs.mouse.x, y: args.inputs.mouse.y).merge(Dinraal.hsv_to_rgb(hue, 1, 1))
   args.state.tri2 ||= { x: 200, y: 600, x2: 400, y2: 600, x3: 275, y3: 500, r: 255 }
 
   if args.state.tick_count.zero?
@@ -48,26 +48,3 @@ def tick(args)
   # args.outputs.debug << args.gtk.framerate_diagnostics_primitives
 end
 
-def hsv_to_rgb h, s, v
-  # based on conversion listed here: https://www.rapidtables.com/convert/color/hsv-to-rgb.html
-  h = h % 360
-
-  c = v * s
-  x = c * (1 - ((h / 60) % 2 - 1).abs)
-  m = v - c
-
-  rp, gp, bp = [
-    [c, x, 0], #   0 < h <  60
-    [x, c, 0], #  60 < h < 120
-    [0, c, x], # 120 < h < 180
-    [0, x, c], # 180 < h < 240
-    [x, 0, c], # 240 < h < 300
-    [c, 0, x]  # 300 < h < 360
-  ][h / 60]
-
-  return {
-    r: (rp + m) * 255,
-    g: (gp + m) * 255,
-    b: (bp + m) * 255,
-  }
-end
