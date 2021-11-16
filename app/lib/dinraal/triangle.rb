@@ -1,6 +1,6 @@
-require 'app/lib/dinraal/numeric.rb'
-require 'app/lib/dinraal/point.rb'
-require 'app/lib/dinraal/vector.rb'
+require 'app/lib/dinraal/numeric'
+require 'app/lib/dinraal/point'
+require 'app/lib/dinraal/vector'
 
 module Dinraal
   # Determines if the given `rect` is inside of the given `triangle`.
@@ -177,7 +177,7 @@ module Dinraal
 
     { x: x_min, y: y_min, w: x_max - x_min, h: y_max - y_min }.border!
   end
-  
+
   # Calculates the center `point` of the given `triangle`.
   #
   # @param options [Hash]

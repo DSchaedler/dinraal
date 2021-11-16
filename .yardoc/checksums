@@ -1,1 +1,6 @@
-app/lib/dinraal.rb 630d31e2a4857c434e4376f9eabd1b7123bf062b
+app/lib/dinraal.rb a7078f593b7bb0d1f47c8dfdbb7eda4d73f84e11
+app/lib/dinraal/point.rb 0ce664bcf38580ff60e912cf8ce69653025dbda0
+app/lib/dinraal/circle.rb a3fdc6bb89329ee00d5f3535230ac27fce777c00
+app/lib/dinraal/vector.rb 2a6371cc125c315370dd5ef3ca2e57674d1b3a64
+app/lib/dinraal/numeric.rb 88bddd5d3b669ee6043ed4fc153991d43914219f
+app/lib/dinraal/triangle.rb 8927b2bf79e33a59947b51f22cd66f600d182c31
