@@ -2,11 +2,22 @@ $gtk.reset
 
 require 'app/lib/dinraal.rb'
 
+def circle(x:, y:, radius:, r:, g:, b:, a:)
+  200.times do |i|
+    h = i - radius
+    l = Math::sqrt(radius * radius - h * h)
+    lines = []
+    lines << [i, radius - l, i, radius + l]
+  end
+  lines
+end
+
 def make_rt(args)
   args.render_target(:static_rt).clear_before_render = true
 
   args.render_target(:static_rt).primitives << Dinraal.circle_outline(x: 20, y: 580, radius: 20, g: 255)
-  args.render_target(:static_rt).primitives << Dinraal.circle_raster(x: 70, y: 580, radius: 20, b: 255)
+  #args.render_target(:static_rt).primitives << Dinraal.circle_raster(x: 70, y: 580, radius: 20, b: 255)
+  args.render_target(:static_rt).primitives << circle(x: 70, y: 580, radius: 20, b: 255)
 
   args.render_target(:static_rt).primitives << Dinraal.triangle_outline(args.state.tri2)
 
