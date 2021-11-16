@@ -17,7 +17,7 @@ def make_rt(args)
 
   args.render_target(:static_rt).primitives << Dinraal.circle_outline(x: 20, y: 580, radius: 20, g: 255)
   #args.render_target(:static_rt).primitives << Dinraal.circle_raster(x: 70, y: 580, radius: 20, b: 255)
-  args.render_target(:static_rt).primitives << circle(x: 70, y: 580, radius: 20, b: 255)
+  #args.render_target(:static_rt).primitives << circle(x: 70, y: 580, radius: 20, b: 255)
 
   args.render_target(:static_rt).primitives << Dinraal.triangle_outline(args.state.tri2)
 
@@ -37,6 +37,7 @@ def tick(args)
 
   outputs = []
   
+  outputs << circle(x: 70, y: 580, radius: 20, b: 255)
   outputs << { x: 0, y: 0, w: 1280, h: 720, path: :static_rt }.sprite!
   
   outputs << Dinraal.triangle(tri1)
