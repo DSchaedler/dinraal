@@ -615,13 +615,13 @@ module Dinraal
     a = options[:a].nil? ? 255 : options[:a]
 
     rt_color = { r: r, g: g, b: b, a: a }
-    $rt_color_old ||= rt_color
+    $rt_color_old ||= rt_color.clone
 
-    puts 'rt_color: ' + rt_color.to_s + ' $rt_color_old ' + $rt_color_old.to_s
+    puts "rt_color: " + rt_color.to_s + " $rt_color_old " + $rt_color_old.to_s
 
     $dinraal_have_rt ||= false
-    unless rt_color != $rt_color_old || $dinraal_have_rt
-      $rt_color_old = rt_color
+    unless rt_color == $rt_color_old && $dinraal_have_rt
+      $rt_color_old = rt_color.clone
 
       rt_width = 1280 # Resolution of the rectangles used to generate the triangles. Higher is better, but going over 1280 is useless. Recommend 720 or 1280
       sqrt2 = Math.sqrt(2)
