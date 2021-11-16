@@ -2,7 +2,7 @@ $gtk.reset
 
 require 'app/lib/dinraal.rb'
 
-def circle(x:, y:, radius:, r:, g:, b:, a:)
+def circle(x:, y:, radius:, r: 0, g: 0, b: 0, a: 255)
   200.times do |i|
     h = i - radius
     l = Math::sqrt(radius * radius - h * h)
