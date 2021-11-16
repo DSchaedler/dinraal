@@ -629,14 +629,14 @@ module Dinraal
       args.outputs[:dinraal_solid].h = square_width
       args.outputs[:dinraal_solid].solids << {
         w: square_width, h: square_width
-      }.merge($rt_color_old)
+      }.merge(rt_color)
       args.outputs[:dinraal_triangle_part].w = rt_width
       args.outputs[:dinraal_triangle_part].h = rt_width
       args.outputs[:dinraal_triangle_part].sprites << {
         x: -rt_width / sqrt2, y: -rt_width / sqrt2,
         w: square_width, h: square_width,
         angle: 45, path: :dinraal_solid
-      }.merge($rt_color_old)
+      }.merge(rt_color)
       $dinraal_have_rt = true
     end
 
@@ -693,15 +693,15 @@ module Dinraal
     primitives << {
       x: p1.x + (w1 * Math.cos(th)) + 0.5, y: p1.y + (w1 * Math.sin(th)) + 0.5,
       x2: p3.x + 0.5, y2: p3.y + 0.5
-    }.merge($rt_color_old).line!
+    }.merge(rt_color).line!
     primitives << {
       x: p1.x + (w1 * Math.cos(th)) - 0.5, y: p1.y + (w1 * Math.sin(th)) - 0.5,
       x2: p3.x - 0.5, y2: p3.y - 0.5
-    }.merge($rt_color_old).line!
+    }.merge(rt_color).line!
     primitives << {
       x: p1.x + (w1 * Math.cos(th)) + 0.5, y: p1.y + (w1 * Math.sin(th)) - 0.5,
       x2: p3.x + 0.5, y2: p3.y - 0.5
-    }.merge($rt_color_old).lines
+    }.merge(rt_color).lines
     primitives << {
       x: p1.x + (w1 * Math.cos(th)) - 0.5, y: p1.y + (w1 * Math.sin(th)) + 0.5,
       x2: p3.x - 0.5, y2: p3.y + 0.5
