@@ -5,7 +5,7 @@ require 'app/lib/dinraal.rb'
 def make_rt(args)
   args.render_target(:static_rt).clear_before_render = true
 
-  args.render_target(:static_rt).primitives << Dinraal.circle_outline(x: 20, y: 580, radius: 100, g: 255)
+  args.render_target(:static_rt).primitives << Dinraal.circle_outline(x: 20, y: 580, radius: 20, g: 255)
 
   args.render_target(:static_rt).primitives << Dinraal.triangle_outline(args.state.tri2)
   args.render_target(:static_rt).primitives << Dinraal.triangle_center(args.state.tri2).merge(w: 5, h: 5, g: 255).solid!
