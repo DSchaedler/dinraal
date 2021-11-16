@@ -115,10 +115,10 @@ module Dinraal
     radius = options[:radius]
     diameter = radius * 2
 
-    # r = options[:r].nil? ? 0 : options[:r]
-    # g = options[:g].nil? ? 0 : options[:g]
-    # b = options[:b].nil? ? 0 : options[:b]
-    # a = options[:a].nil? ? 255 : options[:a]
+    r = options[:r].nil? ? 0 : options[:r]
+    g = options[:g].nil? ? 0 : options[:g]
+    b = options[:b].nil? ? 0 : options[:b]
+    a = options[:a].nil? ? 255 : options[:a]
 
     lines = []
     diameter.times do |i|
