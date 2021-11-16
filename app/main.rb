@@ -18,6 +18,7 @@ def tick(args)
   # args.state.tri1 ||= { x: 800, y: 500, x2: 450, y2: 650, x3: 400, y3: 300, path: 'sprites/rick.png', image_width: 300 }
 
   hue = (args.state.tick_count % 360).round
+  puts hue
 
   tri1 = { x: 800, y: 500, x2: 450, y2: 650, x3: 400, y3: 300}.merge(x: args.inputs.mouse.x, y: args.inputs.mouse.y).merge(hsv_to_rgb(hue, 100, 100))
   args.state.tri2 ||= { x: 200, y: 600, x2: 400, y2: 600, x3: 275, y3: 500, r: 255 }
