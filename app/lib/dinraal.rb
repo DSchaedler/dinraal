@@ -617,6 +617,8 @@ module Dinraal
     rt_color = { r: r, g: g, b: b, a: a }
     $rt_color_old ||= rt_color
 
+    puts "rt_color: " + rt_color.to_s + " $rt_color_old " + $rt_color_old
+
     $dinraal_have_rt ||= false
     unless rt_color != $rt_color_old || $dinraal_have_rt
       $rt_color_old = rt_color
