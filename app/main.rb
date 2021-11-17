@@ -45,6 +45,6 @@ def tick(args)
   args.outputs.primitives << outputs
 
   # Optional Debug Information. Uncomment to show
-  # args.outputs.debug << args.gtk.framerate_diagnostics_primitives
+  args.outputs.debug << args.gtk.framerate_diagnostics_primitives
 end
 
