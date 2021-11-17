@@ -31,7 +31,6 @@ Triangles are defined as a hash of points, with any additional information.
 ```
 
 # TODO
-- Alphabetize methods in `dinrall.rb`
 - Create `triangle_intersects_triangle?` method
 - Create `rectangle_intersects_triangle?` method
 - Create `triangle_inradius` method - [Incircle Math Breakdown](https://artofproblemsolving.com/wiki/index.php/Incircle)
@@ -55,7 +54,7 @@ When documenting with YARD, use the full variable / object type names found here
 Dinraal is created by Dee Schaedler. Many thanks to the DragonRuby Discord server for inspiration and feedback. https://discord.dragonruby.org
 
 Specific thanks to:  
-- kota#6413             - Implimenting real time triangles  
+- kota#6413             - Implimenting real time triangles, implimenting many geometry and vector methods  
 - leviondiscord#5978    - Optimization contribution  
 - theanxietybuster#8491 - Catching a project-ending typo  
 
